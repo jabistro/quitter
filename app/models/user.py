@@ -11,6 +11,18 @@ class User(db.Model, UserMixin):
     email = db.Column(db.String(255), nullable=False, unique=True)
     hashed_password = db.Column(db.String(255), nullable=False)
 
+    queets = db.relationship("Queet", back_populates="users")
+    comments = db.relationship("Comment", back_populates="users")
+
+    # followers = db.relationship(
+    #     "User",
+    #     secondary=follows,
+    #     primaryjoin=(follows.c.follower_id == id),
+    #     secondaryjoin=(follows.c.followed_id == id),
+    #     backref=db.backref("following", lazy="dynamic"),
+    #     lazy="dynamic"
+    # )
+
     @property
     def password(self):
         return self.hashed_password

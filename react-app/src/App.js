@@ -8,6 +8,10 @@ import ProtectedRoute from './components/auth/ProtectedRoute';
 import UsersList from './components/UsersList';
 import User from './components/User';
 import { authenticate } from './store/session';
+import { getQueets } from './store/queets';
+import { getComments } from './store/comments';
+import loader from "./images/loading.gif";
+import HomePage from './components/Queets/HomePage/HomePage';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -16,12 +20,14 @@ function App() {
   useEffect(() => {
     (async() => {
       await dispatch(authenticate());
+      await dispatch(getQueets());
+      await dispatch(getComments());
       setLoaded(true);
     })();
   }, [dispatch]);
 
   if (!loaded) {
-    return null;
+    return <img className="loading" src={loader} alt="loader" />;
   }
 
   return (
@@ -41,7 +47,7 @@ function App() {
           <User />
         </ProtectedRoute>
         <ProtectedRoute path='/' exact={true} >
-          <h1>My Home Page</h1>
+          <HomePage />
         </ProtectedRoute>
       </Switch>
     </BrowserRouter>
