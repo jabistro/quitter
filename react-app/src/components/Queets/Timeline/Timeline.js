@@ -10,7 +10,7 @@ const Timeline = () => {
 
     return (
         <div>
-            <h1>I'm a timeline</h1>
+            <h1>I'm still a timeline</h1>
             {queetsArr.map(queet => {
                 return (
                     <div>
