@@ -1,24 +1,19 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import Feed from './Feed/Feed';
+import SideBar from './Sidebar/Sidebar';
 import './Timeline.css';
 
 
 const Timeline = () => {
 
-    const queets = useSelector(state => state.queet)
-    const queetsArr = Object.values(queets);
+    // const queets = useSelector(state => state.queet)
+    // const queetsArr = Object.values(queets);
 
     return (
         <div>
-            <h1>I'm still a timeline</h1>
-            {queetsArr.map(queet => {
-                return (
-                    <div>
-                        <div>{queet.content}</div>
-                        <br />
-                    </div>
-                )
-            })}
+            <SideBar />
+            <Feed />
         </div>
     )
 }
