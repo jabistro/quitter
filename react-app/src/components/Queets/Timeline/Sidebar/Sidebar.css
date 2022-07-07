@@ -1,0 +1,31 @@
+.sidebar-wrap {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.logo {
+    height: 50px;
+    width: 50px;
+}
+
+.icons {
+    height: 30px;
+    width: 30px;
+}
+
+.icon-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: fit-content;
+}
+
+.icon-wrap:hover {
+    background-color: rgb(217, 217, 217);
+    cursor: pointer;
+    transition: all;
+    transition-duration: 200ms;
+    color:rgb(74, 174, 210);
+    border-radius: 15px;
+}

@@ -1,0 +1,28 @@
+.header-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.home {
+    font-weight: bold;
+}
+
+.refresh {
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+    color: #00aced;
+    margin-top: 10px;
+    margin-right: 10px;
+    transition: all;
+    transition-duration: 500ms;
+}
+
+.refresh:hover {
+    transform: rotate(180deg);
+}
+
+.refresh:active {
+    transform: scale(1.5);
+}
