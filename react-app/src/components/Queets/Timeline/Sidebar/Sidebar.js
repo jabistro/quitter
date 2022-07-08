@@ -1,6 +1,6 @@
 import './Sidebar.css';
 import React from 'react'
-import { GiBirdHouse } from 'react-icons/gi';
+import { GrGroup } from 'react-icons/gr';
 import { FaHashtag } from 'react-icons/fa';
 import { FiBell } from 'react-icons/fi';
 import { FiMail } from 'react-icons/fi';
@@ -13,7 +13,7 @@ const Sidebar = () => {
     <div className='sidebar-wrap'>
       <img className='logo' src="https://links.papareact.com/drq" alt="" />
       <div className='icon-wrap'>
-        <GiBirdHouse className='icons' />
+        <GrGroup className='icons' />
         <p className='icon-text'>Home</p>
       </div>
       <div className='icon-wrap'>
