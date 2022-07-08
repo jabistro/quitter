@@ -13,6 +13,8 @@ import { getComments } from './store/comments';
 import loader from "./images/loading.gif";
 import HomePage from './components/Queets/HomePage/HomePage';
 import EditQueet from './components/Queets/Timeline/Queets/EditQueet';
+import SingleQueet from './components/Queets/Timeline/Queets/SingleQueet';
+import EditComment from './components/Queets/Timeline/Comments/EditComment';
 // import { getUsers } from './store/users';
 
 function App() {
@@ -20,7 +22,7 @@ function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    (async() => {
+    (async () => {
       await dispatch(authenticate());
       await dispatch(getQueets());
       await dispatch(getComments());
@@ -44,7 +46,7 @@ function App() {
           <SignUpForm />
         </Route>
         <ProtectedRoute path='/users' exact={true} >
-          <UsersList/>
+          <UsersList />
         </ProtectedRoute>
         <ProtectedRoute path='/users/:userId' exact={true} >
           <User />
@@ -54,6 +56,12 @@ function App() {
         </ProtectedRoute>
         <ProtectedRoute path='/queets/edit/:queetId' exact={true} >
           <EditQueet />
+        </ProtectedRoute>
+        <ProtectedRoute path='/queets/:queetId' exact={true} >
+          <SingleQueet />
+        </ProtectedRoute>
+        <ProtectedRoute path='/comments/edit/:commentId' exact={true} >
+          <EditComment />
         </ProtectedRoute>
       </Switch>
     </BrowserRouter>

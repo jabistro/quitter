@@ -2,6 +2,7 @@ import "./Queets.css";
 import { useSelector } from 'react-redux';
 import { Link, useHistory } from 'react-router-dom';
 import React from 'react'
+import AddComment from "../Comments/AddComment";
 
 const Queets = () => {
 
@@ -23,16 +24,19 @@ const Queets = () => {
         <div className="queets-wrap">
             {latestQueets.map(queet => {
                 return (
-                    <div key={queet.id} className="queets">
-                        <div>{queet.userId}</div>
-                        <div>{queet.content}</div>
-                        {queet.userId === user.id &&
+                    <div className="queets">
+                        <Link className="queet-link" key={queet.id} to={`/queets/${queet.id}`}>
+                            <div>{queet.userId}</div>
+                            <div>{queet.content}</div>
+                        </Link>
+                        {
+                            queet.userId === user.id &&
                             <button className="edit-queet-btn" onClick={() => editHandler(queet)}>Edit</button>
                         }
                     </div>
                 )
             })}
-        </div>
+        </div >
     )
 }
 

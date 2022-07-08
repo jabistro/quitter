@@ -6,7 +6,7 @@ import { useHistory, useParams } from "react-router-dom";
 
 const EditQueet = () => {
 
-    const allQueets = useSelector(state => state.queet)
+    const allQueets = useSelector(state => state.queet);
     const editedQueetId = useParams().queetId;
     const editedQueet = allQueets[editedQueetId] || {};
     const user = useSelector(state => state.session.user);
@@ -43,11 +43,10 @@ const EditQueet = () => {
                             value={content}
                             onChange={(e) => setContent(e.target.value)}
                             required
-                            placeholder="What's happening?"
                         />
                     </label>
                 </div>
-                <div className="edit-and-delete-btn">
+                <div className="edit-and-delete-queet-btn">
                     <button type="submit" className="edit-queet-btn">Submit</button>
                     <button className="delete-queet-btn" onClick={(e) => deleteHandler(e, editedQueet)}>Delete</button>
                 </div>

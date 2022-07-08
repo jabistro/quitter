@@ -1,3 +1,8 @@
 .queets {
     height: 100px;
 }
+
+.queet-link {
+    text-decoration: none;
+    cursor: pointer;
+}
