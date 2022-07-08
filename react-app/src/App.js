@@ -12,6 +12,7 @@ import { getQueets } from './store/queets';
 import { getComments } from './store/comments';
 import loader from "./images/loading.gif";
 import HomePage from './components/Queets/HomePage/HomePage';
+import EditQueet from './components/Queets/Timeline/Queets/EditQueet';
 // import { getUsers } from './store/users';
 
 function App() {
@@ -50,6 +51,9 @@ function App() {
         </ProtectedRoute>
         <ProtectedRoute path='/' exact={true} >
           <HomePage />
+        </ProtectedRoute>
+        <ProtectedRoute path='/queets/edit/:queetId' exact={true} >
+          <EditQueet />
         </ProtectedRoute>
       </Switch>
     </BrowserRouter>
