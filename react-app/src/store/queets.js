@@ -12,9 +12,9 @@ const createQueet = (queet) => ({
 	queet,
 });
 
-const deleteQueet = (queet) => ({
+const deleteQueet = (queetId) => ({
 	type: DELETE_QUEET,
-	queet,
+	queetId,
 });
 
 export const getQueets = () => async (dispatch) => {
@@ -85,9 +85,7 @@ export const eraseQueet = (destroyedQueet) => async (dispatch) => {
 	});
 
 	if (response.ok) {
-		const deletedQueet = await response.json();
-		dispatch(deleteQueet(deletedQueet));
-		return deletedQueet
+		dispatch(deleteQueet(destroyedQueet.id));
 	}
 };
 
@@ -100,7 +98,7 @@ const queetsReducer = (state = {}, action) => {
 			return { ...state, [action.queet.id]: action.queet };
 		case DELETE_QUEET:
 			const newState = { ...state };
-			delete newState[action.queet.id];
+			delete newState[action.queetId];
 			return newState;
 		default:
 			return state;

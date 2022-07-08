@@ -69,4 +69,4 @@ def delete_queet(queet_id):
     queet = Queet.query.get(queet_id)
     db.session.delete(queet)
     db.session.commit()
-    return queet.to_dict()
+    return "queet has been deleted"

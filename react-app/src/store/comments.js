@@ -12,9 +12,9 @@ const createComment = (comment) => ({
 	comment,
 });
 
-const deleteComment = (comment) => ({
+const deleteComment = (commentId) => ({
 	type: DELETE_COMMENT,
-	comment,
+	commentId,
 });
 
 export const getComments = () => async (dispatch) => {
@@ -35,6 +35,8 @@ export const addComment = (comment) => async (dispatch) => {
 		},
 		body: JSON.stringify(comment),
 	});
+
+	// console.log(response)
 
 	if (response.ok) {
 		const comment = await response.json();
@@ -85,9 +87,7 @@ export const eraseComment = (destroyedComment) => async (dispatch) => {
 	});
 
 	if (response.ok) {
-		const deletedComment = await response.json();
-		dispatch(deleteComment(deletedComment));
-		return deletedComment
+		dispatch(deleteComment(destroyedComment.id));
 	}
 };
 
@@ -100,7 +100,7 @@ const commentsReducer = (state = {}, action) => {
 			return { ...state, [action.comment.id]: action.comment };
 		case DELETE_COMMENT:
 			const newState = { ...state };
-			delete newState[action.comment.id];
+			delete newState[action.commentId];
 			return newState;
 		default:
 			return state;

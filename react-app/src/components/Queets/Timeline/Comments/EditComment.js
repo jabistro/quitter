@@ -9,7 +9,7 @@ const EditComment = () => {
     const allComments = useSelector(state => state.comment);
     const editedCommentId = useParams().commentId;
     const editedComment = allComments[editedCommentId] || {};
-    const queetId = editedComment.queet.id
+    const queetId = editedComment?.queet?.id
     const user = useSelector(state => state.session.user);
     const dispatch = useDispatch();
     const history = useHistory();
