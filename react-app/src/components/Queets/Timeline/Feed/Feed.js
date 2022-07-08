@@ -3,14 +3,18 @@ import { FiRefreshCcw } from 'react-icons/fi';
 
 
 import React from 'react'
+import Queets from "../Queets/Queets";
+import AddQueet from "../Queets/AddQueet";
 
 const Feed = () => {
     return (
         <div>
             <div className="header-wrap">
                 <h2 className="home">Home</h2>
-                <FiRefreshCcw className="refresh"/>
+                <FiRefreshCcw className="refresh" />
             </div>
+            <AddQueet />
+            <Queets />
         </div>
     )
 }

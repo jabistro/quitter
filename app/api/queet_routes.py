@@ -8,7 +8,7 @@ queet_routes = Blueprint('queets', __name__)
 
 
 # Route provides all available queets
-@queet_routes.route('')
+@queet_routes.route('/')
 def all_queets():
     queets = Queet.query.all()
     return {queet.id: queet.to_dict() for queet in queets}

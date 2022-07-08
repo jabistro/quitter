@@ -13,7 +13,7 @@ const Sidebar = () => {
     <div className='sidebar-wrap'>
       <img className='logo' src="https://links.papareact.com/drq" alt="" />
       <div className='icon-wrap'>
-        <GiBirdHouse className='icons' />Test
+        <GiBirdHouse className='icons' />
         <p className='icon-text'>Home</p>
       </div>
       <div className='icon-wrap'>

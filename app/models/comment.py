@@ -10,12 +10,13 @@ class Comment(db.Model):
 
     # Relationships
     users = db.relationship("User", back_populates="comments")
+    queets = db.relationship("Queet", back_populates="comments")
 
     # Grab all
     def to_dict(self):
         return {
             "id": self.id,
-            "user": self.users.to_dict(),
+            "userId": self.user_id,
             "content": self.content,
             "queet": self.queets.to_dict()
         }

@@ -1,19 +1,16 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
 import Feed from './Feed/Feed';
 import SideBar from './Sidebar/Sidebar';
 import './Timeline.css';
+import Widgets from './Widgets/Widgets';
 
 
 const Timeline = () => {
-
-    // const queets = useSelector(state => state.queet)
-    // const queetsArr = Object.values(queets);
-
     return (
-        <div>
+        <div className='timeline-wrap'>
             <SideBar />
             <Feed />
+            <Widgets />
         </div>
     )
 }

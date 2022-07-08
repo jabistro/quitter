@@ -12,6 +12,7 @@ import { getQueets } from './store/queets';
 import { getComments } from './store/comments';
 import loader from "./images/loading.gif";
 import HomePage from './components/Queets/HomePage/HomePage';
+// import { getUsers } from './store/users';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -22,6 +23,7 @@ function App() {
       await dispatch(authenticate());
       await dispatch(getQueets());
       await dispatch(getComments());
+      // await dispatch(getUsers());
       setLoaded(true);
     })();
   }, [dispatch]);

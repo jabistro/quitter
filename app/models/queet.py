@@ -9,11 +9,12 @@ class Queet(db.Model):
 
     # Relationships
     users = db.relationship("User", back_populates="queets")
+    comments = db.relationship("Comment", back_populates="queets", cascade="all, delete")
 
     # Grab all
     def to_dict(self):
         return {
             "id": self.id,
-            "user": self.users.to_dict(),
+            "userId": self.user_id,
             "content": self.content
         }

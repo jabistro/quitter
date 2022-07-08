@@ -3,11 +3,13 @@ import thunk from 'redux-thunk';
 import session from './session';
 import queet from './queets';
 import comment from './comments';
+// import user from './users';
 
 const rootReducer = combineReducers({
   session,
   queet,
-  comment
+  comment,
+  // user
 });
 
 
