@@ -41,6 +41,7 @@ export const addQueet = (queet) => async (dispatch) => {
 		dispatch(createQueet(queet));
 
 		return queet;
+
 	} else if (response.status < 500) {
 		const data = await response.json();
 		if (data.errors) {

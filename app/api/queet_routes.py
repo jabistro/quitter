@@ -14,6 +14,17 @@ def all_queets():
     return {queet.id: queet.to_dict() for queet in queets}
 
 
+# Route retrieves a single queet
+@queet_routes.route('/<int:queet_id>')
+@login_required
+def single_queet(queet_id):
+    queet = Queet.query.get(queet_id)
+    if queet:
+        return queet.to_dict()
+    else:
+        return 'Queet not found'
+
+
 # Route creates a new queet for user
 @queet_routes.route('/new', methods=['POST'])
 @login_required

@@ -15,7 +15,7 @@ def all_comments():
 
 
 # Route creates a new queet for user
-@comment_routes.route('/<int:queet_id>/new', methods=['POST'])
+@comment_routes.route('/new', methods=['POST'])
 @login_required
 def new_comment(queet_id):
     form = CommentForm()
@@ -36,7 +36,7 @@ def new_comment(queet_id):
 
 
 # Route updates a queet for user
-@comment_routes.route('/<int:comment_id>', methods=['PUT'])
+@comment_routes.route('/edit/<int:comment_id>', methods=['PUT'])
 @login_required
 def update_comment(comment_id):
     comment = Comment.query.get(comment_id)
