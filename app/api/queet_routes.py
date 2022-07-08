@@ -35,7 +35,7 @@ def new_queet():
 
 
 # Route updates a queet for user
-@queet_routes.route('/<int:queet_id>', methods=['PUT'])
+@queet_routes.route('/edit/<int:queet_id>', methods=['PUT'])
 @login_required
 def update_queet(queet_id):
     queet = Queet.query.get(queet_id)

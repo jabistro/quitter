@@ -17,14 +17,21 @@ const AddQueet = () => {
         }
 
         const queet = await dispatch(addQueet(newQueet))
+
+        if (queet) reset();
+    }
+
+    const reset = () => {
+        setContent('');
     }
 
     return (
         <div>
-            <form onSubmit={handleSubmit} className="queet-form">
+            <form onSubmit={handleSubmit} className="add-queet-form">
                 <div>
                     <label>
                         <textarea
+                            className="add-queet-input"
                             type="text"
                             value={content}
                             onChange={(e) => setContent(e.target.value)}
