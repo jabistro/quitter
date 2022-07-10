@@ -23,7 +23,7 @@
     color: gray;
 }
 
-.username {
+.feed-queet-username {
     text-decoration: none;
     cursor: pointer;
     color: white;
@@ -33,7 +33,7 @@
     padding-left: 10px;
 }
 
-.queet {
+.feed-queet {
     text-decoration: none;
     cursor: pointer;
     color: white;

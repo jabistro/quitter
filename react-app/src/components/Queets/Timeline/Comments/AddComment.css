@@ -1,0 +1,41 @@
+.add-comment-wrap {
+    display: grid;
+    grid-template-columns: 1fr 9fr;
+    border-bottom: 1px solid rgb(84, 84, 84);
+}
+
+.add-comment-input {
+    height: 45px;
+    width: 370px;
+    font-size: large;
+    outline: none;
+    border: none;
+    height: 70px;
+    background-color: transparent;
+    color: white;
+}
+
+.add-comment-input-and-btn {
+    display: grid;
+    grid-template-columns: 7fr 1fr;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.add-comment-btn {
+    background-color: #b83dba;
+    border: none;
+    color: white;
+    font-weight: bold;
+    height: 30px;
+    width: 80px;
+    border-radius: 20px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.add-comment-btn:disabled {
+    opacity: 40%;
+    cursor: default;
+}

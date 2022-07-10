@@ -16,6 +16,7 @@ import EditQueet from './components/Queets/Timeline/Queets/EditQueet';
 import SingleQueet from './components/Queets/Timeline/Queets/SingleQueet';
 import EditComment from './components/Queets/Timeline/Comments/EditComment';
 import { getUsers } from './store/users';
+import TimelineSingleQueet from './components/Queets/Timeline/TimelineSingleQueet';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -58,7 +59,7 @@ function App() {
           <EditQueet />
         </ProtectedRoute>
         <ProtectedRoute path='/queets/:queetId' exact={true} >
-          <SingleQueet />
+          <TimelineSingleQueet />
         </ProtectedRoute>
         <ProtectedRoute path='/comments/edit/:commentId' exact={true} >
           <EditComment />

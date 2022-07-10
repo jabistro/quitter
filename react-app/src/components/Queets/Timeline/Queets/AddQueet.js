@@ -47,7 +47,7 @@ const AddQueet = () => {
                 <div className="add-queet-second-half">
                     <div className="icons-and-button">
                         <AiOutlinePicture className='add-img-btn' />
-                        <button disabled={!content} type="submit" className="add-queet">Queet</button>
+                        <button disabled={!content} type="submit" className="add-queet-btn">Queet</button>
                     </div>
                 </div>
             </form>

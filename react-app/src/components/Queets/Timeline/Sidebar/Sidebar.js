@@ -6,18 +6,21 @@ import { FiBell } from 'react-icons/fi';
 import { FiMail } from 'react-icons/fi';
 import { FiBookmark } from 'react-icons/fi';
 import { BsPerson } from 'react-icons/bs';
+import { Link } from 'react-router-dom';
 
 
 const Sidebar = () => {
   return (
     <div className='sidebar-wrap'>
-      <div className='first-half'></div>
-      <div className='second-half'>
+      <div className='sidebar-first-half'></div>
+      <div className='sidebar-second-half'>
         <img className='logo' src={require('../../../../images/quitter2-removebg-preview.png')} alt="" />
-        <div className='icon-wrap'>
-          <HiOutlineUserGroup className='icons' />
-          <p className='icon-text'>Home</p>
-        </div>
+        <Link className='sidebar-home-link' to='/'>
+          <div className='icon-wrap'>
+            <HiOutlineUserGroup className='icons' />
+            <p className='icon-text'>Home</p>
+          </div>
+        </Link>
         <div className='icon-wrap'>
           <FaHashtag className='icons' />
           <p className='icon-text'>Explore</p>

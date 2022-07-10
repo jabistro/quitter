@@ -8,7 +8,7 @@
     grid-template-columns: 1fr 9fr;
 }
 
-.add-queet {
+.add-queet-btn {
     background-color: #b83dba;
     border: none;
     color: white;
@@ -20,7 +20,7 @@
     cursor: pointer;
 }
 
-.add-queet:disabled {
+.add-queet-btn:disabled {
     opacity: 40%;
     cursor: default;
 }

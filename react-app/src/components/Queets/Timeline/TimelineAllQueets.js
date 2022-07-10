@@ -1,11 +1,11 @@
 import React from 'react';
 import Feed from './Feed/Feed';
 import SideBar from './Sidebar/Sidebar';
-import './Timeline.css';
+import './TimelineAllQueets.css';
 import Widgets from './Widgets/Widgets';
 
 
-const Timeline = () => {
+const TimelineAllQueets = () => {
     return (
         <div className='timeline-wrap'>
             <SideBar />
@@ -15,4 +15,4 @@ const Timeline = () => {
     )
 }
 
-export default Timeline
+export default TimelineAllQueets

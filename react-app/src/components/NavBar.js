@@ -8,22 +8,22 @@ const NavBar = () => {
     <nav>
       <div>
         <div>
-          <NavLink className="link" to='/' exact={true} activeClassName='active'>
+          <NavLink className="navbar-link" to='/' exact={true} activeClassName='active'>
             Home
           </NavLink>
         </div>
         <div>
-          <NavLink className="link" to='/login' exact={true} activeClassName='active'>
+          <NavLink className="navbar-link" to='/login' exact={true} activeClassName='active'>
             Login
           </NavLink>
         </div>
         <div>
-          <NavLink className="link" to='/sign-up' exact={true} activeClassName='active'>
+          <NavLink className="navbar-link" to='/sign-up' exact={true} activeClassName='active'>
             Sign Up
           </NavLink>
         </div>
         <div>
-          <NavLink className="link" to='/users' exact={true} activeClassName='active'>
+          <NavLink className="navbar-link" to='/users' exact={true} activeClassName='active'>
             Users
           </NavLink>
         </div>

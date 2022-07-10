@@ -27,12 +27,11 @@ const Queets = () => {
     return (
         <div className="queets-wrap">
             {latestQueets.map(queet => {
-                console.log(queet.createdAt)
                 return (
                     <div key={queet.id} className="queets">
                         <Link className="queet-link" to={`/queets/${queet.id}`}>
-                            <div className="username">@{usersArr[queet.userId - 1].username}</div>
-                            <div className="queet">{queet.content}</div>
+                            <div className="feed-queet-username">@{usersArr[queet.userId - 1].username}</div>
+                            <div className="feed-queet">{queet.content}</div>
                             {/* <TimeAgo
                                 className="timestamp"
                                 date={queet.createdAt}

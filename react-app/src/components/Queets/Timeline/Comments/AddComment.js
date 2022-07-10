@@ -28,21 +28,24 @@ const AddComment = () => {
     }
 
     return (
-        <div>
+        <div className="add-comment-wrap">
+            <img className='profile-pic' src='https://cdn.iconscout.com/icon/premium/png-256-thumb/medical-recovery-2070639-1750321.png' alt='' />
             <form onSubmit={handleSubmit} className="add-comment-form">
-                <div>
-                    <label>
-                        <textarea
-                            className="add-comment-input"
-                            type="text"
-                            value={content}
-                            onChange={(e) => setContent(e.target.value)}
-                            required
-                            placeholder="Queet your reply"
-                        />
-                    </label>
+                <div className="add-comment-input-and-btn">
+                    <div>
+                        <label>
+                            <input
+                                className="add-comment-input"
+                                type="text"
+                                value={content}
+                                onChange={(e) => setContent(e.target.value)}
+                                required
+                                placeholder="Queet your reply"
+                            />
+                        </label>
+                    </div>
+                    <button disabled={!content} type="submit" className="add-comment-btn">Reply</button>
                 </div>
-                <button type="submit" className="add-comment">Reply</button>
             </form>
         </div>
     )

@@ -8,7 +8,9 @@ import AddComment from '../Comments/AddComment';
 const SingleQueet = () => {
 
     const history = useHistory()
-    const user = useSelector(state => state.session.user);
+    const sessionUser = useSelector(state => state.session.user);
+    const users = useSelector(state => state.user.users);
+    const usersArr = Object.values(users);
     const { queetId } = useParams();
     const queet = useSelector(state => state?.queet[queetId]);
 
@@ -18,13 +20,18 @@ const SingleQueet = () => {
 
     return (
         <div className='queet-comment-wrap'>
-            <div className="single-queet">
-                <div>User: {queet.userId}</div>
-                <div>{queet.content}</div>
-                {
-                    queet.userId === user.id &&
-                    <button className="single-queet-edit-btn" onClick={() => editHandler(queet)}>Edit</button>
-                }
+            <div className="single-queet-block">
+                <div className='single-username-and-edit-btn'>
+                    <div className='single-queet-username'>@{usersArr[queet.userId - 1].username}</div>
+                    {
+                        queet.userId === sessionUser.id &&
+                        <button className="single-queet-edit-btn" onClick={() => editHandler(queet)}>Edit</button>
+                    }
+                </div>
+                <div className='single-queet'>{queet.content}</div>
+                <div className='single-queet-timestamp'>timestamp</div>
+                <div className='single-queet-stats'># of RTs/Likes</div>
+                <div className='single-queet-icons'>ICONS</div>
             </div>
             <AddComment />
             <div className="comments-wrap">

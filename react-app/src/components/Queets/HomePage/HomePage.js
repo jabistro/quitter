@@ -2,7 +2,7 @@ import React from 'react'
 import { useSelector } from 'react-redux';
 
 import SplashPage from '../../SplashPage/SplashPage';
-import Timeline from '../Timeline/Timeline';
+import TimelineAllQueets from '../Timeline/TimelineAllQueets';
 
 import './HomePage.css'
 
@@ -12,9 +12,9 @@ const HomePage = () => {
 
     return (
         <>
-        {sessionUser ?
-            <Timeline /> : <SplashPage />
-        }
+            {sessionUser ?
+                <TimelineAllQueets /> : <SplashPage />
+            }
         </>
     )
 }

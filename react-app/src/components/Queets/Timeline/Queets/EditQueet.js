@@ -22,13 +22,13 @@ const EditQueet = () => {
             content
         }
         await dispatch(modifyQueet(editingQueet))
-            .then(() => history.push("/"))
+            .then(() => history.push(`/queets/${editedQueet.id}`))
     }
 
     const deleteHandler = (e, queet) => {
         e.preventDefault();
         dispatch(eraseQueet(editedQueet))
-            .then(() => history.push("/"))
+            .then(() => history.push(""))
     }
 
     return (

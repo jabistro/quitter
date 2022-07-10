@@ -36,3 +36,7 @@
     transition: all;
     transition-duration: 200ms;
 }
+
+.sidebar-home-link {
+    text-decoration: none;
+}
