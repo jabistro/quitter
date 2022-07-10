@@ -32,12 +32,12 @@ const EditQueet = () => {
     }
 
     return (
-        <div>
+        <div className="edit-queet-wrap">
             <h1>Edit Queet</h1>
             <form onSubmit={handleSubmit} className="edit-queet-form">
                 <div>
                     <label>
-                        <textarea
+                        <input
                             className="edit-queet-input"
                             type="text"
                             value={content}

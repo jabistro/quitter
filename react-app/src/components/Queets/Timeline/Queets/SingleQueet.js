@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom';
 import Comments from '../Comments/Comments';
 import AddComment from '../Comments/AddComment';
+import EditQueetModal from './EditQueetModal';
 
 const SingleQueet = () => {
 
@@ -17,6 +18,7 @@ const SingleQueet = () => {
     const editHandler = queet => {
         history.push(`/queets/edit/${queet.id}`)
     }
+    // <button className="single-queet-edit-btn" onClick={() => editHandler(queet)}>Edit</button>
 
     return (
         <div className='queet-comment-wrap'>
@@ -25,7 +27,7 @@ const SingleQueet = () => {
                     <div className='single-queet-username'>@{usersArr[queet.userId - 1].username}</div>
                     {
                         queet.userId === sessionUser.id &&
-                        <button className="single-queet-edit-btn" onClick={() => editHandler(queet)}>Edit</button>
+                        <EditQueetModal className="single-queet-edit-btn" />
                     }
                 </div>
                 <div className='single-queet'>{queet.content}</div>

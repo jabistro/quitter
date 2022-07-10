@@ -35,7 +35,7 @@ const EditComment = () => {
     }
 
     return (
-        <div>
+        <div className="edit-comment-wrap">
             <h1>Edit Comment</h1>
             <form onSubmit={handleSubmit} className="edit-comment-form">
                 <div>

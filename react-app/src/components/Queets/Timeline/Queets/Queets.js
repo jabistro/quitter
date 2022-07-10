@@ -22,24 +22,26 @@ const Queets = () => {
         history.push(`/queets/edit/${queet.id}`)
     }
 
-    // const user = queetsArr.filter(queet => queet.userId === )
-
     return (
         <div className="queets-wrap">
             {latestQueets.map(queet => {
                 return (
                     <div key={queet.id} className="queets">
+                        <div className="feed-queet-username-and-edit-btn">
+                            <Link className="queet-link" to={`/queets/${queet.id}`}>
+                                <div className="feed-queet-username">@{usersArr[queet.userId - 1].username}</div>
+                            </Link>
+                            {queet.userId === sessionUser.id &&
+                                <button className="feed-edit-queet-btn" onClick={() => editHandler(queet)}>Edit</button>
+                            }
+                        </div>
                         <Link className="queet-link" to={`/queets/${queet.id}`}>
-                            <div className="feed-queet-username">@{usersArr[queet.userId - 1].username}</div>
                             <div className="feed-queet">{queet.content}</div>
-                            {/* <TimeAgo
+                        </Link>
+                        {/* <TimeAgo
                                 className="timestamp"
                                 date={queet.createdAt}
                             /> */}
-                        </Link>
-                        {queet.userId === sessionUser.id &&
-                            <button className="edit-queet-btn" onClick={() => editHandler(queet)}>Edit</button>
-                        }
                     </div>
                 )
             })}

@@ -23,6 +23,12 @@
     color: gray;
 }
 
+.feed-queet-username-and-edit-btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .feed-queet-username {
     text-decoration: none;
     cursor: pointer;
@@ -39,4 +45,17 @@
     color: white;
     font-size: 18px;
     padding-left: 25px;
+}
+
+.feed-edit-queet-btn {
+    background-color: #b83dba;
+    border: none;
+    color: white;
+    font-weight: bold;
+    height: 20px;
+    width: 60px;
+    border-radius: 20px;
+    font-size: 12px;
+    cursor: pointer;
+    margin-right: 15px;
 }

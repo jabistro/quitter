@@ -14,7 +14,7 @@ def seed_queets():
         user_id=2, content="Nevermind, I want to go home."
     )
     queet5 = Queet(
-        user_id=3, content="Where did you go, my lovely?"
+        user_id=3, content="Where do you go, my lovely?"
     )
     queet6 = Queet(
         user_id=3, content="I wanna know."
