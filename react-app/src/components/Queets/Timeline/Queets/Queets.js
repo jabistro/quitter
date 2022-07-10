@@ -2,12 +2,15 @@ import "./Queets.css";
 import { useSelector } from 'react-redux';
 import { Link, useHistory } from 'react-router-dom';
 import React from 'react'
-import AddComment from "../Comments/AddComment";
+// import TimeAgo from 'react-timeago';
+
 
 const Queets = () => {
 
     const history = useHistory();
-    const user = useSelector(state => state.session.user)
+    const users = useSelector(state => state.user.users);
+    const usersArr = Object.values(users);
+    const sessionUser = useSelector(state => state.session.user);
     const queets = useSelector(state => state.queet);
     const queetsArr = Object.values(queets);
     const latestQueets = [];
@@ -19,18 +22,23 @@ const Queets = () => {
         history.push(`/queets/edit/${queet.id}`)
     }
 
+    // const user = queetsArr.filter(queet => queet.userId === )
 
     return (
         <div className="queets-wrap">
             {latestQueets.map(queet => {
+                console.log(queet.createdAt)
                 return (
-                    <div className="queets">
-                        <Link className="queet-link" key={queet.id} to={`/queets/${queet.id}`}>
-                            <div>{queet.userId}</div>
-                            <div>{queet.content}</div>
+                    <div key={queet.id} className="queets">
+                        <Link className="queet-link" to={`/queets/${queet.id}`}>
+                            <div className="username">@{usersArr[queet.userId - 1].username}</div>
+                            <div className="queet">{queet.content}</div>
+                            {/* <TimeAgo
+                                className="timestamp"
+                                date={queet.createdAt}
+                            /> */}
                         </Link>
-                        {
-                            queet.userId === user.id &&
+                        {queet.userId === sessionUser.id &&
                             <button className="edit-queet-btn" onClick={() => editHandler(queet)}>Edit</button>
                         }
                     </div>

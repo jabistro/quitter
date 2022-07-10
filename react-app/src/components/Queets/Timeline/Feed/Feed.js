@@ -8,7 +8,7 @@ import AddQueet from "../Queets/AddQueet";
 
 const Feed = () => {
     return (
-        <div>
+        <div className="feed-wrap">
             <div className="header-wrap">
                 <h2 className="home">Home</h2>
                 <FiRefreshCcw className="refresh" />

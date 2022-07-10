@@ -9,7 +9,7 @@ const Timeline = () => {
     return (
         <div className='timeline-wrap'>
             <SideBar />
-            <Feed />
+            <Feed className='timeline-feed' />
             <Widgets />
         </div>
     )

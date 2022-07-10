@@ -6,15 +6,16 @@
 
 .home {
     font-weight: bold;
+    color: white;
 }
 
 .refresh {
     height: 30px;
     width: 30px;
     cursor: pointer;
-    color: #00aced;
-    margin-top: 10px;
-    margin-right: 10px;
+    color: #b83dba;
+    margin-top: 15px;
+    margin-right: 15px;
     transition: all;
     transition-duration: 500ms;
 }
@@ -25,4 +26,9 @@
 
 .refresh:active {
     transform: scale(1.5);
+}
+
+.feed-wrap {
+    border-left: 1px solid rgb(84, 84, 84);
+    border-right: 1px solid rgb(84, 84, 84);
 }

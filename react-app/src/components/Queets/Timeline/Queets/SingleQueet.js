@@ -18,12 +18,12 @@ const SingleQueet = () => {
 
     return (
         <div className='queet-comment-wrap'>
-            <div className="queet">
+            <div className="single-queet">
                 <div>User: {queet.userId}</div>
                 <div>{queet.content}</div>
                 {
                     queet.userId === user.id &&
-                    <button className="edit-queet-btn" onClick={() => editHandler(queet)}>Edit</button>
+                    <button className="single-queet-edit-btn" onClick={() => editHandler(queet)}>Edit</button>
                 }
             </div>
             <AddComment />

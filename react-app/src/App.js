@@ -15,7 +15,7 @@ import HomePage from './components/Queets/HomePage/HomePage';
 import EditQueet from './components/Queets/Timeline/Queets/EditQueet';
 import SingleQueet from './components/Queets/Timeline/Queets/SingleQueet';
 import EditComment from './components/Queets/Timeline/Comments/EditComment';
-// import { getUsers } from './store/users';
+import { getUsers } from './store/users';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -26,7 +26,7 @@ function App() {
       await dispatch(authenticate());
       await dispatch(getQueets());
       await dispatch(getComments());
-      // await dispatch(getUsers());
+      await dispatch(getUsers());
       setLoaded(true);
     })();
   }, [dispatch]);
