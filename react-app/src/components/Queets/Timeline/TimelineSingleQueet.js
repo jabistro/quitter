@@ -6,7 +6,7 @@ import SingleQueet from './Queets/SingleQueet';
 
 const TimelineSingleQueet = () => {
     return (
-        <div className='timeline-single-wrap'>
+        <div className='timeline-single-queet-wrap'>
             <SideBar />
             <SingleQueet />
             <Widgets />

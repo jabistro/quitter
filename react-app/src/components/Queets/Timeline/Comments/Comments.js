@@ -1,11 +1,12 @@
 import "./Comments.css";
 import React from 'react'
-import { useHistory, useParams } from "react-router-dom";
+import { useHistory, useParams, Link } from "react-router-dom";
 import { useSelector } from "react-redux";
+import EditCommentModal from "./EditCommentModal";
+import ReactTimeAgo from 'react-time-ago';
 
 const Comments = () => {
 
-    const history = useHistory();
     const { queetId } = useParams();
     const sessionUser = useSelector(state => state.session.user);
     const users = useSelector(state => state.user.users);
@@ -14,23 +15,32 @@ const Comments = () => {
     const commentsArr = Object.values(comments)
     const queetComments = commentsArr.filter(comment => Number(comment.queet.id) === Number(queetId))
 
-    const editHandler = comment => {
-        history.push(`/comments/edit/${comment.id}`)
-    }
 
     return (
         <div className="comments-wrap">
             {queetComments.map(comment => {
                 return (
                     <div key={comment.id} className="comment-wrap">
-                        <div className="comment-username-and-edit-btn">
-                            <div className="comment-username">@{usersArr[comment.userId - 1].username}</div>
+                        <div className="feed-comment-username-and-edit-btn">
+                            <Link className="comment-link" to={`/comments/${comment.id}`}>
+                                <div className="comment-username">
+                                    @{usersArr[comment.userId - 1].username}
+                                    <ReactTimeAgo
+                                        className="timestamp"
+                                        date={comment.created_at}
+                                        locale='en-US'
+                                        timeStyle="twitter"
+                                    />
+                                </div>
+                            </Link>
                             {
                                 comment.userId === sessionUser.id &&
-                                <button className="edit-comment-btn" onClick={() => editHandler(comment)}>Edit</button>
+                                <EditCommentModal className="all-comments-edit-btn" />
                             }
                         </div>
-                        <div className="comment">{comment.content}</div>
+                        <Link className="comment-link" to={`/comments/${comment.id}`}>
+                            <div className="comment">{comment.content}</div>
+                        </Link>
                     </div>
                 )
             })}

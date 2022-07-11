@@ -1,0 +1,60 @@
+.edit-comment-wrap {
+    width: 600px;
+    height: 300px;
+    /* background-color: #15202b; */
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.edit-comment-input {
+    outline: none;
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 30px;
+    width: 550px;
+    height: 150px;
+    padding-left: 40px;
+    resize: none;
+}
+
+.edit-and-delete-comment-btn {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 55px;
+    margin-right: 55px;
+}
+
+.submit-edit-comment-btn {
+    font-family: 'Lucida Sans Unicode';
+    background-color: #b83dba;
+    border: none;
+    color: white;
+    font-weight: bold;
+    height: 30px;
+    width: 80px;
+    border-radius: 20px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.delete-comment-btn {
+    font-family: 'Lucida Sans Unicode';
+    background-color: #b83dba;
+    border: none;
+    color: white;
+    font-weight: bold;
+    height: 30px;
+    width: 80px;
+    border-radius: 20px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.edit-comment-title {
+    font-family: 'Lucida Sans Unicode';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

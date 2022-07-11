@@ -1,4 +1,4 @@
-.timeline-all-wrap {
+.timeline-single-comment-wrap {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     height: 820px;

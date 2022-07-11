@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useHistory, useParams } from "react-router-dom";
 import { eraseComment, modifyComment } from "../../../../store/comments";
 
-const EditComment = () => {
+const EditComment = ({ setShowModal }) => {
 
     const allComments = useSelector(state => state.comment);
     const editedCommentId = useParams().commentId;
@@ -25,7 +25,7 @@ const EditComment = () => {
             content
         }
         await dispatch(modifyComment(editingComment))
-            .then(() => history.push(`/queets/${queetId}`))
+        setShowModal(false)
     }
 
     const deleteHandler = (e, comment) => {
@@ -36,7 +36,7 @@ const EditComment = () => {
 
     return (
         <div className="edit-comment-wrap">
-            <h1>Edit Comment</h1>
+            <h1 className="edit-comment-title">Edit Comment</h1>
             <form onSubmit={handleSubmit} className="edit-comment-form">
                 <div>
                     <label>
@@ -49,16 +49,12 @@ const EditComment = () => {
                         />
                     </label>
                 </div>
-                <div className="edit-delete-comment-btn">
-                    <button type="submit" className="edit-comment-btn">Submit</button>
+                <div className="edit-and-delete-comment-btn">
+                    <button type="submit" className="submit-edit-comment-btn">Submit</button>
                     <button className="delete-comment-btn" onClick={(e) => deleteHandler(e, editedComment)}>Delete</button>
                 </div>
             </form>
         </div>
-    )
-
-    return (
-        <div>EditComment</div>
     )
 }
 

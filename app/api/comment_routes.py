@@ -1,3 +1,4 @@
+from datetime import datetime
 from flask import Blueprint, request
 from flask_login import login_required, current_user
 from app.models import Comment, db
@@ -26,7 +27,9 @@ def new_comment():
         new_comment = Comment(
             user_id=current_user.to_dict()['id'],
             content=data['content'],
-            queet_id=request.json['queet_id']
+            queet_id=request.json['queet_id'],
+            created_at=datetime.now(),
+            updated_at=datetime.now()
         )
 
         # print(new_comment)
@@ -47,7 +50,9 @@ def update_comment(comment_id):
     form['csrf_token'].data = request.cookies['csrf_token']
 
     if form.validate_on_submit():
-        comment.content = data['content']
+        comment.content = data['content'],
+        comment.created_at = datetime.now(),
+        comment.updated_at = datetime.now()
 
         db.session.commit()
         return comment.to_dict()

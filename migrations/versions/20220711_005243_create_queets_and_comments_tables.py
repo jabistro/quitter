@@ -1,8 +1,8 @@
-"""create tables
+"""create queets and comments tables
 
-Revision ID: d8552cc9396a
+Revision ID: 501284b30266
 Revises: 
-Create Date: 2022-07-10 22:57:10.660252
+Create Date: 2022-07-11 00:52:43.347886
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = 'd8552cc9396a'
+revision = '501284b30266'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -41,6 +41,8 @@ def upgrade():
     sa.Column('user_id', sa.Integer(), nullable=False),
     sa.Column('content', sa.String(length=280), nullable=False),
     sa.Column('queet_id', sa.Integer(), nullable=False),
+    sa.Column('created_at', sa.DateTime(), nullable=True),
+    sa.Column('updated_at', sa.DateTime(), nullable=True),
     sa.ForeignKeyConstraint(['queet_id'], ['queets.id'], ),
     sa.ForeignKeyConstraint(['user_id'], ['users.id'], ),
     sa.PrimaryKeyConstraint('id')

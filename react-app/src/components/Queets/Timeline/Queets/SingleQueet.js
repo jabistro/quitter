@@ -1,7 +1,7 @@
 import './SingleQueet.css';
 import React from 'react'
 import { useSelector } from 'react-redux';
-import { useHistory, useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import Comments from '../Comments/Comments';
 import AddComment from '../Comments/AddComment';
 import EditQueetModal from './EditQueetModal';
@@ -9,6 +9,7 @@ import { BiMessage } from 'react-icons/bi';
 import { FaRetweet } from 'react-icons/fa';
 import { FiHeart } from 'react-icons/fi';
 import { FiShare } from 'react-icons/fi';
+import { MdKeyboardBackspace } from 'react-icons/md';
 
 const SingleQueet = () => {
 
@@ -25,6 +26,12 @@ const SingleQueet = () => {
 
     return (
         <div className='queet-comment-wrap'>
+            <div className='thread-and-back-button'>
+                <Link className='thread-back-link' to={"/"}>
+                    <MdKeyboardBackspace className='back-button' />
+                </Link>
+                <h2 className='thread'>Queet</h2>
+            </div>
             <div className="single-queet-block">
                 <div className='single-username-and-edit-btn'>
                     <div className='single-queet-username'>@{usersArr[queet.userId - 1].username}</div>
@@ -34,8 +41,7 @@ const SingleQueet = () => {
                     }
                 </div>
                 <div className='single-queet'>{queet.content}</div>
-                <div className='single-queet-timestamp'>timestamp</div>
-                <div className='single-queet-stats'># of RTs/Likes</div>
+                <div className='single-queet-timestamp'>{queet.created_at}</div>
                 <div className='single-queet-icons'>
                     <div className='single-queet-icon-and-stat'>
                         <BiMessage />
@@ -56,7 +62,7 @@ const SingleQueet = () => {
                 </div>
             </div>
             <AddComment />
-            <div className="comments-wrap">
+            <div className="all-comments-wrap">
                 <Comments />
             </div>
         </div>
