@@ -1,6 +1,6 @@
 import './EditQueetModal.css';
 import React, { useState } from 'react';
-import { Modal } from '../../../../context/Modal';
+import { Modal } from '../../../context/Modal';
 import EditQueet from './EditQueet';
 
 const EditQueetModal = ({ queetId }) => {

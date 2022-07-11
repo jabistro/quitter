@@ -20,7 +20,7 @@ const Comments = () => {
         <div className="comments-wrap">
             {queetComments.map(comment => {
                 return (
-                    <div key={comment.id} className="comment-wrap">
+                    <div key={comment.id} className="all-comment-wrap">
                         <div className="feed-comment-username-and-edit-btn">
                             <Link className="comment-link" to={`/comments/${comment.id}`}>
                                 <div className="comment-username">

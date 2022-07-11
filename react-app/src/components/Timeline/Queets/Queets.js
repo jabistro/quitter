@@ -1,6 +1,6 @@
 import "./Queets.css";
 import { useSelector } from 'react-redux';
-import { Link, useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import React from 'react'
 import EditQueetModal from "./EditQueetModal";
 import { BiMessage } from 'react-icons/bi';
@@ -18,17 +18,17 @@ const Queets = () => {
     const queets = useSelector(state => state.queet);
     const queetsArr = Object.values(queets);
     const latestQueets = [];
-    queetsArr.map(queet => {
+    queetsArr.forEach(queet => {
         latestQueets.unshift(queet);
     })
     const comments = useSelector(state => state.comment);
     const commentsArr = Object.values(comments);
-    const replies = [];
+    // const replies = [];
 
     return (
         <div className="queets-wrap">
             {latestQueets.map(queet => {
-                commentsArr.forEach(comment => { { comment.queetId === queet.id && replies.push(comment) } })
+                // commentsArr.forEach(comment => { { comment.queetId === queet.id && replies.push(comment) } })
                 return (
                     <div key={queet.id} className="queets">
                         <div className="feed-queet-username-and-edit-btn">
@@ -53,7 +53,7 @@ const Queets = () => {
                         <div className="feed-queet-icons">
                             <div className='feed-queet-icon-and-stat'>
                                 <BiMessage />
-                                <p className='feed-queet-stat'>{replies.length}</p>
+                                <p className='feed-queet-stat'></p>
                             </div>
                             <div className='feed-queet-icon-and-stat'>
                                 <FaRetweet className="requeet-icon" />

@@ -1,7 +1,7 @@
 import React from 'react'
 import { useSelector } from 'react-redux';
 
-import SplashPage from '../../SplashPage/SplashPage';
+import SplashPage from '../SplashPage/SplashPage';
 import TimelineAllQueets from '../Timeline/TimelineAllQueets';
 
 import './HomePage.css'

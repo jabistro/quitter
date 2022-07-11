@@ -6,17 +6,18 @@ import SignUpForm from './components/auth/SignUpForm';
 import NavBar from './components/NavBar';
 import ProtectedRoute from './components/auth/ProtectedRoute';
 import UsersList from './components/UsersList';
-import User from './components/User';
+// import User from './components/User';
 import { authenticate } from './store/session';
 import { getQueets } from './store/queets';
 import { getComments } from './store/comments';
 import loader from "./images/loading.gif";
-import HomePage from './components/Queets/HomePage/HomePage';
-import EditQueet from './components/Queets/Timeline/Queets/EditQueet';
-import EditComment from './components/Queets/Timeline/Comments/EditComment';
+import EditQueet from './components/Timeline/Queets/EditQueet';
+import EditComment from './components/Timeline/Comments/EditComment';
 import { getUsers } from './store/users';
-import TimelineSingleQueet from './components/Queets/Timeline/TimelineSingleQueet';
-import TimelineSingleComment from './components/Queets/Timeline/TimelineSingleComment';
+import TimelineSingleQueet from './components/Timeline/TimelineSingleQueet';
+import TimelineSingleComment from './components/Timeline/TimelineSingleComment';
+import HomePage from './components/HomePage/HomePage';
+import ProfilePage from './components/ProfilePage/ProfilePage';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -50,7 +51,8 @@ function App() {
           <UsersList />
         </ProtectedRoute>
         <ProtectedRoute path='/users/:userId' exact={true} >
-          <User />
+          <ProfilePage />
+          {/* <User /> */}
         </ProtectedRoute>
         <ProtectedRoute path='/' exact={true} >
           <HomePage />

@@ -1,7 +1,7 @@
 import "./AddQueet.css";
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from "react-redux";
-import { addQueet } from "../../../../store/queets";
+import { addQueet } from "../../../store/queets";
 import { AiOutlinePicture } from 'react-icons/ai';
 
 const AddQueet = () => {

@@ -1,0 +1,94 @@
+.profile-queets-wrap {
+    border-top: 1px solid rgb(84, 84, 84);
+}
+
+.profile-queets:hover {
+    background-color: #2c3d4d;
+    transition: all;
+    transition-duration: 200ms;
+}
+
+.profile-queets {
+    display: flex;
+    flex-direction: column;
+    padding-top: 15px;
+    height: 100px;
+    border-bottom: 1px solid rgb(84, 84, 84);
+}
+
+.profile-queet-link {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.requeet-icon {
+    height: 20px;
+    width: 20px;
+}
+
+.timestamp {
+    color: gray;
+    margin-left: 15px;
+}
+
+.profile-feed-queet-username-and-edit-btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.profile-feed-queet-username {
+    text-decoration: none;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 5px;
+    padding-left: 10px;
+    font-family: 'Lucida Sans Unicode';
+    height: 100%;
+    width: 100%;
+}
+
+.profile-feed-queet-icon-and-stat {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-feed-queet {
+    text-decoration: none;
+    cursor: pointer;
+    color: white;
+    font-size: 18px;
+    padding-left: 25px;
+    font-family: 'Lucida Sans Unicode';
+    height: 100%;
+}
+
+.profile-feed-queet-stat {
+    margin-left: 5px;
+}
+
+.profile-feed-queet-icons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: gray;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.profile-queets-edit-btn {
+    font-family: 'Lucida Sans Unicode';
+    background-color: #b83dba;
+    border: none;
+    color: white;
+    font-weight: bold;
+    height: 20px;
+    width: 60px;
+    border-radius: 20px;
+    font-size: 12px;
+    cursor: pointer;
+    margin-right: 15px;
+}

@@ -2,7 +2,7 @@ import './SingleComment.css'
 import React from 'react'
 import { useSelector } from 'react-redux';
 import { Link, useParams } from 'react-router-dom';
-import AddComment from '../Comments/AddComment';
+// import AddComment from '../Comments/AddComment';
 import { BiMessage } from 'react-icons/bi';
 import { FaRetweet } from 'react-icons/fa';
 import { FiHeart } from 'react-icons/fi';
@@ -58,7 +58,7 @@ const SingleComment = () => {
                     </div>
                 </div>
             </div>
-            <AddComment />
+            {/* <AddComment /> */}
         </div>
     )
 }

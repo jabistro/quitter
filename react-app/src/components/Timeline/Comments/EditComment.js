@@ -2,7 +2,7 @@ import "./EditComment.css";
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory, useParams } from "react-router-dom";
-import { eraseComment, modifyComment } from "../../../../store/comments";
+import { eraseComment, modifyComment } from "../../../store/comments";
 
 const EditComment = ({ setShowModal, comment_id }) => {
 
@@ -44,6 +44,7 @@ const EditComment = ({ setShowModal, comment_id }) => {
                             value={content}
                             onChange={(e) => setContent(e.target.value)}
                             required
+                            placeholder="What's on your mind? This is a safe space."
                         />
                     </label>
                 </div>

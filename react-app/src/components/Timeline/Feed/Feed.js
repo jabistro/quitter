@@ -1,7 +1,5 @@
 import "./Feed.css";
 import { FiRefreshCcw } from 'react-icons/fi';
-
-
 import React from 'react'
 import Queets from "../Queets/Queets";
 import AddQueet from "../Queets/AddQueet";

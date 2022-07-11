@@ -7,14 +7,17 @@ import { FiMail } from 'react-icons/fi';
 import { FiBookmark } from 'react-icons/fi';
 import { BsPerson } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 
 const Sidebar = () => {
+
+  const sessionUser = useSelector(state => state.session.user)
   return (
     <div className='sidebar-wrap'>
       <div className='sidebar-first-half'></div>
       <div className='sidebar-second-half'>
-        <img className='logo' src={require('../../../../images/quitter2-removebg-preview.png')} alt="" />
+        <img className='logo' src={require('../../../images/quitter2-removebg-preview.png')} alt="" />
         <Link className='sidebar-home-link' to='/'>
           <div className='icon-wrap'>
             <HiOutlineUserGroup className='icons' />
@@ -37,10 +40,12 @@ const Sidebar = () => {
           <FiBookmark className='icons' />
           <p className='icon-text'>Bookmarks</p>
         </div>
-        <div className='icon-wrap'>
-          <BsPerson className='icons' />
-          <p className='icon-text'>Profile</p>
-        </div>
+        <Link className='sidebar-profile-link' to={`/users/${sessionUser.id}`}>
+          <div className='icon-wrap'>
+            <BsPerson className='icons' />
+            <p className='icon-text'>Profile</p>
+          </div>
+        </Link>
       </div>
     </div>
   )

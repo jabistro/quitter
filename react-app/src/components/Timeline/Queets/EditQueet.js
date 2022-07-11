@@ -1,7 +1,7 @@
 import "./EditQueet.css";
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from "react-redux";
-import { eraseQueet, modifyQueet } from "../../../../store/queets";
+import { eraseQueet, modifyQueet } from "../../../store/queets";
 import { useHistory, useParams } from "react-router-dom";
 
 const EditQueet = ({ setShowModal, queet_id }) => {
