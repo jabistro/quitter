@@ -7,6 +7,8 @@
 .home {
     font-weight: bold;
     color: white;
+    margin-left: 15px;
+    font-family: 'Lucida Sans Unicode';
 }
 
 .refresh {
@@ -31,4 +33,7 @@
 .feed-wrap {
     border-left: 1px solid rgb(84, 84, 84);
     border-right: 1px solid rgb(84, 84, 84);
+    height: 100%;
+    border-bottom: 1px solid rgb(84, 84, 84);
+
 }

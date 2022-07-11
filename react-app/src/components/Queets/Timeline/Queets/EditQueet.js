@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { eraseQueet, modifyQueet } from "../../../../store/queets";
 import { useHistory, useParams } from "react-router-dom";
 
-const EditQueet = () => {
+const EditQueet = ({ setShowModal }) => {
 
     const allQueets = useSelector(state => state.queet);
     const editedQueetId = useParams().queetId;
@@ -22,32 +22,34 @@ const EditQueet = () => {
             content
         }
         await dispatch(modifyQueet(editingQueet))
-            .then(() => history.push(`/queets/${editedQueet.id}`))
+        setShowModal(false)
     }
 
     const deleteHandler = (e, queet) => {
         e.preventDefault();
         dispatch(eraseQueet(editedQueet))
+        setShowModal(false)
             .then(() => history.push(""))
     }
 
     return (
         <div className="edit-queet-wrap">
-            <h1>Edit Queet</h1>
+            <h1 className="edit-queet-title">Edit Queet</h1>
             <form onSubmit={handleSubmit} className="edit-queet-form">
                 <div>
                     <label>
-                        <input
+                        <textarea
                             className="edit-queet-input"
                             type="text"
                             value={content}
                             onChange={(e) => setContent(e.target.value)}
                             required
+                            placeholder="What's on your mind? This is a safe space."
                         />
                     </label>
                 </div>
                 <div className="edit-and-delete-queet-btn">
-                    <button type="submit" className="edit-queet-btn">Submit</button>
+                    <button type="submit" className="submit-edit-queet-btn">Submit</button>
                     <button className="delete-queet-btn" onClick={(e) => deleteHandler(e, editedQueet)}>Delete</button>
                 </div>
             </form>

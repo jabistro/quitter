@@ -7,6 +7,8 @@ import { AiOutlinePicture } from 'react-icons/ai';
 const AddQueet = () => {
 
     const user = useSelector(state => state.session.user);
+    const date = new Date();
+    console.log(date)
     const dispatch = useDispatch();
     const [content, setContent] = useState('');
 
@@ -33,13 +35,13 @@ const AddQueet = () => {
                     <img className='profile-pic' src='https://cdn.iconscout.com/icon/premium/png-256-thumb/medical-recovery-2070639-1750321.png' alt='' />
                     <div>
                         <label>
-                            <input
+                            <textarea
                                 className="add-queet-input"
                                 type="text"
                                 value={content}
                                 onChange={(e) => setContent(e.target.value)}
                                 required
-                                placeholder="What's happening?"
+                                placeholder="What's on your mind? This is a safe space."
                             />
                         </label>
                     </div>

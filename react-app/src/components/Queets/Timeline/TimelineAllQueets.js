@@ -7,9 +7,9 @@ import Widgets from './Widgets/Widgets';
 
 const TimelineAllQueets = () => {
     return (
-        <div className='timeline-wrap'>
+        <div className='timeline-all-wrap'>
             <SideBar />
-            <Feed className='timeline-feed' />
+            <Feed className='timeline-all-feed' />
             <Widgets />
         </div>
     )

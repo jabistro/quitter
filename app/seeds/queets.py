@@ -2,22 +2,40 @@ from app.models import db, Queet
 
 def seed_queets():
     queet1 = Queet(
-        user_id=1, content="Hello, World!"
+        user_id=1,
+        content="Hello, World!",
+        created_at="2022-05-03 19:17:22",
+        updated_at="2022-05-03 19:17:22"
     )
     queet2 = Queet(
-        user_id=1, content="Goodbye, World!"
+        user_id=1,
+        content="Goodbye, World!",
+        created_at="2022-05-03 19:17:22",
+        updated_at="2022-05-03 19:17:22"
     )
     queet3 = Queet(
-        user_id=2, content="This is going to be fun!"
+        user_id=2,
+        content="This is going to be fun!",
+        created_at="2022-05-03 19:17:22",
+        updated_at="2022-05-03 19:17:22"
     )
     queet4 = Queet(
-        user_id=2, content="Nevermind, I want to go home."
+        user_id=2,
+        content="Nevermind, I want to go home.",
+        created_at="2022-05-03 19:17:22",
+        updated_at="2022-05-03 19:17:22"
     )
     queet5 = Queet(
-        user_id=3, content="Where do you go, my lovely?"
+        user_id=3,
+        content="Where do you go, my lovely?",
+        created_at="2022-05-03 19:17:22",
+        updated_at="2022-05-03 19:17:22"
     )
     queet6 = Queet(
-        user_id=3, content="I wanna know."
+        user_id=3,
+        content="I wanna know.",
+        created_at="2022-05-03 19:17:22",
+        updated_at="2022-05-03 19:17:22"
     )
 
     db.session.add(queet1)

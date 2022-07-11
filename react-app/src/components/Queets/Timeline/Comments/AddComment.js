@@ -29,12 +29,12 @@ const AddComment = () => {
 
     return (
         <div className="add-comment-wrap">
-            <img className='profile-pic' src='https://cdn.iconscout.com/icon/premium/png-256-thumb/medical-recovery-2070639-1750321.png' alt='' />
+            <img className='comment-profile-pic' src='https://cdn.iconscout.com/icon/premium/png-256-thumb/medical-recovery-2070639-1750321.png' alt='' />
             <form onSubmit={handleSubmit} className="add-comment-form">
                 <div className="add-comment-input-and-btn">
                     <div>
                         <label>
-                            <input
+                            <textarea
                                 className="add-comment-input"
                                 type="text"
                                 value={content}

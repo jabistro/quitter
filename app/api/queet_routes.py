@@ -1,3 +1,4 @@
+from datetime import datetime
 from flask import Blueprint, request
 from flask_login import login_required, current_user
 from app.models import Queet, db, queet
@@ -36,7 +37,9 @@ def new_queet():
     if form.validate_on_submit():
         new_queet = Queet(
             user_id=current_user.to_dict()['id'],
-            content=data['content']
+            content=data['content'],
+            created_at=datetime.now(),
+            updated_at=datetime.now()
         )
 
         db.session.add(new_queet)
@@ -55,7 +58,9 @@ def update_queet(queet_id):
     form['csrf_token'].data = request.cookies['csrf_token']
 
     if form.validate_on_submit():
-        queet.content = data['content']
+        queet.content = data['content'],
+        queet.created_at = datetime.now(),
+        queet.updated_at = datetime.now()
 
         db.session.commit()
         return queet.to_dict()

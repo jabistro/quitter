@@ -5,25 +5,29 @@
 }
 
 .add-comment-input {
-    height: 45px;
-    width: 370px;
+    height: 155px;
+    width: 100%;
+    resize: none;
     font-size: large;
     outline: none;
     border: none;
     height: 70px;
     background-color: transparent;
     color: white;
+    margin: 5px;
+    font-family: 'Lucida Sans Unicode';
+    padding-top: 20px;
 }
 
 .add-comment-input-and-btn {
     display: grid;
     grid-template-columns: 7fr 1fr;
     align-items: center;
-    padding-left: 20px;
     padding-right: 20px;
 }
 
 .add-comment-btn {
+    font-family: 'Lucida Sans Unicode';
     background-color: #b83dba;
     border: none;
     color: white;
@@ -33,9 +37,19 @@
     border-radius: 20px;
     font-size: 15px;
     cursor: pointer;
+    margin-left: 10px;
 }
 
 .add-comment-btn:disabled {
     opacity: 40%;
     cursor: default;
+}
+
+.comment-profile-pic {
+    height: 45px;
+    width: 45px;
+    border-radius: 20px;
+    object-fit: cover;
+    margin-top: 15px;
+    margin-left: 11px;
 }

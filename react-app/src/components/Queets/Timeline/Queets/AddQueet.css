@@ -9,6 +9,7 @@
 }
 
 .add-queet-btn {
+    font-family: 'Lucida Sans Unicode';
     background-color: #b83dba;
     border: none;
     color: white;
@@ -27,13 +28,15 @@
 
 .add-queet-input {
     height: 45px;
-    width: 370px;
-    font-size: large;
+    width: 100%;
+    font-size: 20px;
     outline: none;
     border: none;
     height: 70px;
     background-color: transparent;
     color: white;
+    resize: none;
+    font-family: 'Lucida Sans Unicode';
 }
 
 .profile-pic {

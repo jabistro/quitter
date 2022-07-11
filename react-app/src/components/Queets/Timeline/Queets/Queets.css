@@ -9,6 +9,8 @@
 }
 
 .queets {
+    display: flex;
+    flex-direction: column;
     padding-top: 15px;
     height: 100px;
     border-bottom: 1px solid rgb(84, 84, 84);
@@ -21,6 +23,7 @@
 
 .timestamp {
     color: gray;
+    margin-left: 15px;
 }
 
 .feed-queet-username-and-edit-btn {
@@ -34,9 +37,12 @@
     cursor: pointer;
     color: white;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 18px;
     margin-bottom: 5px;
     padding-left: 10px;
+    font-family: 'Lucida Sans Unicode';
+    height: 100%;
+    width: 100%;
 }
 
 .feed-queet {
@@ -45,9 +51,21 @@
     color: white;
     font-size: 18px;
     padding-left: 25px;
+    font-family: 'Lucida Sans Unicode';
+    height: 100%;
 }
 
-.feed-edit-queet-btn {
+.feed-queet-icons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 15px;
+    color: gray;
+    padding-bottom: 15px;
+}
+
+.all-queets-edit-btn {
+    font-family: 'Lucida Sans Unicode';
     background-color: #b83dba;
     border: none;
     color: white;
