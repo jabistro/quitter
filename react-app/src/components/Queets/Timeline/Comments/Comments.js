@@ -1,6 +1,6 @@
 import "./Comments.css";
 import React from 'react'
-import { useHistory, useParams, Link } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import EditCommentModal from "./EditCommentModal";
 import ReactTimeAgo from 'react-time-ago';
@@ -35,7 +35,7 @@ const Comments = () => {
                             </Link>
                             {
                                 comment.userId === sessionUser.id &&
-                                <EditCommentModal className="all-comments-edit-btn" />
+                                <EditCommentModal commentId={comment.id} className="all-comments-edit-btn" />
                             }
                         </div>
                         <Link className="comment-link" to={`/comments/${comment.id}`}>

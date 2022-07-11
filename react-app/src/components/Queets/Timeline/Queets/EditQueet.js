@@ -4,15 +4,14 @@ import { useDispatch, useSelector } from "react-redux";
 import { eraseQueet, modifyQueet } from "../../../../store/queets";
 import { useHistory, useParams } from "react-router-dom";
 
-const EditQueet = ({ setShowModal, queetId }) => {
+const EditQueet = ({ setShowModal, queet_id }) => {
 
     const allQueets = useSelector(state => state.queet);
-    const editedQueetId = useParams().queetId;
-    const editedQueet = allQueets[editedQueetId] || {};
+    const editedQueet = allQueets[queet_id] || {};
     const user = useSelector(state => state.session.user);
     const dispatch = useDispatch();
     const history = useHistory();
-    const [content, setContent] = useState(editedQueet.content || '');
+    const [content, setContent] = useState(editedQueet.content);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -29,7 +28,7 @@ const EditQueet = ({ setShowModal, queetId }) => {
         e.preventDefault();
         dispatch(eraseQueet(editedQueet))
         setShowModal(false)
-            .then(() => history.push("/"))
+        history.push("/")
     }
 
     return (

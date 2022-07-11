@@ -8,7 +8,6 @@ const AddQueet = () => {
 
     const user = useSelector(state => state.session.user);
     const date = new Date();
-    console.log(date)
     const dispatch = useDispatch();
     const [content, setContent] = useState('');
 

@@ -36,8 +36,6 @@ export const addComment = (comment) => async (dispatch) => {
 		body: JSON.stringify(comment),
 	});
 
-	// console.log(response)
-
 	if (response.ok) {
 		const comment = await response.json();
 		dispatch(createComment(comment));

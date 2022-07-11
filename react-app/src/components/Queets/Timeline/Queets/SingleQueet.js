@@ -37,7 +37,7 @@ const SingleQueet = () => {
                     <div className='single-queet-username'>@{usersArr[queet.userId - 1].username}</div>
                     {
                         queet.userId === sessionUser.id &&
-                        <EditQueetModal className="single-queet-edit-btn" />
+                        <EditQueetModal queetId={queetId} className="single-queet-edit-btn" />
                     }
                 </div>
                 <div className='single-queet'>{queet.content}</div>

@@ -10,21 +10,22 @@ import { FiShare } from 'react-icons/fi';
 import EditCommentModal from './EditCommentModal';
 import { MdKeyboardBackspace } from 'react-icons/md';
 
-const SingleComment = ({ queetId }) => {
+const SingleComment = () => {
 
     const sessionUser = useSelector(state => state.session.user);
     const users = useSelector(state => state.user.users);
     const usersArr = Object.values(users);
     const { commentId } = useParams();
     const comment = useSelector(state => state?.comment[commentId]);
-    console.log(commentId)
+    console.log(comment.queet.id)
+
 
     // <button className="single-queet-edit-btn" onClick={() => editHandler(queet)}>Edit</button>
 
     return (
         <div className='single-comment-wrap'>
             <div className='comment-and-back-button'>
-                <Link className='comment-back-link' to={`/queets/${comment.queetId}`}>
+                <Link className='comment-back-link' to={`/queets/${comment.queet.id}`}>
                     <MdKeyboardBackspace className='back-button' />
                 </Link>
                 <h2 className='thread'>Comment</h2>
@@ -34,7 +35,7 @@ const SingleComment = ({ queetId }) => {
                     <div className='single-comment-username'>@{usersArr[comment.userId - 1].username}</div>
                     {
                         comment.userId === sessionUser.id &&
-                        <EditCommentModal className="single-comment-edit-btn" />
+                        <EditCommentModal queetId={comment.queet.id} commentId={commentId} className="single-comment-edit-btn" />
                     }
                 </div>
                 <div className='single-comment'>{comment.content}</div>

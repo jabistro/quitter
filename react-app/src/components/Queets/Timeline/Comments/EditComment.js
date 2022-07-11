@@ -4,17 +4,15 @@ import { useDispatch, useSelector } from "react-redux";
 import { useHistory, useParams } from "react-router-dom";
 import { eraseComment, modifyComment } from "../../../../store/comments";
 
-const EditComment = ({ setShowModal }) => {
+const EditComment = ({ setShowModal, comment_id }) => {
 
     const allComments = useSelector(state => state.comment);
-    const editedCommentId = useParams().commentId;
-    const editedComment = allComments[editedCommentId] || {};
+    const editedComment = allComments[comment_id] || {};
     const queetId = editedComment?.queet?.id
     const user = useSelector(state => state.session.user);
     const dispatch = useDispatch();
     const history = useHistory();
-    const [content, setContent] = useState(editedComment.content || '');
-    console.log(queetId)
+    const [content, setContent] = useState(editedComment.content);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -31,7 +29,7 @@ const EditComment = ({ setShowModal }) => {
     const deleteHandler = (e, comment) => {
         e.preventDefault();
         dispatch(eraseComment(editedComment))
-            .then(() => history.push(`/queets/${queetId}`))
+        history.push(`/queets/${queetId}`)
     }
 
     return (

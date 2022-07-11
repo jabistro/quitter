@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Modal } from '../../../../context/Modal';
 import EditQueet from './EditQueet';
 
-const EditQueetModal = () => {
+const EditQueetModal = ({ queetId }) => {
     const [showModal, setShowModal] = useState(false);
 
     return (
@@ -11,7 +11,7 @@ const EditQueetModal = () => {
             <button className="queet-edit-btn" onClick={() => setShowModal(true)}>Edit</button>
             {showModal && (
                 <Modal onClose={() => setShowModal(false)}>
-                    <EditQueet setShowModal={setShowModal} />
+                    <EditQueet queet_id={queetId} setShowModal={setShowModal} />
                 </Modal>
             )}
         </>
