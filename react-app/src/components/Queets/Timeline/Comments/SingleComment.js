@@ -17,7 +17,6 @@ const SingleComment = () => {
     const usersArr = Object.values(users);
     const { commentId } = useParams();
     const comment = useSelector(state => state?.comment[commentId]);
-    console.log(comment.queet.id)
 
 
     // <button className="single-queet-edit-btn" onClick={() => editHandler(queet)}>Edit</button>
