@@ -32,7 +32,7 @@
 .single-queet-username {
     font-family: 'Lucida Sans Unicode';
     font-weight: bold;
-    font-size: 25px;
+    font-size: 16px;
     margin: 15px;
 }
 
@@ -52,7 +52,7 @@
 
 .single-queet {
     font-family: 'Lucida Sans Unicode';
-    font-size: 20px;
+    font-size: 23px;
     margin-left: 15px;
     margin-bottom: 20px;
 }
