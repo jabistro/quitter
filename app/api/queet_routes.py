@@ -1,7 +1,7 @@
 from datetime import datetime
 from flask import Blueprint, request
 from flask_login import login_required, current_user
-from app.models import Queet, db, queet
+from app.models import Queet, db
 from app.forms.queet_form import QueetForm
 from .utils import validation_errors_to_error_messages
 
