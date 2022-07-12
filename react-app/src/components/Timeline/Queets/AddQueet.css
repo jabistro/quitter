@@ -68,3 +68,55 @@
     padding-left: 20px;
     padding-right: 20px;
 }
+
+.queet-upload-img-form {
+    background-color: #b83dba;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 400px;
+    border-radius: 20px;
+    margin-left: 40px;
+    margin-top: 15px;
+}
+
+.queet-upload-img-input {
+    background-color: transparent;
+    color: white;
+}
+
+/* .queet-upload-img-wrap {
+    background-color: #b83dba;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 400px;
+    border-radius: 20px;
+} */
+
+.queet-upload-img-input {
+    margin-right: 30px;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    color: white;
+}
+
+.queet-upload-img-btn {
+    margin-left: 30px;
+}
+
+.queet-upload-img-btn {
+    font-family: 'Lucida Sans Unicode';
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-weight: bold;
+    height: 30px;
+    width: 100px;
+    border-radius: 20px;
+    font-size: 15px;
+    cursor: pointer;
+}

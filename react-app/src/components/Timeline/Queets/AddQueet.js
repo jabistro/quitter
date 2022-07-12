@@ -7,9 +7,9 @@ import { AiOutlinePicture } from 'react-icons/ai';
 const AddQueet = () => {
 
     const user = useSelector(state => state.session.user);
-    const date = new Date();
     const dispatch = useDispatch();
     const [content, setContent] = useState('');
+    const [imageBoxOpen, setImageBoxOpen] = useState(false);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -47,9 +47,22 @@ const AddQueet = () => {
                 </div>
                 <div className="add-queet-second-half">
                     <div className="icons-and-button">
-                        <AiOutlinePicture className='add-img-btn' />
+                        <AiOutlinePicture onClick={() => setImageBoxOpen(!imageBoxOpen)} className='add-img-btn' />
                         <button disabled={!content} type="submit" className="add-queet-btn">Queet</button>
                     </div>
+                </div>
+                <div className="queet-upload-img-wrap">
+                    {imageBoxOpen && (
+                        <form className="queet-upload-img-form">
+                            <input
+                                className="queet-upload-img-input"
+                                type="text"
+                                placeholder="Enter Image URL..."
+                            >
+                            </input>
+                            <button className="queet-upload-img-btn">Add Image</button>
+                        </form>
+                    )}
                 </div>
             </form>
         </div>
