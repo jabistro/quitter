@@ -35,7 +35,7 @@ const ProfileQueets = () => {
                                         className="timestamp"
                                         date={queet.created_at}
                                         locale='en-US'
-                                        timeStyle="twitter"
+                                        timeStyle="twitter-first-minute"
                                     />
                                 </div>
                             </Link>
