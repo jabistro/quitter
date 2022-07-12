@@ -1,0 +1,123 @@
+.sidebar-add-queet-wrap {
+    display: grid;
+    grid-template-rows: 4fr 1fr;
+    height: 200px;
+}
+
+.sidebar-add-queet-first-half {
+    display: grid;
+    grid-template-columns: 1fr 9fr;
+}
+
+.sidebar-add-queet-btn {
+    font-family: 'Lucida Sans Unicode';
+    background-color: #b83dba;
+    border: none;
+    color: white;
+    font-weight: bold;
+    height: 30px;
+    width: 80px;
+    border-radius: 20px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.sidebar-add-queet-btn:disabled {
+    opacity: 40%;
+    cursor: default;
+}
+
+.sidebar-add-queet-input {
+    height: 45px;
+    width: 100%;
+    font-size: 20px;
+    outline: none;
+    border: none;
+    height: 70px;
+    background-color: transparent;
+    color: white;
+    resize: none;
+    font-family: 'Lucida Sans Unicode';
+}
+
+.profile-pic {
+    height: 45px;
+    width: 45px;
+    border-radius: 20px;
+    object-fit: cover;
+    margin-top: 5px;
+    margin-left: 11px;
+}
+
+.sidebar-add-img-btn {
+    height: 25px;
+    width: 25px;
+    color: #b83dba;
+    cursor: pointer;
+    transition: ease-out;
+    transition-duration: 150ms;
+}
+
+.sidebar-add-img-btn:hover {
+    transform: scale(1.5);
+}
+
+.sidebar-icons-and-button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.sidebar-queet-upload-img-form {
+    background-color: #b83dba;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 400px;
+    border-radius: 20px;
+    margin-left: 40px;
+    margin-top: 15px;
+}
+
+.sidebar-queet-upload-img-input {
+    background-color: transparent;
+    color: white;
+}
+
+/* .queet-upload-img-wrap {
+    background-color: #b83dba;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 400px;
+    border-radius: 20px;
+} */
+
+.sidebar-queet-upload-img-input {
+    margin-right: 30px;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    color: white;
+}
+
+.sidebar-queet-upload-img-btn {
+    margin-left: 30px;
+}
+
+.sidebar-queet-upload-img-btn {
+    font-family: 'Lucida Sans Unicode';
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-weight: bold;
+    height: 30px;
+    width: 100px;
+    border-radius: 20px;
+    font-size: 15px;
+    cursor: pointer;
+}

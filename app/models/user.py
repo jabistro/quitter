@@ -10,9 +10,11 @@ class User(db.Model, UserMixin):
     username = db.Column(db.String(40), nullable=False, unique=True)
     email = db.Column(db.String(255), nullable=False, unique=True)
     hashed_password = db.Column(db.String(255), nullable=False)
+    # created_at = db.Column(db.DateTime)
 
     queets = db.relationship("Queet", back_populates="users")
     comments = db.relationship("Comment", back_populates="users")
+    # profiles = db.relationship("Profile", back_populates="users")
 
     # followers = db.relationship(
     #     "User",
@@ -38,5 +40,6 @@ class User(db.Model, UserMixin):
         return {
             'id': self.id,
             'username': self.username,
-            'email': self.email
+            'email': self.email,
+            # "created_at": self.created_at
         }

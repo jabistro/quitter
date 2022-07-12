@@ -8,6 +8,7 @@ import { FiBookmark } from 'react-icons/fi';
 import { BsPerson } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import SidebarQueetModal from './SidebarQueetModal';
 
 
 const Sidebar = () => {
@@ -46,6 +47,7 @@ const Sidebar = () => {
             <p className='icon-text'>Profile</p>
           </div>
         </Link>
+        <SidebarQueetModal className="sidebar-add-queet-length" />
       </div>
     </div>
   )
