@@ -10,3 +10,9 @@
     border-radius: 20px;
     cursor: pointer;
 }
+
+.sidebar-queet-modal-main-btn:hover {
+    background-color: #892c8a;
+    transition: all;
+    transition-duration: 200ms;
+}

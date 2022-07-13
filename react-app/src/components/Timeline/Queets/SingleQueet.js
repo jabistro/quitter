@@ -10,6 +10,7 @@ import { FaRetweet } from 'react-icons/fa';
 import { FiHeart } from 'react-icons/fi';
 import { FiShare } from 'react-icons/fi';
 import { MdKeyboardBackspace } from 'react-icons/md';
+import moment from 'moment';
 
 const SingleQueet = () => {
 
@@ -33,18 +34,23 @@ const SingleQueet = () => {
                 <h2 className='thread'>Queet</h2>
             </div>
             <div className="single-queet-block">
-                <div className='single-username-and-edit-btn'>
-                    <div className='single-queet-username'>
-                        {usersArr[queet.userId - 1].display_name}
-                        @{usersArr[queet.userId - 1].username}
+                <div className='single-queet-pic-names-and-edit'>
+                    <div className='single-queet-pic-and-names'>
+                        <img className='single-queet-profile-pic' src={sessionUser.profile_pic === '' ? 'https://i.pinimg.com/736x/7c/ee/6f/7cee6fa507169843e3430a90dd5377d4.jpg' : sessionUser.profile_pic} />
+                        <div className='single-queet-names'>
+                            <p className='single-queet-display-name'>{usersArr[queet.userId - 1].display_name}</p>
+                            <p className='single-queet-username'>@{usersArr[queet.userId - 1].username}</p>
+                        </div>
                     </div>
-                    {
-                        queet.userId === sessionUser.id &&
-                        <EditQueetModal queetId={queetId} className="single-queet-edit-btn" />
-                    }
+                    <div className="single-queet-edit-btn">
+                        {
+                            queet.userId === sessionUser.id &&
+                            <EditQueetModal queetId={queetId} />
+                        }
+                    </div>
                 </div>
                 <div className='single-queet'>{queet.content}</div>
-                <div className='single-queet-timestamp'>{queet.created_at}</div>
+                <div className='single-queet-timestamp'>{moment(queet.created_at).format('LT')}  ·  {moment(queet.created_at).format('ll')}</div>
                 <div className='single-queet-icons'>
                     <div className='single-queet-icon-and-stat'>
                         <BiMessage />

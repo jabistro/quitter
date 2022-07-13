@@ -31,44 +31,49 @@ const Queets = () => {
                 // commentsArr.forEach(comment => { { comment.queetId === queet.id && replies.push(comment) } })
                 return (
                     <div key={queet.id} className="queets">
-                        <div className="feed-queet-username-and-edit-btn">
-                            <Link className="queet-link" to={`/queets/${queet.id}`}>
-                                <div className="feed-queet-names">
-                                    <p className="feed-queet-display-name">{usersArr[queet.userId - 1].display_name}</p>
-                                    <p className="feed-queet-username">@{usersArr[queet.userId - 1].username}<p className="stupid-dot">·</p></p>
-                                    <p className="timestamp-container">
-                                        <ReactTimeAgo
-                                            className="timestamp"
-                                            date={queet.created_at}
-                                            locale='en-US'
-                                            timeStyle="twitter-first-minute"
-                                        />
-                                    </p>
+                        <img className='all-queets-profile-pic' src={sessionUser.profile_pic === '' ? 'https://i.pinimg.com/736x/7c/ee/6f/7cee6fa507169843e3430a90dd5377d4.jpg' : sessionUser.profile_pic} />
+                        <div className="all-queets-everything-minus-pic">
+                            <div className="feed-queet-names-edit-and-content">
+                                <div className="feed-queet-username-and-edit-btn">
+                                    <Link className="queet-link" to={`/queets/${queet.id}`}>
+                                        <div className="feed-queet-names">
+                                            <p className="feed-queet-display-name">{usersArr[queet.userId - 1]?.display_name}</p>
+                                            <p className="feed-queet-username">@{usersArr[queet.userId - 1].username}<div className="stupid-dot">·</div></p>
+                                            <p className="timestamp-container">
+                                                <ReactTimeAgo
+                                                    className="timestamp"
+                                                    date={queet.created_at}
+                                                    locale='en-US'
+                                                    timeStyle="twitter-first-minute"
+                                                />
+                                            </p>
+                                        </div>
+                                    </Link>
+                                    {queet.userId === sessionUser.id &&
+                                        <EditQueetModal queetId={queet.id} className="all-queets-edit-btn" />
+                                    }
                                 </div>
-                            </Link>
-                            {queet.userId === sessionUser.id &&
-                                <EditQueetModal queetId={queet.id} className="all-queets-edit-btn" />
-                            }
-                        </div>
-                        <Link className="queet-link" to={`/queets/${queet.id}`}>
-                            <div className="feed-queet">{queet.content}</div>
-                        </Link>
-                        <div className="feed-queet-icons">
-                            <div className='feed-queet-icon-and-stat'>
-                                <BiMessage />
-                                <p className='feed-queet-stat'></p>
+                                <Link className="queet-link" to={`/queets/${queet.id}`}>
+                                    <div className="feed-queet">{queet.content}</div>
+                                </Link>
                             </div>
-                            <div className='feed-queet-icon-and-stat'>
-                                <FaRetweet className="requeet-icon" />
-                                <p className='feed-queet-stat'></p>
-                            </div>
-                            <div className='feed-queet-icon-and-stat'>
-                                <FiHeart />
-                                <p className='feed-queet-stat'></p>
-                            </div>
-                            <div className='feed-queet-icon-and-stat'>
-                                <FiShare />
-                                <p className='feed-queet-stat'></p>
+                            <div className="feed-queet-icons">
+                                <div className='feed-queet-icon-and-stat'>
+                                    <BiMessage />
+                                    <p className='feed-queet-stat'></p>
+                                </div>
+                                <div className='feed-queet-icon-and-stat'>
+                                    <FaRetweet className="requeet-icon" />
+                                    <p className='feed-queet-stat'></p>
+                                </div>
+                                <div className='feed-queet-icon-and-stat'>
+                                    <FiHeart />
+                                    <p className='feed-queet-stat'></p>
+                                </div>
+                                <div className='feed-queet-icon-and-stat'>
+                                    <FiShare />
+                                    <p className='feed-queet-stat'></p>
+                                </div>
                             </div>
                         </div>
                     </div>

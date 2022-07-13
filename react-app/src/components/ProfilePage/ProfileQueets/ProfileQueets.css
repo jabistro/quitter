@@ -8,9 +8,16 @@
     transition-duration: 200ms;
 }
 
+.profile-queets-profile-pic {
+    height: 44px;
+    width: 44px;
+    border-radius: 22px;
+    margin-left: 15px;
+}
+
 .profile-queets {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr 12fr;
     padding-top: 15px;
     border-bottom: 1px solid rgb(84, 84, 84);
 }
@@ -32,8 +39,6 @@
 
 .profile-feed-queet-names {
     display: flex;
-    flex-grow: 1;
-    justify-content: flex-end;
     align-items: center;
     height: 30px;
 }
@@ -51,8 +56,6 @@
     color: white;
     font-weight: bold;
     font-size: 14px;
-    margin-bottom: 5px;
-    padding-left: 10px;
     font-family: 'Lucida Sans Unicode';
     height: 100%;
     width: 100%;
@@ -85,18 +88,4 @@
     margin-left: 15px;
     margin-right: 15px;
     margin-bottom: 0%;
-}
-
-.profile-queets-edit-btn {
-    font-family: 'Lucida Sans Unicode';
-    background-color: #b83dba;
-    border: none;
-    color: white;
-    font-weight: bold;
-    height: 20px;
-    width: 60px;
-    border-radius: 20px;
-    font-size: 12px;
-    cursor: pointer;
-    margin-right: 15px;
 }

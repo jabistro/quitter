@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
 import { Redirect } from 'react-router-dom';
 import { signUp } from '../../store/session';
+import './SignUpForm.css';
 
 const SignUpForm = () => {
   const [errors, setErrors] = useState([]);
@@ -9,13 +10,14 @@ const SignUpForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [repeatPassword, setRepeatPassword] = useState('');
+  const [displayName, setDisplayName] = useState('');
   const user = useSelector(state => state.session.user);
   const dispatch = useDispatch();
 
   const onSignUp = async (e) => {
     e.preventDefault();
     if (password === repeatPassword) {
-      const data = await dispatch(signUp(username, email, password));
+      const data = await dispatch(signUp(username, email, password, displayName));
       if (data) {
         setErrors(data)
       }
@@ -38,16 +40,31 @@ const SignUpForm = () => {
     setRepeatPassword(e.target.value);
   };
 
+  const updateDisplayName = (e) => {
+    setDisplayName(e.target.value);
+  };
+
+
+
   if (user) {
     return <Redirect to='/' />;
   }
 
   return (
-    <form onSubmit={onSignUp}>
+    <form className='nav-signup-form' onSubmit={onSignUp}>
       <div>
         {errors.map((error, ind) => (
           <div key={ind}>{error}</div>
         ))}
+      </div>
+      <div>
+        <label>Display Name</label>
+        <input
+          type='text'
+          name='display_name'
+          onChange={updateDisplayName}
+          value={displayName}
+        ></input>
       </div>
       <div>
         <label>User Name</label>

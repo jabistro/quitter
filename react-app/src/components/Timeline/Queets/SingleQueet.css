@@ -16,7 +16,6 @@
 .thread-and-back-button {
     display: flex;
     align-items: center;
-    margin-bottom: 10px;
 }
 
 .single-queet-back-button {
@@ -29,25 +28,48 @@
     width: 23px;
 }
 
-.single-queet-username {
-    font-family: 'Lucida Sans Unicode';
-    font-weight: bold;
-    font-size: 16px;
-    margin: 15px;
+.single-queet-pic-names-and-edit {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
 }
 
-.single-queet-edit-btn {
+.single-queet-pic-and-names {
+    display: flex;
+    align-items: center;
+}
+
+.single-queet-profile-pic {
+    height: 44px;
+    width: 44px;
+    border-radius: 22px;
+    margin-left: 15px;
+}
+
+.single-queet-names {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 15px;
+}
+
+.single-queet-username {
+    color: gray;
     font-family: 'Lucida Sans Unicode';
-    background-color: #b83dba;
-    border: none;
-    color: white;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 15px;
+}
+
+.single-queet-display-name {
+    display: flex;
+    align-items: flex-end;
+    font-family: 'Lucida Sans Unicode';
     font-weight: bold;
-    height: 20px;
-    width: 60px;
-    border-radius: 20px;
-    font-size: 12px;
-    cursor: pointer;
-    margin-right: 15px;
+    font-size: 15px;
+    margin-top: 0px;
+    margin-bottom: 0px;
 }
 
 .single-queet {

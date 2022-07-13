@@ -1,7 +1,7 @@
 import './ProfileHeader.css';
 import React from 'react'
 import EditProfileModal from './EditProfile/EditProfileModal';
-import Moment from 'moment';
+import moment from 'moment';
 import { useSelector } from 'react-redux';
 import { HiOutlineLocationMarker } from 'react-icons/hi';
 import { FaBirthdayCake } from 'react-icons/fa';
@@ -18,7 +18,7 @@ const ProfileHeader = () => {
                     {/* <img className='profile-header' src='https://pbs.twimg.com/profile_banners/326835342/1559881342/600x200' /> */}
                 </div>
                 <div className='profile-prof-pic-and-edit-btn'>
-                    <img className='profile-prof-pic' src='https://pbs.twimg.com/profile_images/1349201944376700928/bDUxYtla_400x400.jpg' />
+                    <img className='profile-prof-pic' src={user.profile_pic === '' ? 'https://i.pinimg.com/736x/7c/ee/6f/7cee6fa507169843e3430a90dd5377d4.jpg' : user.profile_pic} />
                     <div className='profile-edit-profile-btn-div'>
                         <EditProfileModal />
                     </div>
@@ -32,19 +32,19 @@ const ProfileHeader = () => {
                 </div>
                 <div className='profile-stats'>
                     <p className='profile-bio'>
-                        {user.bio}placeholder: this is what you call a bio. where i talk about myself. not much to say really.
+                        {user.bio}
                     </p>
                     <div className='profile-stat-and-icon'>
                         <HiOutlineLocationMarker className='profile-icons' />
-                        <p className='profile-location'>{user.location}placeholder: location</p>
+                        <p className='profile-location'>{user.location}</p>
                     </div>
                     <div className='profile-stat-and-icon'>
                         <FaBirthdayCake className='profile-icons' />
-                        <p className='profile-birthday'>{user.birthday}placeholder: birthday</p>
+                        <p className='profile-birthday'>Born {user.birthday}</p>
                     </div>
                     <div className='profile-stat-and-icon'>
                         <BsCalendar3 className='profile-icons' />
-                        <p className='profile-joined'>Joined {Moment(`${user.joined}`).format('MMMM YYYY')}</p>
+                        <p className='profile-joined'>Joined {moment(user.joined).format('MMMM YYYY')}</p>
                     </div>
                 </div>
                 <div className='profile-relationships'>

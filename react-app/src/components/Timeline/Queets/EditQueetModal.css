@@ -1,6 +1,9 @@
 .queet-edit-btn {
-    background-color: #b83dba;
-    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #15202b;
+    border: 2px solid gray;
     color: white;
     font-weight: bold;
     height: 20px;
@@ -10,4 +13,10 @@
     cursor: pointer;
     margin-right: 15px;
     font-family: 'Lucida Sans Unicode';
+}
+
+.queet-edit-btn:hover {
+    background-color: #b83dba;
+    transition: all;
+    transition-duration: 200ms;
 }
