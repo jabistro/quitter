@@ -1,0 +1,131 @@
+.profile-header-container {
+    width: 600px;
+    height: 200px;
+    background-color: purple;
+    background-size: 600px, 200px, cover;
+    background-image: url('https://pbs.twimg.com/profile_banners/326835342/1559881342/600x200');
+    display: flex;
+    align-items: flex-end;
+}
+
+/* .profile-header {
+    object-fit: fill;
+} */
+
+.profile-prof-pic {
+    width: 140px;
+    height: 140px;
+    border-radius: 70px;
+    background-color: transparent;
+    border: 5px solid #15202b;
+    margin-left: 15px;
+    position: relative;
+    top: -70px;
+}
+
+.profile-prof-pic-and-edit-btn {
+    display: flex;
+    justify-content: space-between;
+    height: 95px;
+}
+
+.profile-edit-profile-btn-div {
+    margin-right: 5px;
+    margin-top: 15px;
+}
+
+.profile-header-wrap {
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-names {
+    display: flex;
+    flex-direction: column;
+    height: 55px;
+}
+
+.profile-display-name {
+    margin-top: 0px;
+    margin-left: 15px;
+    font-family: 'Lucida Sans Unicode';
+    font-weight: bold;
+    color: white;
+    font-size: 20px;
+    margin-bottom: 0%;
+    padding-bottom: 0%;
+}
+
+.profile-username {
+    font-family: 'Lucida Sans Unicode';
+    margin-left: 15px;
+    color: gray;
+    margin-top: 0%;
+    padding-top: 0%;
+    position: relative;
+    top: -5px;
+}
+
+.profile-bio {
+    margin-left: 15px;
+}
+
+.profile-stat-and-icon {
+    display: flex;
+    align-items: center;
+    color: gray;
+    margin-left: 15px;
+    height: 20px;
+    font-family: 'Lucida Sans Unicode';
+    font-size: 15px;
+}
+
+.profile-icons {
+    margin-right: 8px;
+}
+
+.profile-bio {
+    color: white;
+    font-family: 'Lucida Sans Unicode';
+    font-size: 15px;
+}
+
+.profile-relationships {
+    display: flex;
+    margin-left: 15px;
+}
+
+.profile-following-wrap {
+    font-family: 'Lucida Sans Unicode';
+    display: flex;
+    align-items: center;
+}
+
+.profile-followers-wrap {
+    font-family: 'Lucida Sans Unicode';
+    display: flex;
+    align-items: center;
+}
+
+.profile-following-amount {
+    font-weight: bold;
+    font-size: 13px;
+    margin-right: 3px;
+}
+
+.profile-followers-amount {
+    font-weight: bold;
+    font-size: 13px;
+    margin-right: 3px;
+}
+
+.profile-following-txt {
+    color: gray;
+    font-size: 13px;
+    margin-right: 17px;
+}
+
+.profile-followers-txt {
+    color: gray;
+    font-size: 13px;
+}

@@ -28,13 +28,16 @@ const SingleQueet = () => {
         <div className='queet-comment-wrap'>
             <div className='thread-and-back-button'>
                 <Link className='thread-back-link' to={"/"}>
-                    <MdKeyboardBackspace className='back-button' />
+                    <MdKeyboardBackspace className='single-queet-back-button' />
                 </Link>
                 <h2 className='thread'>Queet</h2>
             </div>
             <div className="single-queet-block">
                 <div className='single-username-and-edit-btn'>
-                    <div className='single-queet-username'>@{usersArr[queet.userId - 1].username}</div>
+                    <div className='single-queet-username'>
+                        {usersArr[queet.userId - 1].display_name}
+                        @{usersArr[queet.userId - 1].username}
+                    </div>
                     {
                         queet.userId === sessionUser.id &&
                         <EditQueetModal queetId={queetId} className="single-queet-edit-btn" />

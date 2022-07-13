@@ -25,13 +25,16 @@ const SingleComment = () => {
         <div className='single-comment-wrap'>
             <div className='comment-and-back-button'>
                 <Link className='comment-back-link' to={`/queets/${comment.queet.id}`}>
-                    <MdKeyboardBackspace className='back-button' />
+                    <MdKeyboardBackspace className='single-comment-back-button' />
                 </Link>
                 <h2 className='thread'>Comment</h2>
             </div>
             <div className="single-comment-block">
                 <div className='single-comment-username-and-edit-btn'>
-                    <div className='single-comment-username'>@{usersArr[comment.userId - 1].username}</div>
+                    <div className='single-comment-username'>
+                        {usersArr[comment.userId - 1].display_name}
+                        @{usersArr[comment.userId - 1].username}
+                    </div>
                     {
                         comment.userId === sessionUser.id &&
                         <EditCommentModal queetId={comment.queet.id} commentId={commentId} className="single-comment-edit-btn" />
