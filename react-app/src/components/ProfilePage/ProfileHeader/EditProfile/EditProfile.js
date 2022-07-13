@@ -2,6 +2,8 @@ import './EditProfile.css';
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { modifyUser } from '../../../../store/session';
+import { AiOutlineClose } from 'react-icons/ai';
+
 
 const EditProfile = ({ setShowModal }) => {
 
@@ -66,101 +68,100 @@ const EditProfile = ({ setShowModal }) => {
     };
 
     return (
-        <div>
-            <div>close button/edit profile/save button</div>
-            <form className='edit-profile-form' onSubmit={onSubmit}>
-                <div>
-                    <label>display name
-                        <input
-                            className='edit-profile-display-name-input'
-                            type="text"
-                            name='display_name'
-                            onChange={updateDisplayName}
-                            value={displayName}
-                            required
-                        />
-                    </label>
+        <div className='edit-profile-wrap'>
+            <div className='edit-profile-header'>
+                <div className='edit-profile-btn-and-title'>
+                    <div onClick={() => setShowModal(false)} className='edit-close-btn-container'>
+                        <AiOutlineClose className='edit-close-btn' />
+                    </div>
+                    <p className='edit-title-txt'>Edit profile</p>
                 </div>
-                <div>
-                    <label>username
-                        <input
-                            className='edit-profile-username-input'
-                            type="text"
-                            name='username'
-                            onChange={updateUsername}
-                            value={username}
-                            required
-                        />
-                    </label>
+                <button onClick={onSubmit} type='submit' className='edit-profile-sumbit-btn'>Save</button>
+            </div>
+            <form className='edit-profile-form'>
+                <div className='edit-profile-field-container'>
+                    <label className='edit-label'>Name</label>
+                    <input
+                        className='edit-profile-input'
+                        type="text"
+                        name='display_name'
+                        onChange={updateDisplayName}
+                        value={displayName}
+                        required
+                    />
                 </div>
-                <div>
-                    <label>email
-                        <input
-                            className='edit-profile-email-input'
-                            type="text"
-                            name='email'
-                            onChange={updateEmail}
-                            value={email}
-                            required
-                        />
-                    </label>
+                <div className='edit-profile-field-container'>
+                    <label className='edit-label'>Username</label>
+                    <input
+                        className='edit-profile-input'
+                        type="text"
+                        name='username'
+                        onChange={updateUsername}
+                        value={username}
+                        required
+                    />
                 </div>
-                <div>
-                    <label>header
-                        <input
-                            className='edit-profile-header-input'
-                            type="text"
-                            name='header'
-                            onChange={updateHeader}
-                            value={header}
-                        />
-                    </label>
+                <div className='edit-profile-field-container'>
+                    <label className='edit-label'>Email</label>
+                    <input
+                        className='edit-profile-input'
+                        type="text"
+                        name='email'
+                        onChange={updateEmail}
+                        value={email}
+                        required
+                    />
                 </div>
-                <div>
-                    <label>profile pic
-                        <input
-                            className='edit-profile-profile-pic-input'
-                            type="text"
-                            name='profile-pic'
-                            onChange={updateProfilePic}
-                            value={profilePic}
-                        />
-                    </label>
+                <div className='edit-profile-field-container'>
+                    <label className='edit-label'>Header URL</label>
+                    <input
+                        className='edit-profile-input'
+                        type="text"
+                        name='header'
+                        onChange={updateHeader}
+                        value={header}
+                    />
                 </div>
-                <div>
-                    <label>bio
-                        <textarea
-                            className='edit-profile-bio-input'
-                            type="text"
-                            name='bio'
-                            onChange={updateBio}
-                            value={bio}
-                        />
-                    </label>
+                <div className='edit-profile-field-container'>
+                    <label className='edit-label'>Profile Picture URL</label>
+                    <input
+                        className='edit-profile-input'
+                        type="text"
+                        name='profile-pic'
+                        onChange={updateProfilePic}
+                        value={profilePic}
+                    />
                 </div>
-                <div>
-                    <label>location
-                        <input
-                            className='edit-profile-location-input'
-                            type="text"
-                            name='location'
-                            onChange={updateLocation}
-                            value={location}
-                        />
-                    </label>
+                <div className='edit-profile-field-container'>
+                    <label className='edit-label'>Bio</label>
+                    <textarea
+                        className='edit-profile-input'
+                        type="text"
+                        name='bio'
+                        onChange={updateBio}
+                        value={bio}
+                    />
                 </div>
-                <div>
-                    <label>birthday
-                        <input
-                            className='edit-profile-birthday-input'
-                            type="text"
-                            name='birthday'
-                            onChange={updateBirthday}
-                            value={birthday}
-                        />
-                    </label>
+                <div className='edit-profile-field-container'>
+                    <label className='edit-label'>Location</label>
+                    <input
+                        className='edit-profile-input'
+                        type="text"
+                        name='location'
+                        onChange={updateLocation}
+                        value={location}
+                    />
                 </div>
-                <button type='submit' className='edit-profile-sumbit-btn'>Save</button>
+                <div className='edit-profile-field-container'>
+                    <label className='edit-label'>Birthday</label>
+                    <input
+                        className='edit-profile-input'
+                        type="text"
+                        name='birthday'
+                        onChange={updateBirthday}
+                        value={birthday}
+                    />
+                </div>
             </form>
         </div>
     )
