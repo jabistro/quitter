@@ -24,7 +24,7 @@ const Comments = () => {
                         <div className="feed-comment-username-and-edit-btn">
                             <Link className="comment-link" to={`/comments/${comment.id}`}>
                                 <div className="comment-username">
-                                    @{usersArr[comment.userId - 1].username}
+                                    {usersArr[comment.userId - 1].display_name} @{usersArr[comment.userId - 1].username}
                                     <ReactTimeAgo
                                         className="timestamp"
                                         date={comment.created_at}

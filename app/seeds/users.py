@@ -1,3 +1,4 @@
+from sqlalchemy import null
 from app.models import db, User
 
 
@@ -6,18 +7,36 @@ def seed_users():
     demo = User(
         username='Demo',
         email='demo@aa.io',
-        password='password')
-        # created_at="2022-05-03 19:17:22")
+        password='password',
+        header='',
+        profile_pic='',
+        display_name='Demo Lition',
+        bio='',
+        location='',
+        birthday='',
+        joined='2022-05-03 19:17:22')
     marnie = User(
         username='marnie',
         email='marnie@aa.io',
-        password='password')
-        # created_at="2022-05-03 19:17:22")
+        password='password',
+        header='',
+        profile_pic='',
+        display_name='Marnie Alexander',
+        bio='',
+        location='',
+        birthday='',
+        joined='2022-05-03 19:17:22')
     bobbie = User(
         username='bobbie',
         email='bobbie@aa.io',
-        password='password')
-        # created_at="2022-05-03 19:17:22")
+        password='password',
+        header='',
+        profile_pic='',
+        display_name='Bobbie Bogay',
+        bio='',
+        location='',
+        birthday='',
+        joined='2022-05-03 19:17:22')
 
     db.session.add(demo)
     db.session.add(marnie)

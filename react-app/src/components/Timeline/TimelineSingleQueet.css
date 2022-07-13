@@ -1,5 +1,5 @@
 .timeline-single-queet-wrap {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 600px 1fr;
     height: 820px;
 }

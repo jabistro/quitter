@@ -19,14 +19,14 @@
     margin-bottom: 10px;
 }
 
-.back-button {
+.single-queet-back-button {
     text-decoration: none;
     color: white;
-    height: 30px;
-    width: 30px;
     cursor: pointer;
     margin-left: 10px;
     margin-right: 15px;
+    height: 23px;
+    width: 23px;
 }
 
 .single-queet-username {

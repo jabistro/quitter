@@ -1,8 +1,8 @@
 
 from flask_wtf import FlaskForm
-# from sqlalchemy import DateTime
+from sqlalchemy import DateTime
 from wtforms import StringField
-from wtforms.validators import DataRequired, Email, ValidationError
+from wtforms.validators import DataRequired, Length, ValidationError
 from app.models import User
 
 
@@ -26,4 +26,5 @@ class SignUpForm(FlaskForm):
     username = StringField('username', validators=[DataRequired(), username_exists])
     email = StringField('email', validators=[DataRequired(), user_exists])
     password = StringField('password', validators=[DataRequired()])
-    # created_at = DateTime('Created At')
+    display_name = StringField('display name', validators=[DataRequired(), Length(min=1, max=50, message="Display name must be between 1 and 50.")])
+    joined = DateTime('Created At')

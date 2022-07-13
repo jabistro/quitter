@@ -80,6 +80,13 @@ export const signUp = (username, email, password) => async (dispatch) => {
       username,
       email,
       password,
+      header,
+      profile_pic,
+      display_name,
+      bio,
+      location,
+      birthday,
+      joined
     }),
   });
 

@@ -20,11 +20,11 @@
     margin-bottom: 10px;
 }
 
-.back-button {
+.single-comment-back-button {
     text-decoration: none;
     color: white;
-    height: 30px;
-    width: 30px;
+    height: 23px;
+    width: 23px;
     cursor: pointer;
     margin-left: 10px;
     margin-right: 15px;

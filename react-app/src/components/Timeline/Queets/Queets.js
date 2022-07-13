@@ -33,14 +33,17 @@ const Queets = () => {
                     <div key={queet.id} className="queets">
                         <div className="feed-queet-username-and-edit-btn">
                             <Link className="queet-link" to={`/queets/${queet.id}`}>
-                                <div className="feed-queet-username">
-                                    @{usersArr[queet.userId - 1].username}
-                                    <ReactTimeAgo
-                                        className="timestamp"
-                                        date={queet.created_at}
-                                        locale='en-US'
-                                        timeStyle="twitter-first-minute"
-                                    />
+                                <div className="feed-queet-names">
+                                    <p className="feed-queet-display-name">{usersArr[queet.userId - 1].display_name}</p>
+                                    <p className="feed-queet-username">@{usersArr[queet.userId - 1].username}<p className="stupid-dot">·</p></p>
+                                    <p className="timestamp-container">
+                                        <ReactTimeAgo
+                                            className="timestamp"
+                                            date={queet.created_at}
+                                            locale='en-US'
+                                            timeStyle="twitter-first-minute"
+                                        />
+                                    </p>
                                 </div>
                             </Link>
                             {queet.userId === sessionUser.id &&
