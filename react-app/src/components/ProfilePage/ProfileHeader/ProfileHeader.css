@@ -1,4 +1,4 @@
-.profile-header-container {
+/* .profile-header-container {
     width: 600px;
     height: 200px;
     background-color: purple;
@@ -6,11 +6,18 @@
     background-image: url('https://pbs.twimg.com/profile_banners/326835342/1559881342/600x200');
     display: flex;
     align-items: flex-end;
+} */
+
+.profile-header-container {
+    width: 600px;
+    height: 200px;
 }
 
-/* .profile-header {
+.profile-header {
     object-fit: fill;
-} */
+    width: 600px;
+    height: 200px;
+}
 
 .profile-prof-pic {
     width: 140px;

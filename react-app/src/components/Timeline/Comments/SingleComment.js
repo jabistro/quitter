@@ -25,7 +25,7 @@ const SingleComment = () => {
     return (
         <div className='single-comment-wrap'>
             <div className='comment-and-back-button'>
-                <Link className='comment-back-link' to={"/"}>
+                <Link className='comment-back-link' to={`/queets/${comment.queet.id}`}>
                     <MdKeyboardBackspace className='single-comment-back-button' />
                 </Link>
                 <h2 className='comment'>Comment</h2>

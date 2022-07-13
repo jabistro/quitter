@@ -15,7 +15,7 @@ const ProfileHeader = () => {
         <div className='profile-header-wrap'>
             <div className='profile-header-pic-and-profile-pic'>
                 <div className='profile-header-container'>
-                    {/* <img className='profile-header' src='https://pbs.twimg.com/profile_banners/326835342/1559881342/600x200' /> */}
+                    <img className='profile-header' src={user.header === '' ? 'https://pbs.twimg.com/profile_banners/326835342/1559881342/600x200' : user.header} />
                 </div>
                 <div className='profile-prof-pic-and-edit-btn'>
                     <img className='profile-prof-pic' src={user.profile_pic === '' ? 'https://i.pinimg.com/736x/7c/ee/6f/7cee6fa507169843e3430a90dd5377d4.jpg' : user.profile_pic} />
