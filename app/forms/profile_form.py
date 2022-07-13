@@ -21,8 +21,8 @@ def username_exists(form, field):
         raise ValidationError('Username is already in use.')
 
 class ProfileForm(FlaskForm):
-    username = StringField("Username", validators=[DataRequired(), Length(min=1, max=50, message="Username must be between 1 and 15."), username_exists])
-    email = StringField('Email', validators=[DataRequired(), user_exists])
+    username = StringField("Username", validators=[DataRequired(), Length(min=1, max=50, message="Username must be between 1 and 15.")])
+    email = StringField('Email', validators=[DataRequired()])
     header = StringField("Header Photo")
     profile_pic = StringField("Profile Picture")
     display_name = StringField("Display Name", validators=[DataRequired(), Length(min=1, max=50, message="Display name must be between 1 and 50.")])

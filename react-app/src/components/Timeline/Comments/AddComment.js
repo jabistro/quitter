@@ -29,8 +29,8 @@ const AddComment = () => {
 
     return (
         <div className="add-comment-wrap">
-            <img className='comment-profile-pic' src='https://cdn.iconscout.com/icon/premium/png-256-thumb/medical-recovery-2070639-1750321.png' alt='' />
             <form onSubmit={handleSubmit} className="add-comment-form">
+                <img className='add-comment-profile-pic' src={user.profile_pic === '' ? 'https://i.pinimg.com/736x/7c/ee/6f/7cee6fa507169843e3430a90dd5377d4.jpg' : user.profile_pic} />
                 <div className="add-comment-input-and-btn">
                     <div>
                         <label>

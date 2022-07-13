@@ -1,7 +1,7 @@
 import "./EditComment.css";
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from "react-redux";
-import { useHistory, useParams } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { eraseComment, modifyComment } from "../../../store/comments";
 
 const EditComment = ({ setShowModal, comment_id }) => {

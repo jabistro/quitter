@@ -3,9 +3,16 @@
     grid-template-rows: 4fr 1fr;
 }
 
-.add-queet-first-half {
+.add-queet-form {
     display: grid;
-    grid-template-columns: 1fr 9fr;
+    grid-template-columns: 1fr 12fr;
+}
+
+.add-queet-profile-pic {
+    height: 44px;
+    width: 44px;
+    border-radius: 22px;
+    margin-left: 15px;
 }
 
 .add-queet-btn {
@@ -27,6 +34,7 @@
 }
 
 .add-queet-input {
+    display: flex;
     height: 45px;
     width: 100%;
     font-size: 20px;
@@ -36,6 +44,7 @@
     background-color: transparent;
     color: white;
     resize: none;
+    margin-left: 15px;
     font-family: 'Lucida Sans Unicode';
 }
 

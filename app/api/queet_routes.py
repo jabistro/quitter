@@ -58,8 +58,8 @@ def update_queet(queet_id):
     form['csrf_token'].data = request.cookies['csrf_token']
 
     if form.validate_on_submit():
-        queet.content = data['content'],
-        queet.created_at = datetime.now(),
+        queet.content = data['content']
+        queet.created_at = datetime.now()
         queet.updated_at = datetime.now()
 
         db.session.commit()

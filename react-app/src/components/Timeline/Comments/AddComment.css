@@ -1,6 +1,4 @@
 .add-comment-wrap {
-    display: grid;
-    grid-template-columns: 1fr 9fr;
     border-bottom: 1px solid rgb(84, 84, 84);
 }
 
@@ -20,11 +18,12 @@
 }
 
 .add-comment-input-and-btn {
-    display: grid;
-    grid-template-columns: 7fr 1fr;
+    display: flex;
     align-items: center;
-    padding-right: 20px;
+    justify-content: space-between;
+    width: 100%;
 }
+
 
 .add-comment-btn {
     font-family: 'Lucida Sans Unicode';
@@ -38,6 +37,7 @@
     font-size: 15px;
     cursor: pointer;
     margin-left: 10px;
+    margin-right: 15px;
 }
 
 .add-comment-btn:disabled {
@@ -45,11 +45,15 @@
     cursor: default;
 }
 
-.comment-profile-pic {
-    height: 45px;
-    width: 45px;
-    border-radius: 20px;
-    object-fit: cover;
+.add-comment-profile-pic {
+    height: 44px;
+    width: 44px;
+    border-radius: 22px;
+    margin-left: 15px;
     margin-top: 15px;
-    margin-left: 11px;
+}
+
+.add-comment-form {
+    display: grid;
+    grid-template-columns: 1fr 12fr;
 }

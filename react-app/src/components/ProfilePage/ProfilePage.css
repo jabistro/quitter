@@ -2,4 +2,17 @@
     display: grid;
     grid-template-columns: 1fr 600px 1fr;
     height: 820px;
+    overflow-x: hidden;
+    overflow-y: scroll;
 }
+
+/* .profile-left {
+    position: fixed;
+    top: 0%;
+    bottom: 0%;
+}
+
+.profile-right {
+    position: fixed;
+    right: 0%
+} */

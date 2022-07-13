@@ -9,6 +9,7 @@ import { FiHeart } from 'react-icons/fi';
 import { FiShare } from 'react-icons/fi';
 import EditCommentModal from './EditCommentModal';
 import { MdKeyboardBackspace } from 'react-icons/md';
+import moment from 'moment';
 
 const SingleComment = () => {
 
@@ -24,24 +25,29 @@ const SingleComment = () => {
     return (
         <div className='single-comment-wrap'>
             <div className='comment-and-back-button'>
-                <Link className='comment-back-link' to={`/queets/${comment.queet.id}`}>
+                <Link className='comment-back-link' to={"/"}>
                     <MdKeyboardBackspace className='single-comment-back-button' />
                 </Link>
-                <h2 className='thread'>Comment</h2>
+                <h2 className='comment'>Comment</h2>
             </div>
             <div className="single-comment-block">
-                <div className='single-comment-username-and-edit-btn'>
-                    <div className='single-comment-username'>
-                        {usersArr[comment.userId - 1].display_name}
-                        @{usersArr[comment.userId - 1].username}
+                <div className='single-comment-pic-names-and-edit'>
+                    <div className='single-comment-pic-and-names'>
+                        <img className='single-comment-profile-pic' src={sessionUser.profile_pic === '' ? 'https://i.pinimg.com/736x/7c/ee/6f/7cee6fa507169843e3430a90dd5377d4.jpg' : sessionUser.profile_pic} />
+                        <div className='single-comment-names'>
+                            <p className='single-comment-display-name'>{usersArr[comment.queet.userId - 1].display_name}</p>
+                            <p className='single-comment-username'>@{usersArr[comment.queet.userId - 1].username}</p>
+                        </div>
                     </div>
-                    {
-                        comment.userId === sessionUser.id &&
-                        <EditCommentModal queetId={comment.queet.id} commentId={commentId} className="single-comment-edit-btn" />
-                    }
+                    <div className="single-comment-edit-btn">
+                        {
+                            comment.queet.userId === sessionUser.id &&
+                            <EditCommentModal commentId={commentId} />
+                        }
+                    </div>
                 </div>
                 <div className='single-comment'>{comment.content}</div>
-                <div className='single-comment-timestamp'>{comment.created_at}</div>
+                <div className='single-comment-timestamp'>{moment(comment.created_at).format('LT')}  ·  {moment(comment.created_at).format('ll')}</div>
                 <div className='single-comment-icons'>
                     <div className='single-comment-icon-and-stat'>
                         <BiMessage />
@@ -61,7 +67,6 @@ const SingleComment = () => {
                     </div>
                 </div>
             </div>
-            {/* <AddComment /> */}
         </div>
     )
 }
