@@ -6,28 +6,33 @@ import { useSelector } from "react-redux";
 import ProfileQueets from "../ProfileQueets/ProfileQueets";
 import ProfileHeader from "../ProfileHeader/ProfileHeader";
 
-const ProfileFeed = () => {
+const ProfileFeed = ({ userId }) => {
 
-    const sessionUser = useSelector(state => state.session.user);
+    // const sessionUser = useSelector(state => state.session.user);
+    const users = useSelector(state => state.user);
+    const usersArr = Object.values(users);
+    const user = usersArr[0]
+    const userInfo = user[userId - 1]
+
     const queets = useSelector(state => state.queet);
     const queetsArr = Object.values(queets);
-    const userQueets = queetsArr.filter(queet => queet.userId === sessionUser.id)
+    const userQueets = queetsArr.filter(queet => queet.userId === userId)
 
     return (
         <div className="profile-feed-wrap">
             <div className="profile-title-wrap">
                 <Link className='profile-back-link' to={"/"}>
-                    <div>
+                    <div className="profile-feed-back-button-container">
                         <MdKeyboardBackspace className='profile-feed-back-button' />
                     </div>
                 </Link>
                 <div className="profile-title-and-tweet-ammount">
-                    <p className="profile-title">{sessionUser.display_name}</p>
+                    <p className="profile-title">{userInfo.display_name === '' ? '' : userInfo.display_name}</p>
                     <p className="profile-amount-of-tweets">{userQueets.length} Tweets</p>
                 </div>
             </div>
-            <ProfileHeader />
-            <ProfileQueets />
+            <ProfileHeader userId={userId} />
+            <ProfileQueets userId={userId} />
         </div>
     )
 }

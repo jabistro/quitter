@@ -9,17 +9,23 @@ import { BiMessage } from 'react-icons/bi';
 import { FaRetweet } from 'react-icons/fa';
 import { FiHeart, FiShare } from 'react-icons/fi';
 
-const ProfileQueets = () => {
+const ProfileQueets = ({ userId }) => {
 
-    const sessionUser = useSelector(state => state.session.user);
+    // const sessionUser = useSelector(state => state.session.user);
+    const users = useSelector(state => state.user);
+    const usersArr = Object.values(users);
+    const user = usersArr[0]
+    const userInfo = user[userId - 1]
+
+    console.log(users)
+
     const queets = useSelector(state => state.queet);
     const queetsArr = Object.values(queets);
-    const userQueets = queetsArr.filter(queet => queet.userId === sessionUser.id)
+    const userQueets = queetsArr.filter(queet => queet.userId === Number(userId))
     const latestUserQueets = [];
     userQueets.forEach(queet => {
         latestUserQueets.unshift(queet);
     });
-    console.log(queetsArr[0].created_at)
 
     return (
         <div className="profile-queets-wrap">
@@ -27,13 +33,13 @@ const ProfileQueets = () => {
                 // commentsArr.forEach(comment => { { comment.queetId === queet.id && replies.push(comment) } })
                 return (
                     <div key={queet.id} className="profile-queets">
-                        <img className='profile-queets-profile-pic' src={sessionUser.profile_pic === '' ? 'https://i.pinimg.com/736x/7c/ee/6f/7cee6fa507169843e3430a90dd5377d4.jpg' : sessionUser.profile_pic} />
+                        <img className='profile-queets-profile-pic' src={userInfo.profile_pic === '' ? 'https://i.pinimg.com/736x/7c/ee/6f/7cee6fa507169843e3430a90dd5377d4.jpg' : userInfo.profile_pic} />
                         <div className='profile-queets-everything-minus-pic'>
                             <div className="profile-feed-queet-username-and-edit-btn">
                                 <Link className="profile-queet-link" to={`/queets/${queet.id}`}>
                                     <div className="profile-feed-queet-names">
-                                        <p className="feed-queet-display-name">{sessionUser.display_name}</p>
-                                        <p className="feed-queet-username">@{sessionUser.username}<p className="stupid-dot">·</p></p>
+                                        <p className="feed-queet-display-name">{userInfo.display_name}</p>
+                                        <p className="feed-queet-username">@{userInfo.username}<p className="stupid-dot">·</p></p>
                                         <p className="timestamp-container">
                                             <ReactTimeAgo
                                                 className="timestamp"
@@ -44,7 +50,7 @@ const ProfileQueets = () => {
                                         </p>
                                     </div>
                                 </Link>
-                                {queet.userId === sessionUser.id &&
+                                {queet.userId === userInfo.id &&
                                     <EditQueetModal queetId={queet.id} className="profile-page-queets-edit-btn" />
                                 }
                             </div>

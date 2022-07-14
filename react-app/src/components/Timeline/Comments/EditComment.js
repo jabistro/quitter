@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { eraseComment, modifyComment } from "../../../store/comments";
+import { AiOutlineClose } from 'react-icons/ai';
 
 const EditComment = ({ setShowModal, comment_id }) => {
 
@@ -34,19 +35,22 @@ const EditComment = ({ setShowModal, comment_id }) => {
 
     return (
         <div className="edit-comment-wrap">
-            <h1 className="edit-comment-title">Edit Comment</h1>
+            <div className="edit-comment-btn-and-title">
+                <div onClick={() => setShowModal(false)} className='edit-comment-close-btn-container'>
+                    <AiOutlineClose className='edit-comment-close-btn' />
+                </div>
+                <h3 className="edit-comment-title">Edit Comment</h3>
+            </div>
             <form onSubmit={handleSubmit} className="edit-comment-form">
                 <div>
-                    <label>
-                        <textarea
-                            className="edit-comment-input"
-                            type="text"
-                            value={content}
-                            onChange={(e) => setContent(e.target.value)}
-                            required
-                            placeholder="What's on your mind? This is a safe space."
-                        />
-                    </label>
+                    <textarea
+                        className="edit-comment-input"
+                        type="text"
+                        value={content}
+                        onChange={(e) => setContent(e.target.value)}
+                        required
+                        placeholder="What's on your mind? This is a safe space."
+                    />
                 </div>
                 <div className="edit-and-delete-comment-btn">
                     <button type="submit" className="submit-edit-comment-btn">Submit</button>

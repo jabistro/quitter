@@ -26,17 +26,19 @@ const SingleComment = () => {
         <div className='single-comment-wrap'>
             <div className='comment-and-back-button'>
                 <Link className='comment-back-link' to={`/queets/${comment.queet.id}`}>
-                    <MdKeyboardBackspace className='single-comment-back-button' />
+                    <div className='single-comment-back-btn-container'>
+                        <MdKeyboardBackspace className='single-comment-back-button' />
+                    </div>
                 </Link>
                 <h2 className='comment'>Comment</h2>
             </div>
             <div className="single-comment-block">
                 <div className='single-comment-pic-names-and-edit'>
                     <div className='single-comment-pic-and-names'>
-                        <img className='single-comment-profile-pic' src={sessionUser.profile_pic === '' ? 'https://i.pinimg.com/736x/7c/ee/6f/7cee6fa507169843e3430a90dd5377d4.jpg' : sessionUser.profile_pic} />
+                        <img className='single-comment-profile-pic' src={usersArr[comment.userId - 1].profile_pic === '' ? 'https://i.pinimg.com/736x/7c/ee/6f/7cee6fa507169843e3430a90dd5377d4.jpg' : usersArr[comment.userId - 1].profile_pic} />
                         <div className='single-comment-names'>
-                            <p className='single-comment-display-name'>{usersArr[comment.queet.userId - 1].display_name}</p>
-                            <p className='single-comment-username'>@{usersArr[comment.queet.userId - 1].username}</p>
+                            <p className='single-comment-display-name'>{usersArr[comment.userId - 1].display_name}</p>
+                            <p className='single-comment-username'>@{usersArr[comment.userId - 1].username}</p>
                         </div>
                     </div>
                     <div className="single-comment-edit-btn">

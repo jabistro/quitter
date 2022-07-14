@@ -4,8 +4,10 @@
 }
 
 .logo {
-    height: 80px;
-    width: 80px;
+    margin-left: 10px;
+    height: 40px;
+    width: 40px;
+    margin-top: 5px;
 }
 
 .icons {
@@ -26,7 +28,7 @@
     border-radius: 25px;
     margin-top: 15px;
     margin-bottom: 15px;
-    font-size: 21px;
+    font-size: 18px;
     height: 45px;
     font-family: 'Lucida Sans Unicode';
 }

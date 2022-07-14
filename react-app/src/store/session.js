@@ -99,7 +99,6 @@ export const signUp = (username, email, password, display_name) => async (dispat
 }
 
 export const modifyUser = (editUser) => async (dispatch) => {
-  console.log(editUser)
 
   const response = await fetch(`/api/users/edit/${editUser.id}`, {
     method: "PUT",
@@ -109,8 +108,6 @@ export const modifyUser = (editUser) => async (dispatch) => {
     body: JSON.stringify(editUser),
   });
 
-  console.log(response)
-
   if (response.ok) {
     const editedUser = await response.json();
     dispatch(setUser(editedUser));
@@ -118,7 +115,6 @@ export const modifyUser = (editUser) => async (dispatch) => {
   } else if (response.status < 500) {
     const data = await response.json();
     if (data.errors) {
-      console.log(data.errors)
       return data.errors;
     }
   } else {

@@ -1,7 +1,7 @@
 .profile-all-wrap {
     display: grid;
     grid-template-columns: 1fr 600px 1fr;
-    height: 820px;
+    height: 100vh;
 }
 
 /* .profile-left {

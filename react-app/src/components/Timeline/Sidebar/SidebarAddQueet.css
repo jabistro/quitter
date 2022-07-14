@@ -1,12 +1,43 @@
-.sidebar-add-queet-wrap {
+.sidebar-add-queet-form {
     display: grid;
-    grid-template-rows: 4fr 1fr;
-    height: 200px;
+    grid-template-columns: 1fr 8fr;
+    height: 280px;
+    width: 600px;
+}
+
+.sidebar-queet-close-btn {
+    height: 25px;
+    width: 25px;
+}
+
+.sidebar-queet-close-btn-container {
+    margin-left: 8px;
+    margin-top: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+    border-radius: 25px;
+    color: white;
+}
+
+.sidebar-queet-close-btn-container:hover {
+    background-color: #27323d;
+    transition: all;
+    transition-duration: 200ms;
 }
 
 .sidebar-add-queet-first-half {
-    display: grid;
-    grid-template-columns: 1fr 9fr;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-add-queet-second-half {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .sidebar-add-queet-btn {
@@ -15,9 +46,9 @@
     border: none;
     color: white;
     font-weight: bold;
-    height: 30px;
-    width: 80px;
-    border-radius: 20px;
+    height: 37px;
+    width: 75px;
+    border-radius: 25px;
     font-size: 15px;
     cursor: pointer;
 }
@@ -28,25 +59,28 @@
 }
 
 .sidebar-add-queet-input {
-    height: 45px;
-    width: 100%;
+    display: flex;
+    align-items: center;
+    height: 120px;
+    width: 490px;
     font-size: 20px;
     outline: none;
-    border: none;
-    height: 70px;
     background-color: transparent;
     color: white;
     resize: none;
     font-family: 'Lucida Sans Unicode';
+    margin-top: 40px;
+    border: none;
 }
 
-.profile-pic {
-    height: 45px;
-    width: 45px;
-    border-radius: 20px;
+.sidebar-profile-pic {
+    height: 46px;
+    width: 46px;
+    border-radius: 23px;
     object-fit: cover;
-    margin-top: 5px;
-    margin-left: 11px;
+    margin-top: 15px;
+    margin-left: 15px;
+    margin-right: 15px;
 }
 
 .sidebar-add-img-btn {
@@ -66,8 +100,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-left: 20px;
-    padding-right: 20px;
+    height: 55px;
+    border-top: 1px solid rgb(154, 154, 154);
+    padding-top: 10px;
+    width: 95%;
 }
 
 .sidebar-queet-upload-img-form {
@@ -76,15 +112,9 @@
     justify-content: center;
     align-items: center;
     height: 50px;
-    width: 400px;
+    width: 350px;
     border-radius: 20px;
-    margin-left: 40px;
-    margin-top: 15px;
-}
-
-.sidebar-queet-upload-img-input {
-    background-color: transparent;
-    color: white;
+    border: none;
 }
 
 /* .queet-upload-img-wrap {
@@ -103,6 +133,13 @@
     border: none;
     background-color: transparent;
     color: white;
+    font-weight: bold;
+    font-family: 'Lucida Sans Unicode';
+    margin-left: 10px;
+}
+
+.sidebar-queet-upload-img-input::placeholder {
+    color: rgb(228, 228, 228);
 }
 
 .sidebar-queet-upload-img-btn {

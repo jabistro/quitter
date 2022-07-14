@@ -31,7 +31,7 @@ const Queets = () => {
                 // commentsArr.forEach(comment => { { comment.queetId === queet.id && replies.push(comment) } })
                 return (
                     <div key={queet.id} className="queets">
-                        <img className='all-queets-profile-pic' src={sessionUser.profile_pic === '' ? 'https://i.pinimg.com/736x/7c/ee/6f/7cee6fa507169843e3430a90dd5377d4.jpg' : sessionUser.profile_pic} />
+                        <img className='all-queets-profile-pic' src={usersArr[queet.userId - 1].profile_pic === '' ? 'https://i.pinimg.com/736x/7c/ee/6f/7cee6fa507169843e3430a90dd5377d4.jpg' : usersArr[queet.userId - 1].profile_pic} />
                         <div className="all-queets-everything-minus-pic">
                             <div className="feed-queet-names-edit-and-content">
                                 <div className="feed-queet-username-and-edit-btn">
@@ -53,9 +53,11 @@ const Queets = () => {
                                         <EditQueetModal queetId={queet.id} className="all-queets-edit-btn" />
                                     }
                                 </div>
-                                <Link className="queet-link" to={`/queets/${queet.id}`}>
-                                    <div className="feed-queet">{queet.content}</div>
-                                </Link>
+                                <div className="feed-queet-container">
+                                    <Link className="queet-link" to={`/queets/${queet.id}`}>
+                                        <textarea className="feed-queet">{queet.content}</textarea>
+                                    </Link>
+                                </div>
                             </div>
                             <div className="feed-queet-icons">
                                 <div className='feed-queet-icon-and-stat'>

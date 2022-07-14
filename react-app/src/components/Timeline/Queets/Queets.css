@@ -17,12 +17,7 @@
 .queets {
     display: grid;
     grid-template-columns: 1fr 12fr;
-    padding-top: 15px;
     border-bottom: 1px solid rgb(84, 84, 84);
-    overflow-wrap: normal;
-    text-align: justify;
-    overflow-x: auto;
-    height: 120px;
 }
 
 .all-queets-everything-minus-pic {
@@ -117,8 +112,11 @@
     font-size: 14px;
     padding-left: 10px;
     font-family: 'Lucida Sans Unicode';
-    height: 100%;
     margin-right: 15px;
+    width: 95%;
+    resize: none;
+    background-color: transparent;
+    border: none;
 }
 
 .feed-queet-stat {

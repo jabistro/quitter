@@ -7,44 +7,48 @@ import { HiOutlineLocationMarker } from 'react-icons/hi';
 import { FaBirthdayCake } from 'react-icons/fa';
 import { BsCalendar3 } from 'react-icons/bs';
 
-const ProfileHeader = () => {
+const ProfileHeader = ({ userId }) => {
 
-    const user = useSelector(state => state.session.user);
+    const sessionUser = useSelector(state => state.session.user);
+    const users = useSelector(state => state.user);
+    const usersArr = Object.values(users);
+    const user = usersArr[0]
+    const userInfo = user[userId - 1]
 
     return (
         <div className='profile-header-wrap'>
             <div className='profile-header-pic-and-profile-pic'>
                 <div className='profile-header-container'>
-                    <img className='profile-header' src={user.header === '' ? 'https://pbs.twimg.com/profile_banners/326835342/1559881342/600x200' : user.header} />
+                    <img className='profile-header' src={userInfo.header === '' ? 'https://pbs.twimg.com/profile_banners/326835342/1559881342/600x200' : userInfo.header} />
                 </div>
                 <div className='profile-prof-pic-and-edit-btn'>
-                    <img className='profile-prof-pic' src={user.profile_pic === '' ? 'https://i.pinimg.com/736x/7c/ee/6f/7cee6fa507169843e3430a90dd5377d4.jpg' : user.profile_pic} />
+                    <img className='profile-prof-pic' src={userInfo.profile_pic === '' ? 'https://i.pinimg.com/736x/7c/ee/6f/7cee6fa507169843e3430a90dd5377d4.jpg' : userInfo.profile_pic} />
                     <div className='profile-edit-profile-btn-div'>
-                        <EditProfileModal />
+                        {sessionUser.id === Number(userId) && <EditProfileModal />}
                     </div>
                 </div>
             </div>
             <div className='profile-info'>
 
                 <div className='profile-names'>
-                    <p className='profile-display-name'>{user.display_name}</p>
-                    <p className='profile-username'>@{user.username}</p>
+                    <p className='profile-display-name'>{userInfo.display_name}</p>
+                    <p className='profile-username'>@{userInfo.username}</p>
                 </div>
                 <div className='profile-stats'>
                     <p className='profile-bio'>
-                        {user.bio}
+                        {userInfo.bio}
                     </p>
                     <div className='profile-stat-and-icon'>
                         <HiOutlineLocationMarker className='profile-icons' />
-                        <p className='profile-location'>{user.location}</p>
+                        <p className='profile-location'>{userInfo.location}</p>
                     </div>
                     <div className='profile-stat-and-icon'>
                         <FaBirthdayCake className='profile-icons' />
-                        <p className='profile-birthday'>Born {user.birthday}</p>
+                        <p className='profile-birthday'>Born {userInfo.birthday}</p>
                     </div>
                     <div className='profile-stat-and-icon'>
                         <BsCalendar3 className='profile-icons' />
-                        <p className='profile-joined'>Joined {moment(user.joined).format('MMMM YYYY')}</p>
+                        <p className='profile-joined'>Joined {moment(userInfo.joined).format('MMMM YYYY')}</p>
                     </div>
                 </div>
                 <div className='profile-relationships'>

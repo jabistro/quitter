@@ -31,7 +31,7 @@ export const addUser = (user) => async (dispatch) => {
         },
         body: JSON.stringify(user),
     });
-    console.log(response)
+
     if (response.ok) {
         const user = await response.json();
         dispatch(createUser(user));

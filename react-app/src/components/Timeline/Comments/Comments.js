@@ -24,14 +24,14 @@ const Comments = () => {
             {queetComments.map(comment => {
                 return (
                     <div key={comment.id} className="comments">
-                        <img className='all-comments-profile-pic' src={sessionUser.profile_pic === '' ? 'https://i.pinimg.com/736x/7c/ee/6f/7cee6fa507169843e3430a90dd5377d4.jpg' : sessionUser.profile_pic} />
+                        <img className='all-comments-profile-pic' src={usersArr[comment.userId - 1].profile_pic === '' ? 'https://i.pinimg.com/736x/7c/ee/6f/7cee6fa507169843e3430a90dd5377d4.jpg' : usersArr[comment.userId - 1].profile_pic} />
                         <div className="all-comments-everything-minus-pic">
                             <div className="feed-comment-names-edit-and-content">
                                 <div className="feed-comment-username-and-edit-btn">
                                     <Link className="comment-link" to={`/comments/${comment.id}`}>
                                         <div className="feed-comment-names">
-                                            <p className="feed-comment-display-name">{usersArr[comment.queet.userId - 1].display_name}</p>
-                                            <p className="feed-comment-username">@{usersArr[comment.queet.userId - 1].username}<div className="stupid-dot">·</div></p>
+                                            <p className="feed-comment-display-name">{usersArr[comment.userId - 1].display_name}</p>
+                                            <p className="feed-comment-username">@{usersArr[comment.userId - 1].username}<div className="stupid-dot">·</div></p>
                                             <p className="timestamp-container">
                                                 <ReactTimeAgo
                                                     className="timestamp"

@@ -29,14 +29,16 @@ const SingleQueet = () => {
         <div className='queet-comment-wrap'>
             <div className='thread-and-back-button'>
                 <Link className='thread-back-link' to={"/"}>
-                    <MdKeyboardBackspace className='single-queet-back-button' />
+                    <div className='single-queet-back-btn-container'>
+                        <MdKeyboardBackspace className='single-queet-back-button' />
+                    </div>
                 </Link>
                 <h2 className='thread'>Queet</h2>
             </div>
             <div className="single-queet-block">
                 <div className='single-queet-pic-names-and-edit'>
                     <div className='single-queet-pic-and-names'>
-                        <img className='single-queet-profile-pic' src={sessionUser.profile_pic === '' ? 'https://i.pinimg.com/736x/7c/ee/6f/7cee6fa507169843e3430a90dd5377d4.jpg' : sessionUser.profile_pic} />
+                        <img className='single-queet-profile-pic' src={usersArr[queet.userId - 1].profile_pic === '' ? 'https://i.pinimg.com/736x/7c/ee/6f/7cee6fa507169843e3430a90dd5377d4.jpg' : usersArr[queet.userId - 1].profile_pic} />
                         <div className='single-queet-names'>
                             <p className='single-queet-display-name'>{usersArr[queet.userId - 1].display_name}</p>
                             <p className='single-queet-username'>@{usersArr[queet.userId - 1].username}</p>

@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { eraseQueet, modifyQueet } from "../../../store/queets";
 import { useHistory } from "react-router-dom";
+import { AiOutlineClose } from 'react-icons/ai';
 
 const EditQueet = ({ setShowModal, queet_id }) => {
 
@@ -33,19 +34,22 @@ const EditQueet = ({ setShowModal, queet_id }) => {
 
     return (
         <div className="edit-queet-wrap">
-            <h1 className="edit-queet-title">Edit Queet</h1>
+            <div className="edit-queet-btn-and-title">
+                <div onClick={() => setShowModal(false)} className='edit-queet-close-btn-container'>
+                    <AiOutlineClose className='edit-queet-close-btn' />
+                </div>
+                <h3 className="edit-queet-title">Edit Queet</h3>
+            </div>
             <form onSubmit={handleSubmit} className="edit-queet-form">
                 <div>
-                    <label>
-                        <textarea
-                            className="edit-queet-input"
-                            type="text"
-                            value={content}
-                            onChange={(e) => setContent(e.target.value)}
-                            required
-                            placeholder="What's on your mind? This is a safe space."
-                        />
-                    </label>
+                    <textarea
+                        className="edit-queet-input"
+                        type="text"
+                        value={content}
+                        onChange={(e) => setContent(e.target.value)}
+                        required
+                        placeholder="What's on your mind? This is a safe space."
+                    />
                 </div>
                 <div className="edit-and-delete-queet-btn">
                     <button type="submit" className="submit-edit-queet-btn">Submit</button>
