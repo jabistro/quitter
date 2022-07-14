@@ -45,6 +45,14 @@
     cursor: default;
 }
 
+.add-comment-profile-pic-link {
+    cursor: pointer;
+}
+
+.add-comment-profile-pic:hover {
+    opacity: 0.7;
+}
+
 .add-comment-profile-pic {
     height: 44px;
     width: 44px;

@@ -8,6 +8,14 @@
     grid-template-columns: 1fr 12fr;
 }
 
+.add-queet-profile-pic-link {
+    cursor: pointer;
+}
+
+.add-queet-profile-pic:hover {
+    opacity: 0.7;
+}
+
 .add-queet-profile-pic {
     height: 44px;
     width: 44px;

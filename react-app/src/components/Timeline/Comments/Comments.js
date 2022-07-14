@@ -24,7 +24,9 @@ const Comments = () => {
             {queetComments.map(comment => {
                 return (
                     <div key={comment.id} className="comments">
-                        <img className='all-comments-profile-pic' src={usersArr[comment.userId - 1].profile_pic === '' ? 'https://i.pinimg.com/736x/7c/ee/6f/7cee6fa507169843e3430a90dd5377d4.jpg' : usersArr[comment.userId - 1].profile_pic} />
+                        <Link className="all-comments-profile-pic-link" to={`/users/${comment.userId}`}>
+                            <img className='all-comments-profile-pic' src={usersArr[comment.userId - 1].profile_pic === '' ? 'https://i.pinimg.com/736x/7c/ee/6f/7cee6fa507169843e3430a90dd5377d4.jpg' : usersArr[comment.userId - 1].profile_pic} />
+                        </Link>
                         <div className="all-comments-everything-minus-pic">
                             <div className="feed-comment-names-edit-and-content">
                                 <div className="feed-comment-username-and-edit-btn">

@@ -31,7 +31,9 @@ const Queets = () => {
                 // commentsArr.forEach(comment => { { comment.queetId === queet.id && replies.push(comment) } })
                 return (
                     <div key={queet.id} className="queets">
-                        <img className='all-queets-profile-pic' src={usersArr[queet.userId - 1].profile_pic === '' ? 'https://i.pinimg.com/736x/7c/ee/6f/7cee6fa507169843e3430a90dd5377d4.jpg' : usersArr[queet.userId - 1].profile_pic} />
+                        <Link className="all-queets-profile-pic-link" to={`/users/${queet.userId}`}>
+                            <img className='all-queets-profile-pic' src={usersArr[queet.userId - 1].profile_pic === '' ? 'https://i.pinimg.com/736x/7c/ee/6f/7cee6fa507169843e3430a90dd5377d4.jpg' : usersArr[queet.userId - 1].profile_pic} />
+                        </Link>
                         <div className="all-queets-everything-minus-pic">
                             <div className="feed-queet-names-edit-and-content">
                                 <div className="feed-queet-username-and-edit-btn">
