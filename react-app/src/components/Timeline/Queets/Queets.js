@@ -8,6 +8,7 @@ import { FaRetweet } from 'react-icons/fa';
 import { FiHeart } from 'react-icons/fi';
 import { FiShare } from 'react-icons/fi';
 import ReactTimeAgo from 'react-time-ago';
+import NumberOfComments from "../Comments/NumberOfComments/NumberOfComments";
 
 
 const Queets = () => {
@@ -23,12 +24,23 @@ const Queets = () => {
     // })
     const comments = useSelector(state => state.comment);
     const commentsArr = Object.values(comments);
-    const replies = [];
-    console.log(replies)
+    // const replies = latestQueets.map(queet => {
+    //     commentsArr.filter(comment => (comment.queet.id === queet.id)
+    //     )
+    // })
+    // console.log(replies)
+    // const replies = latestQueets.map(queet => {
+    //     comments
+    // })
+
+
     return (
         <div className="queets-wrap">
-            {latestQueets.map(queet => {
-                commentsArr.forEach(comment => { if (comment.queet.id === queet.id) replies.push(comment) })
+            {latestQueets?.map(queet => {
+                // console.log(queet)
+                // commentsArr.forEach(comment => console.log(comment))
+                // replies = commentsArr?.filter(comment => (comment.queet.id === queet.id))
+                // console.log(replies)
                 return (
                     <div key={queet.id} className="queets">
                         <Link className="all-queets-profile-pic-link" to={`/users/${queet.userId}`}>
@@ -66,7 +78,9 @@ const Queets = () => {
                             <div className="feed-queet-icons">
                                 <div className='feed-queet-icon-and-stat'>
                                     <BiMessage />
-                                    <p className='feed-queet-stat'>{replies?.length}</p>
+                                    <p className='feed-queet-stat'>
+                                        {/* {replies?.length} */}<NumberOfComments queetId={queet.id} />
+                                    </p>
                                 </div>
                                 <div className='feed-queet-icon-and-stat'>
                                     <FaRetweet className="requeet-icon" />
