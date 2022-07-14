@@ -130,6 +130,11 @@
     background-color: transparent;
 }
 
+.feed-queet-content-lines {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
 .feed-queet-stat {
     margin-left: 5px;
 }

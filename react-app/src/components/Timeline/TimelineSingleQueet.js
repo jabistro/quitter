@@ -7,9 +7,15 @@ import SingleQueet from './Queets/SingleQueet';
 const TimelineSingleQueet = () => {
     return (
         <div className='timeline-single-queet-wrap'>
-            <SideBar />
-            <SingleQueet />
-            <Widgets />
+            <div className='timeline-single-queet-left'>
+                <SideBar />
+            </div>
+            <div className='timeline-single-queet-center'>
+                <SingleQueet className='timeline-single-queet-feed' />
+            </div>
+            <div className='timeline-single-queet-right'>
+                <Widgets />
+            </div>
         </div>
     )
 }

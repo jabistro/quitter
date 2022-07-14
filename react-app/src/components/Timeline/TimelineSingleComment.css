@@ -1,5 +1,31 @@
 .timeline-single-comment-wrap {
-    display: grid;
-    grid-template-columns: 1fr 600px 1fr;
+    display: flex;
+    justify-content: center;
     height: 100%;
+    overflow-y: scroll;
+}
+
+.timeline-single-comment-wrap::-webkit-scrollbar {
+    display: none;
+}
+
+.timeline-single-comment-left {
+    width: 650px;
+    position: fixed;
+    left: 0;
+}
+
+.timeline-single-comment-center::-webkit-scrollbar {
+    display: none;
+}
+
+.timeline-single-comment-center {
+    width: 600px;
+    overflow-y: scroll;
+}
+
+.timeline-single-comment-right {
+    width: 650px;
+    position: fixed;
+    right: 0;
 }

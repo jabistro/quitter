@@ -1,5 +1,31 @@
 .timeline-all-wrap {
-    display: grid;
-    grid-template-columns: 1fr 600px 1fr;
+    display: flex;
+    justify-content: center;
     height: 100%;
+    overflow-y: scroll;
+}
+
+.timeline-all-wrap::-webkit-scrollbar {
+    display: none;
+}
+
+.timeline-all-left {
+    width: 650px;
+    position: fixed;
+    left: 0;
+}
+
+.timeline-all-center::-webkit-scrollbar {
+    display: none;
+}
+
+.timeline-all-center {
+    width: 600px;
+    overflow-y: scroll;
+}
+
+.timeline-all-right {
+    width: 650px;
+    position: fixed;
+    right: 0;
 }

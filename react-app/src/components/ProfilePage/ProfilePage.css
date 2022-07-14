@@ -1,16 +1,31 @@
 .profile-all-wrap {
-    display: grid;
-    grid-template-columns: 1fr 600px 1fr;
-    height: 100vh;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    overflow-y: scroll;
 }
 
-/* .profile-left {
-    position: fixed;
-    top: 0%;
-    bottom: 0%;
+.profile-all-wrap::-webkit-scrollbar {
+    display: none;
 }
 
-.profile-right {
+.profile-all-left {
+    width: 650px;
     position: fixed;
-    right: 0%
-} */
+    left: 0;
+}
+
+.profile-all-center::-webkit-scrollbar {
+    display: none;
+}
+
+.profile-all-center {
+    width: 600px;
+    overflow-y: scroll;
+}
+
+.profile-all-right {
+    width: 650px;
+    position: fixed;
+    right: 0;
+}

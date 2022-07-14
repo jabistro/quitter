@@ -1,5 +1,31 @@
 .timeline-single-queet-wrap {
-    display: grid;
-    grid-template-columns: 1fr 600px 1fr;
+    display: flex;
+    justify-content: center;
     height: 100%;
+    overflow-y: scroll;
+}
+
+.timeline-single-queet-wrap::-webkit-scrollbar {
+    display: none;
+}
+
+.timeline-single-queet-left {
+    width: 650px;
+    position: fixed;
+    left: 0;
+}
+
+.timeline-single-queet-center::-webkit-scrollbar {
+    display: none;
+}
+
+.timeline-single-queet-center {
+    width: 600px;
+    overflow-y: scroll;
+}
+
+.timeline-single-queet-right {
+    width: 650px;
+    position: fixed;
+    right: 0;
 }

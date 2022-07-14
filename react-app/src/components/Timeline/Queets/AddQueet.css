@@ -43,7 +43,6 @@
 
 .add-queet-input {
     display: flex;
-    height: 45px;
     width: 95%;
     font-size: 20px;
     outline: none;
@@ -55,6 +54,11 @@
     margin-left: 15px;
     font-family: 'Lucida Sans Unicode';
 }
+
+.add-queet-input::-webkit-scrollbar {
+    display: none;
+}
+
 
 .profile-pic {
     height: 45px;

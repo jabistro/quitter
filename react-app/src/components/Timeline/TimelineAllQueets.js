@@ -8,9 +8,15 @@ import Widgets from './Widgets/Widgets';
 const TimelineAllQueets = () => {
     return (
         <div className='timeline-all-wrap'>
-            <SideBar />
-            <Feed className='timeline-all-feed' />
-            <Widgets />
+            <div className='timeline-all-left'>
+                <SideBar />
+            </div>
+            <div className='timeline-all-center'>
+                <Feed className='timeline-all-feed' />
+            </div>
+            <div className='timeline-all-right'>
+                <Widgets />
+            </div>
         </div>
     )
 }

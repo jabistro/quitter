@@ -11,13 +11,13 @@ const ProfilePage = () => {
 
     return (
         <div className="profile-all-wrap">
-            <div className="profile-left">
+            <div className='profile-all-left'>
                 <Sidebar />
             </div>
-            <div className="profile-center">
-                <ProfileFeed userId={userId} />
+            <div className='profile-all-center'>
+                <ProfileFeed userId={userId} className='profile-all-feed' />
             </div>
-            <div className="profile-right">
+            <div className='profile-all-right'>
                 <Widgets />
             </div>
         </div>

@@ -29,7 +29,9 @@ const EditQueet = ({ setShowModal, queet_id }) => {
         e.preventDefault();
         dispatch(eraseQueet(editedQueet))
         setShowModal(false)
-        history.push("/")
+        if (history.location.pathname === (`/users/${user.id}`)) {
+            history.push(`/users/${user.id}`)
+        } else { history.push("/") }
     }
 
     return (

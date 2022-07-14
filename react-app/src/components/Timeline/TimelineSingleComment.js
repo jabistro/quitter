@@ -7,9 +7,15 @@ import SingleComment from './Comments/SingleComment';
 const TimelineSingleComment = () => {
     return (
         <div className='timeline-single-comment-wrap'>
-            <SideBar />
-            <SingleComment />
-            <Widgets />
+            <div className='timeline-single-comment-left'>
+                <SideBar />
+            </div>
+            <div className='timeline-single-comment-center'>
+                <SingleComment className='timeline-single-comment-feed' />
+            </div>
+            <div className='timeline-single-comment-right'>
+                <Widgets />
+            </div>
         </div>
     )
 }

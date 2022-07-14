@@ -17,22 +17,22 @@ const Queets = () => {
     const sessionUser = useSelector(state => state.session.user);
     const queets = useSelector(state => state.queet);
     const queetsArr = Object.values(queets);
-    const latestQueets = [];
-    queetsArr.forEach(queet => {
-        latestQueets.unshift(queet);
-    })
+    const latestQueets = queetsArr.reverse();
+    // queetsArr.forEach(queet => {
+    //     latestQueets.unshift(queet);
+    // })
     const comments = useSelector(state => state.comment);
     const commentsArr = Object.values(comments);
-    // const replies = [];
-
+    const replies = [];
+    console.log(replies)
     return (
         <div className="queets-wrap">
             {latestQueets.map(queet => {
-                // commentsArr.forEach(comment => { { comment.queetId === queet.id && replies.push(comment) } })
+                commentsArr.forEach(comment => { if (comment.queet.id === queet.id) replies.push(comment) })
                 return (
                     <div key={queet.id} className="queets">
                         <Link className="all-queets-profile-pic-link" to={`/users/${queet.userId}`}>
-                            <img className='all-queets-profile-pic' src={usersArr[queet.userId - 1].profile_pic === '' ? 'https://i.pinimg.com/736x/7c/ee/6f/7cee6fa507169843e3430a90dd5377d4.jpg' : usersArr[queet.userId - 1].profile_pic} />
+                            <img className='all-queets-profile-pic' src={usersArr[queet.userId - 1]?.profile_pic === '' ? 'https://i.pinimg.com/736x/7c/ee/6f/7cee6fa507169843e3430a90dd5377d4.jpg' : usersArr[queet.userId - 1].profile_pic} />
                         </Link>
                         <div className="all-queets-everything-minus-pic">
                             <div className="feed-queet-names-edit-and-content">
@@ -57,14 +57,16 @@ const Queets = () => {
                                 </div>
                                 <div className="feed-queet-container">
                                     <Link className="queet-link" to={`/queets/${queet.id}`}>
-                                        <p className="feed-queet">{queet.content}</p>
+                                        <div className="feed-queet">
+                                            {queet.content.split('\n').map(line => (<p className="feed-queet-content-lines">{line}</p>))}
+                                        </div>
                                     </Link>
                                 </div>
                             </div>
                             <div className="feed-queet-icons">
                                 <div className='feed-queet-icon-and-stat'>
                                     <BiMessage />
-                                    <p className='feed-queet-stat'></p>
+                                    <p className='feed-queet-stat'>{replies?.length}</p>
                                 </div>
                                 <div className='feed-queet-icon-and-stat'>
                                     <FaRetweet className="requeet-icon" />
