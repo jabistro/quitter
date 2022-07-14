@@ -125,8 +125,9 @@
     margin-right: 15px;
     width: 95%;
     resize: none;
-    background-color: transparent;
     border: none;
+    outline: none;
+    background-color: transparent;
 }
 
 .feed-queet-stat {

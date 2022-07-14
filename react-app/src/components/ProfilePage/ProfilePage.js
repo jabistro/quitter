@@ -7,7 +7,7 @@ import { useParams } from "react-router-dom";
 
 const ProfilePage = () => {
 
-    let { userId } = useParams();
+    const { userId } = useParams();
 
     return (
         <div className="profile-all-wrap">

@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { modifyUser } from '../../../../store/session';
 import { AiOutlineClose } from 'react-icons/ai';
-
+// import { useParams } from "react-router-dom";
 
 const EditProfile = ({ setShowModal }) => {
 

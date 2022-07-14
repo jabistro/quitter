@@ -24,6 +24,23 @@
     width: 100%;
 }
 
+.add-comment-replying-to-container {
+    display: flex;
+    align-items: center;
+}
+
+.add-comment-replying-to-txt {
+    margin-left: 10px;
+    color: gray;
+    font-family: 'Lucida Sans Unicode';
+}
+
+.add-comment-replying-to-user {
+    text-decoration: none;
+    color: #b83dba;
+    font-family: 'Lucida Sans Unicode';
+    margin-left: 5px;
+}
 
 .add-comment-btn {
     font-family: 'Lucida Sans Unicode';
