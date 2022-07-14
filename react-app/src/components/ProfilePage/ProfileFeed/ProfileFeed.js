@@ -11,9 +11,7 @@ const ProfileFeed = ({ userId }) => {
     // const sessionUser = useSelector(state => state.session.user);
     const users = useSelector(state => state.user);
     const usersArr = Object.values(users);
-    const user = usersArr[0]
-    const userInfo = user[userId - 1]
-
+    const userInfo = usersArr[userId - 1]
     const queets = useSelector(state => state.queet);
     const queetsArr = Object.values(queets);
     const userQueets = queetsArr.filter(queet => queet.userId === userId)

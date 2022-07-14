@@ -14,7 +14,7 @@ import moment from 'moment';
 const SingleComment = () => {
 
     const sessionUser = useSelector(state => state.session.user);
-    const users = useSelector(state => state.user.users);
+    const users = useSelector(state => state.user);
     const usersArr = Object.values(users);
     const { commentId } = useParams();
     const comment = useSelector(state => state?.comment[commentId]);

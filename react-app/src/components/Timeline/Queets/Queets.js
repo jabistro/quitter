@@ -12,7 +12,7 @@ import ReactTimeAgo from 'react-time-ago';
 
 const Queets = () => {
 
-    const users = useSelector(state => state.user.users);
+    const users = useSelector(state => state.user);
     const usersArr = Object.values(users);
     const sessionUser = useSelector(state => state.session.user);
     const queets = useSelector(state => state.queet);
@@ -57,7 +57,7 @@ const Queets = () => {
                                 </div>
                                 <div className="feed-queet-container">
                                     <Link className="queet-link" to={`/queets/${queet.id}`}>
-                                        <textarea className="feed-queet">{queet.content}</textarea>
+                                        <p className="feed-queet">{queet.content}</p>
                                     </Link>
                                 </div>
                             </div>

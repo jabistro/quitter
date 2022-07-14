@@ -14,6 +14,7 @@ import SidebarQueetModal from './SidebarQueetModal';
 const Sidebar = () => {
 
   const sessionUser = useSelector(state => state.session.user)
+
   return (
     <div className='sidebar-wrap'>
       <div className='sidebar-first-half'></div>

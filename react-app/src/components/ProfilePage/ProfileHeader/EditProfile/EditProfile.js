@@ -1,13 +1,15 @@
 import './EditProfile.css';
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { modifyUser } from '../../../../store/session';
+import { modifyUser } from '../../../../store/users';
 import { AiOutlineClose } from 'react-icons/ai';
 // import { useParams } from "react-router-dom";
 
 const EditProfile = ({ setShowModal }) => {
 
-    const user = useSelector(state => state.session.user);
+    const userId = useSelector(state => state.session.user.id);
+    const users = useSelector(state => state.user)
+    const user = users[userId]
     const [username, setUsername] = useState(user.username);
     const [email, setEmail] = useState(user.email);
     const [header, setHeader] = useState(user.header);

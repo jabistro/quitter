@@ -12,7 +12,7 @@ const Comments = () => {
 
     const { queetId } = useParams();
     const sessionUser = useSelector(state => state.session.user);
-    const users = useSelector(state => state.user.users);
+    const users = useSelector(state => state.user);
     const usersArr = Object.values(users);
     const comments = useSelector(state => state.comment);
     const commentsArr = Object.values(comments)

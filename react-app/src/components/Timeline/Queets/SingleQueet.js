@@ -15,7 +15,7 @@ import moment from 'moment';
 const SingleQueet = () => {
 
     const sessionUser = useSelector(state => state.session.user);
-    const users = useSelector(state => state.user.users);
+    const users = useSelector(state => state.user);
     const usersArr = Object.values(users);
     const { queetId } = useParams();
     const queet = useSelector(state => state?.queet[queetId]);
