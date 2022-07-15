@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
+import { AiOutlineClose } from 'react-icons/ai';
 import { useSelector, useDispatch } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import { login } from '../../store/session';
+import "./LoginForm.css";
 
-const LoginForm = () => {
+const LoginForm = ({ setShowModal }) => {
   const [errors, setErrors] = useState([]);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -31,34 +33,46 @@ const LoginForm = () => {
   }
 
   return (
-    <form onSubmit={onLogin}>
-      <div>
-        {errors.map((error, ind) => (
-          <div key={ind}>{error}</div>
-        ))}
+    <div className='login-wrap'>
+      <div className='login-header'>
+        <div className='login-btn-and-title'>
+          <div onClick={() => setShowModal(false)} className='login-close-btn-container'>
+            <AiOutlineClose className='login-close-btn' />
+          </div>
+          <p className='login-title-txt'>Sign in to Quitter</p>
+        </div>
+        <button className='login-submit-btn' type='submit'>Login</button>
       </div>
-      <div>
-        <label htmlFor='email'>Email</label>
-        <input
-          name='email'
-          type='text'
-          placeholder='Email'
-          value={email}
-          onChange={updateEmail}
-        />
-      </div>
-      <div>
-        <label htmlFor='password'>Password</label>
-        <input
-          name='password'
-          type='password'
-          placeholder='Password'
-          value={password}
-          onChange={updatePassword}
-        />
-        <button type='submit'>Login</button>
-      </div>
-    </form>
+      <form className='login-form' onSubmit={onLogin}>
+        <div>
+          {errors.map((error, ind) => (
+            <div key={ind}>{error}</div>
+          ))}
+        </div>
+        <div className='login-field-container'>
+          <label className='login-label' htmlFor='email'>Email</label>
+          <input
+            className='login-input'
+            name='email'
+            type='text'
+            placeholder='Email'
+            value={email}
+            onChange={updateEmail}
+          />
+        </div>
+        <div className='login-field-container'>
+          <label className='login-label' htmlFor='password'>Password</label>
+          <input
+            className='login-input'
+            name='password'
+            type='password'
+            placeholder='Password'
+            value={password}
+            onChange={updatePassword}
+          />
+        </div>
+      </form>
+    </div>
   );
 };
 

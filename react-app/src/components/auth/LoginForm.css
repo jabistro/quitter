@@ -1,13 +1,13 @@
-.signup-wrap {
+.login-wrap {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-self: center;
     width: 600px;
-    height: 550px;
+    height: 260px;
 }
 
-.signup-header {
+.login-header {
     margin: 10px;
     display: flex;
     justify-content: space-between;
@@ -16,19 +16,19 @@
     padding-bottom: 8px;
 }
 
-.signup-btn-and-title {
+.login-btn-and-title {
     display: flex;
     align-items: center;
     color: white;
     font-family: 'Lucida Sans Unicode';
 }
 
-.signup-close-btn {
+.login-close-btn {
     height: 20px;
     width: 20px;
 }
 
-.signup-close-btn-container {
+.login-close-btn-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -38,13 +38,13 @@
     border-radius: 20px;
 }
 
-.signup-close-btn-container:hover {
+.login-close-btn-container:hover {
     background-color: #27323d;
     transition: all;
     transition-duration: 200ms;
 }
 
-.signup-title-txt-one {
+.login-title-txt-one {
     font-size: 20px;
     font-weight: bold;
     margin-bottom: 0px;
@@ -52,15 +52,7 @@
     margin-left: 30px;
 }
 
-.signup-title-txt-two {
-    font-size: 15px;
-    color: rgb(125, 125, 125);
-    margin-bottom: 0px;
-    margin-top: 0px;
-    margin-left: 10px;
-}
-
-.signup-submit-btn {
+.login-submit-btn {
     font-family: 'Lucida Sans Unicode';
     background-color: white;
     width: 70px;
@@ -73,18 +65,18 @@
     cursor: pointer;
 }
 
-.signup-submit-btn:hover {
+.login-submit-btn:hover {
     background-color: rgb(234, 233, 233);
 }
 
-.signup-form {
+.login-form {
     color: white;
     font-family: 'Lucida Sans Unicode';
     overflow-y: scroll;
     overflow-x: hidden;
 }
 
-.signup-input {
+.login-input {
     margin-top: 0px;
     color: white;
     font-family: 'Lucida Sans Unicode';
@@ -93,13 +85,13 @@
     margin-left: 8px;
     margin-bottom: 8px;
     font-size: 16px;
-    width: 100%;
+    width: 95%;
     resize: none;
     margin-right: 38px;
     outline: none;
 }
 
-.signup-label {
+.login-label {
     margin: 8px;
     margin-bottom: 0px;
     margin-top: 8px;
@@ -107,7 +99,7 @@
     color: rgb(154, 154, 154);
 }
 
-.signup-field-container {
+.login-field-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -117,6 +109,6 @@
     margin: 15px;
 }
 
-.signup-field-container:focus-within {
+.login-field-container:focus-within {
     border: 2px #b83dba solid;
 }
