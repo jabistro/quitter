@@ -61,7 +61,7 @@ const SignUpForm = ({ setShowModal }) => {
           <p className='signup-title-txt-one'>Become a quitter</p>
           <p className='signup-title-txt-two'>(all fields required)</p>
         </div>
-        <button className='signup-submit-btn' type='submit'>Sign Up</button>
+        <button onClick={onSignUp} className='signup-submit-btn' type='submit'>Sign Up</button>
       </div>
       <form className='signup-form' onSubmit={onSignUp}>
         <div>

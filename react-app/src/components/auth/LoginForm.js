@@ -41,7 +41,7 @@ const LoginForm = ({ setShowModal }) => {
           </div>
           <p className='login-title-txt'>Sign in to Quitter</p>
         </div>
-        <button className='login-submit-btn' type='submit'>Login</button>
+        <button onClick={onLogin} className='login-submit-btn' type='submit'>Login</button>
       </div>
       <form className='login-form' onSubmit={onLogin}>
         <div>

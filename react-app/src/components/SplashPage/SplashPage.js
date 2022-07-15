@@ -3,9 +3,17 @@ import SplashSignupModal from "./SplashSignupModal";
 import './SplashPage.css';
 import DemoUserButton from '../auth/DemoUserButton/DemoUserButton';
 import SplashLoginModal from './SplashLoginModal';
+import { Redirect } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 
 const SplashPage = () => {
+  const user = useSelector(state => state.session.user)
+
+  if (user) {
+    return (<Redirect to="/" />)
+  }
+
   return (
     <div className='splash-wrap'>
       <div className='splash-all-minus-footer'>
