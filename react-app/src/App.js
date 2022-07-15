@@ -18,6 +18,7 @@ import TimelineSingleQueet from './components/Timeline/TimelineSingleQueet';
 import TimelineSingleComment from './components/Timeline/TimelineSingleComment';
 import HomePage from './components/HomePage/HomePage';
 import ProfilePage from './components/ProfilePage/ProfilePage';
+import SplashPage from './components/SplashPage/SplashPage';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -39,11 +40,11 @@ function App() {
 
   return (
     <BrowserRouter>
-      <NavBar />
+      {/* <NavBar /> */}
       <Switch>
         <Route path='/login' exact={true}>
-          <LoginForm />
-          <HomePage />
+          {/* <LoginForm /> */}
+          <SplashPage />
         </Route>
         <Route path='/sign-up' exact={true}>
           <SignUpForm />

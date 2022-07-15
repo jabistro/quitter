@@ -1,0 +1,103 @@
+.splash-wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* width: 100%;
+    height: 98vh; */
+    font-family: 'Lucida Sans Unicode';
+    color: white;
+    border: 3px solid peachpuff;
+    width: 100%;
+    height: 98vh;
+}
+
+.splash-all-minus-footer {
+    display: flex;
+    border: 3px solid slateblue;
+    width: 100%;
+    height: 100%;
+    /* height: 850px;
+    width: 1900px; */
+}
+
+.splash-left {
+    border: 3px solid salmon;
+    width: 55%;
+}
+
+.splash-backdrop {
+    border: 3px solid aquamarine;
+    height: 100%;
+    width: 100%;
+}
+
+.splash-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border: 3px solid yellowgreen;
+    width: 45%;
+    height: 100%;
+    justify-content: space-around;
+}
+
+.splash-logo {
+    background-color: brown;
+    height: 80px;
+    width: 80px;
+}
+
+.splash-slogan {
+    border: 3px solid plum;
+    height: 80px;
+    width: 550px;
+}
+
+.splash-txt {
+    border: 3px solid skyblue;
+    height: 50px;
+    width: 350px;
+}
+
+.splash-demo-btn {
+    width: 300px;
+    height: 40px;
+    font-family: 'Lucida Sans Unicode';
+    background-color: white;
+    color: black;
+    border: none;
+}
+
+.splash-signup-container {
+    width: 300px;
+    height: 40px;
+    font-family: 'Lucida Sans Unicode';
+    background-color: rgb(206, 63, 168);
+    color: white;
+    border: 3px solid ivory;
+}
+
+.splash-login-and-txt {
+    border: 3px solid coral;
+    width: 300px;
+    height: 100px;
+}
+
+.splash-login-question {
+    border: 3px solid wheat;
+    height: 20px;
+    width: 250px;
+}
+
+.splash-login-container {
+    height: 40px;
+    width: 300px;
+    border: 3px solid crimson;
+}
+
+.splash-footer {
+    border: 3px solid lightgreen;
+    height: 45px;
+    width: 100%;
+}
