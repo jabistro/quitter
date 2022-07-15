@@ -14,6 +14,7 @@ const ProfileHeader = ({ userId }) => {
     const usersArr = Object.values(users);
     const userInfo = usersArr[userId - 1]
 
+    console.log(userInfo)
 
     return (
         <div className='profile-header-wrap'>
