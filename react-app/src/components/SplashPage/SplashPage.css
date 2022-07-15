@@ -7,14 +7,12 @@
     height: 98vh; */
     font-family: 'Lucida Sans Unicode';
     color: white;
-    border: 3px solid peachpuff;
     width: 100%;
     height: 98vh;
 }
 
 .splash-all-minus-footer {
     display: flex;
-    border: 3px solid slateblue;
     width: 100%;
     height: 100%;
     /* height: 850px;
@@ -22,82 +20,116 @@
 }
 
 .splash-left {
-    border: 3px solid salmon;
     width: 55%;
+    height: 870px;
 }
 
-.splash-backdrop {
-    border: 3px solid aquamarine;
-    height: 100%;
-    width: 100%;
-}
 
 .splash-right {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    border: 3px solid yellowgreen;
     width: 45%;
     height: 100%;
-    justify-content: space-around;
+    justify-content: flex-start;
 }
 
 .splash-logo {
-    background-color: brown;
+    margin-top: 70px;
     height: 80px;
     width: 80px;
+    margin-left: 35px;
 }
 
 .splash-slogan {
-    border: 3px solid plum;
-    height: 80px;
+    font-family: 'Lucida Sans Unicode';
+    height: 90px;
     width: 550px;
+    font-weight: bold;
+    font-size: 70px;
+    margin-top: 40px;
+    margin-bottom: 0px;
+    margin-left: 35px;
 }
 
 .splash-txt {
-    border: 3px solid skyblue;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     height: 50px;
-    width: 350px;
+    width: 400px;
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 48px;
+    margin-bottom: 0px;
+    margin-left: 35px;
 }
 
-.splash-demo-btn {
+/* .splash-demo-btn {
     width: 300px;
     height: 40px;
     font-family: 'Lucida Sans Unicode';
     background-color: white;
     color: black;
     border: none;
-}
+    margin-top: 16px;
+} */
 
-.splash-signup-container {
+/* .splash-signup-container {
     width: 300px;
     height: 40px;
     font-family: 'Lucida Sans Unicode';
     background-color: rgb(206, 63, 168);
     color: white;
     border: 3px solid ivory;
+} */
+
+.splash-border-manipulation {
+    display: flex;
+    align-items: center;
+    margin-left: 35px;
 }
 
-.splash-login-and-txt {
-    border: 3px solid coral;
+.splash-border {
+    border-bottom: 1px solid gray;
+    height: 18px;
+    width: 135px;
+
+}
+
+.splash-border-or {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-family: 'Lucida Sans Unicode';
+    color: white;
+    font-size: 15px;
+    width: 30px;
+    top: 9px;
+}
+
+/* .splash-login-and-txt {
     width: 300px;
     height: 100px;
-}
+} */
 
 .splash-login-question {
-    border: 3px solid wheat;
     height: 20px;
     width: 250px;
-}
-
-.splash-login-container {
-    height: 40px;
-    width: 300px;
-    border: 3px solid crimson;
+    margin-top: 120px;
+    margin-bottom: 0px;
+    font-family: 'Lucida Sans Unicode';
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    margin-left: 35px;
 }
 
 .splash-footer {
-    border: 3px solid lightgreen;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 45px;
     width: 100%;
 }

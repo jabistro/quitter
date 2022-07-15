@@ -9,6 +9,7 @@ import { BsPerson } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import SidebarQueetModal from './SidebarQueetModal';
+import LogoutButton from '../../auth/LogoutButton';
 
 
 const Sidebar = () => {
@@ -49,6 +50,7 @@ const Sidebar = () => {
           </div>
         </Link>
         <SidebarQueetModal className="sidebar-add-queet-length" />
+        <LogoutButton />
       </div>
     </div>
   )

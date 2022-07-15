@@ -1,6 +1,8 @@
 import React from 'react';
 import SplashSignupModal from "./SplashSignupModal";
 import './SplashPage.css';
+import DemoUserButton from '../auth/DemoUserButton/DemoUserButton';
+import SplashLoginModal from './SplashLoginModal';
 
 
 const SplashPage = () => {
@@ -8,30 +10,33 @@ const SplashPage = () => {
     <div className='splash-wrap'>
       <div className='splash-all-minus-footer'>
         <div className='splash-left'>
-          <div className='splash-backdrop'>
-          </div>
+          <img src={require("../../images/splash-backdrop.png")} />
         </div>
         <div className='splash-right'>
-          <div className='splash-logo' />
-          <div className='splash-slogan'>
-          </div>
-          <div className='splash-txt'>
-          </div>
-          <btn className='splash-demo-btn'>
-          </btn>
+          <img className='splash-logo' src={require('../../images/quitter2-removebg-preview.png')} alt="" />
+          <p className='splash-slogan'>
+            Quitters win
+          </p>
+          <p className='splash-txt'>
+            Join the Quitter community.
+          </p>
           <div className='splash-signup-container'>
+            <DemoUserButton />
+            <div className='splash-border-manipulation'>
+              <div className='splash-border'></div>
+              <p className='splash-border-or'>or</p>
+              <div className='splash-border'></div>
+            </div>
             <SplashSignupModal />
           </div>
           <div className='splash-login-and-txt'>
-            <div className='splash-login-question'>
-            </div>
-            <div className='splash-login-container'>
-            </div>
+            <p className='splash-login-question'>Already have an account?</p>
+            <SplashLoginModal />
           </div>
         </div>
-
       </div>
       <div className='splash-footer'>
+        NOT SURE WHAT TO PUT HERE YET
       </div>
     </div >
   )

@@ -8,7 +8,7 @@ const SplashSignupModal = () => {
 
     return (
         <>
-            <button className="splash-signup-btn" onClick={() => setShowModal(true)}>Sign up</button>
+            <button className="splash-signup-btn" onClick={() => setShowModal(true)}>Sign up to be a quitter</button>
             {showModal && (
                 <Modal onClose={() => setShowModal(false)}>
                     <SignUpForm setShowModal={setShowModal} />

@@ -25,7 +25,7 @@ const ProfileFeed = ({ userId }) => {
                     </div>
                 </Link>
                 <div className="profile-title-and-tweet-ammount">
-                    <p className="profile-title">{userInfo.display_name === '' ? '' : userInfo.display_name}</p>
+                    <p className="profile-title">{userInfo?.display_name === '' ? '' : userInfo?.display_name}</p>
                     <p className="profile-amount-of-tweets">{userQueets.length} Tweets</p>
                 </div>
             </div>
