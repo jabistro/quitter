@@ -15,7 +15,7 @@ const TimelineAllQueets = () => {
                 <Feed className='timeline-all-feed' />
             </div>
             <div className='timeline-all-right'>
-                <Widgets />
+                {/* <Widgets /> */}
             </div>
         </div>
     )

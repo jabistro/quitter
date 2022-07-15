@@ -77,6 +77,10 @@
     margin-left: 15px;
 }
 
+.profile-stats {
+    margin-bottom: 15px;
+}
+
 .profile-stat-and-icon {
     display: flex;
     align-items: center;

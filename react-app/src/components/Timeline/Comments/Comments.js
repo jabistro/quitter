@@ -52,7 +52,7 @@ const Comments = () => {
                                     <div className="feed-comment">{comment.content}</div>
                                 </Link>
                             </div>
-                            <div className="feed-comment-icons">
+                            {/* <div className="feed-comment-icons">
                                 <div className='feed-comment-icon-and-stat'>
                                     <BiMessage />
                                     <p className='feed-comment-stat'></p>
@@ -69,7 +69,7 @@ const Comments = () => {
                                     <FiShare />
                                     <p className='feed-comment-stat'></p>
                                 </div>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                 )

@@ -14,7 +14,7 @@ const TimelineSingleQueet = () => {
                 <SingleQueet className='timeline-single-queet-feed' />
             </div>
             <div className='timeline-single-queet-right'>
-                <Widgets />
+                {/* <Widgets /> */}
             </div>
         </div>
     )

@@ -18,7 +18,7 @@ const ProfilePage = () => {
                 <ProfileFeed userId={userId} className='profile-all-feed' />
             </div>
             <div className='profile-all-right'>
-                <Widgets />
+                {/* <Widgets /> */}
             </div>
         </div>
     )

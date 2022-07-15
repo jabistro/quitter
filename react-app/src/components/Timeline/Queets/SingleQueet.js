@@ -58,7 +58,7 @@ const SingleQueet = () => {
                         <BiMessage />
                         <p className='single-queet-icon-info'>{queetComments.length}</p>
                     </div>
-                    <div className='single-queet-icon-and-stat'>
+                    {/* <div className='single-queet-icon-and-stat'>
                         <FaRetweet />
                         <p className='single-queet-icon-info'></p>
                     </div>
@@ -69,7 +69,7 @@ const SingleQueet = () => {
                     <div className='single-queet-icon-and-stat'>
                         <FiShare />
                         <p className='single-queet-icon-info'></p>
-                    </div>
+                    </div> */}
                 </div>
             </div>
             <AddComment />

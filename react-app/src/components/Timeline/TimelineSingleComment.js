@@ -14,7 +14,7 @@ const TimelineSingleComment = () => {
                 <SingleComment className='timeline-single-comment-feed' />
             </div>
             <div className='timeline-single-comment-right'>
-                <Widgets />
+                {/* <Widgets /> */}
             </div>
         </div>
     )

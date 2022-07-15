@@ -12,3 +12,9 @@
     margin-top: 15px;
     margin-left: 35px;
 }
+
+.splash-signup-btn:hover {
+    background-color: #a336a5;
+    transition: all;
+    transition-duration: 200ms;
+}

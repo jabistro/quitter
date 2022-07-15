@@ -141,3 +141,8 @@
     font-size: 15px;
     cursor: pointer;
 }
+
+.add-queet-second-half {
+    display: flex;
+    justify-content: flex-end;
+}

@@ -27,7 +27,7 @@ const Sidebar = () => {
             <p className='icon-text'>Home</p>
           </div>
         </Link>
-        <div className='icon-wrap'>
+        {/* <div className='icon-wrap'>
           <FaHashtag className='icons' />
           <p className='icon-text'>Explore</p>
         </div>
@@ -42,14 +42,16 @@ const Sidebar = () => {
         <div className='icon-wrap'>
           <FiBookmark className='icons' />
           <p className='icon-text'>Bookmarks</p>
-        </div>
+        </div> */}
         <Link className='sidebar-profile-link' to={`/users/${sessionUser.id}`}>
           <div className='icon-wrap'>
             <BsPerson className='icons' />
             <p className='icon-text'>Profile</p>
           </div>
         </Link>
-        <SidebarQueetModal className="sidebar-add-queet-length" />
+        <div className="sidebar-add-queet-length">
+          <SidebarQueetModal />
+        </div>
         <LogoutButton />
       </div>
     </div>
