@@ -2,7 +2,6 @@ import "./DemoUserButton.css";
 import React from 'react'
 import * as sessionActions from "../../../store/session";
 import { useDispatch } from "react-redux";
-import { useHistory } from "react-router-dom";
 
 const DemoUserButton = () => {
     const dispatch = useDispatch();

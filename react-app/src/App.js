@@ -19,6 +19,7 @@ import TimelineSingleComment from './components/Timeline/TimelineSingleComment';
 import HomePage from './components/HomePage/HomePage';
 import ProfilePage from './components/ProfilePage/ProfilePage';
 import SplashPage from './components/SplashPage/SplashPage';
+import './App.css';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -35,7 +36,7 @@ function App() {
   }, [dispatch]);
 
   if (!loaded) {
-    return <img className="loading" src={loader} alt="loader" />;
+    return <div className='loading-container'><img className="loading" src={loader} alt="loader" /></div>;
   }
 
   return (
