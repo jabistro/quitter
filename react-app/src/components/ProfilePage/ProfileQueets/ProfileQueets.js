@@ -1,5 +1,4 @@
 import './ProfileQueets.css';
-
 import React from 'react'
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
@@ -8,6 +7,7 @@ import EditQueetModal from '../../Timeline/Queets/EditQueetModal';
 import { BiMessage } from 'react-icons/bi';
 import { FaRetweet } from 'react-icons/fa';
 import { FiHeart, FiShare } from 'react-icons/fi';
+import NumberOfComments from '../../Timeline/Comments/NumberOfComments/NumberOfComments';
 
 const ProfileQueets = ({ userId }) => {
 
@@ -56,9 +56,9 @@ const ProfileQueets = ({ userId }) => {
                             <div className="profile-feed-queet-icons">
                                 <div className='profile-feed-queet-icon-and-stat'>
                                     <BiMessage />
-                                    <p className='profile-feed-queet-stat'></p>
+                                    <p className='profile-feed-queet-stat'><NumberOfComments queetId={queet.id} /></p>
                                 </div>
-                                <div className='profile-feed-queet-icon-and-stat'>
+                                {/* <div className='profile-feed-queet-icon-and-stat'>
                                     <FaRetweet className="requeet-icon" />
                                     <p className='profile-feed-queet-stat'></p>
                                 </div>
@@ -69,7 +69,7 @@ const ProfileQueets = ({ userId }) => {
                                 <div className='profile-feed-queet-icon-and-stat'>
                                     <FiShare />
                                     <p className='profile-feed-queet-stat'></p>
-                                </div>
+                                </div> */}
                             </div>
                         </div>
                     </div>

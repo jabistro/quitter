@@ -79,10 +79,10 @@ const Queets = () => {
                                 <div className='feed-queet-icon-and-stat'>
                                     <BiMessage />
                                     <p className='feed-queet-stat'>
-                                        {/* {replies?.length} */}<NumberOfComments queetId={queet.id} />
+                                        <NumberOfComments queetId={queet.id} />
                                     </p>
                                 </div>
-                                <div className='feed-queet-icon-and-stat'>
+                                {/* <div className='feed-queet-icon-and-stat'>
                                     <FaRetweet className="requeet-icon" />
                                     <p className='feed-queet-stat'></p>
                                 </div>
@@ -93,7 +93,7 @@ const Queets = () => {
                                 <div className='feed-queet-icon-and-stat'>
                                     <FiShare />
                                     <p className='feed-queet-stat'></p>
-                                </div>
+                                </div> */}
                             </div>
                         </div>
                     </div>

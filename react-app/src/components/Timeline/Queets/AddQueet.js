@@ -51,7 +51,7 @@ const AddQueet = () => {
                     </div>
                     <div className="add-queet-second-half">
                         <div className="icons-and-button">
-                            <AiOutlinePicture onClick={() => setImageBoxOpen(!imageBoxOpen)} className='add-img-btn' />
+                            {/* <AiOutlinePicture onClick={() => setImageBoxOpen(!imageBoxOpen)} className='add-img-btn' /> */}
                             <button disabled={!content} type="submit" className="add-queet-btn">Queet</button>
                         </div>
                     </div>

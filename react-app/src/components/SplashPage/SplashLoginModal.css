@@ -12,3 +12,13 @@
     margin-top: 25px;
     margin-left: 35px;
 }
+
+.splash-user-login-btn:hover {
+    background-color: #1e2e3d;
+    transition: all;
+    transition-duration: 800ms;
+    color: #b83dba;
+    font-weight: bold;
+    font-size: 15px;
+    font-family: 'Lucida Sans Unicode';
+}

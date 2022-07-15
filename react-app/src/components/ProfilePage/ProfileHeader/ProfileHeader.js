@@ -19,10 +19,10 @@ const ProfileHeader = ({ userId }) => {
         <div className='profile-header-wrap'>
             <div className='profile-header-pic-and-profile-pic'>
                 <div className='profile-header-container'>
-                    <img className='profile-header' src={userInfo.header === '' ? 'https://pbs.twimg.com/profile_banners/326835342/1559881342/600x200' : userInfo.header} />
+                    <img className='profile-header' src={userInfo?.header === '' ? 'https://pbs.twimg.com/profile_banners/326835342/1559881342/600x200' : userInfo?.header} />
                 </div>
                 <div className='profile-prof-pic-and-edit-btn'>
-                    <img className='profile-prof-pic' src={userInfo.profile_pic === '' ? 'https://i.pinimg.com/736x/7c/ee/6f/7cee6fa507169843e3430a90dd5377d4.jpg' : userInfo.profile_pic} />
+                    <img className='profile-prof-pic' src={userInfo?.profile_pic === '' ? 'https://i.pinimg.com/736x/7c/ee/6f/7cee6fa507169843e3430a90dd5377d4.jpg' : userInfo?.profile_pic} />
                     <div className='profile-edit-profile-btn-div'>
                         {sessionUser.id === Number(userId) && <EditProfileModal />}
                     </div>
@@ -31,27 +31,27 @@ const ProfileHeader = ({ userId }) => {
             <div className='profile-info'>
 
                 <div className='profile-names'>
-                    <p className='profile-display-name'>{userInfo.display_name}</p>
-                    <p className='profile-username'>@{userInfo.username}</p>
+                    <p className='profile-display-name'>{userInfo?.display_name}</p>
+                    <p className='profile-username'>@{userInfo?.username}</p>
                 </div>
                 <div className='profile-stats'>
                     <p className='profile-bio'>
-                        {userInfo.bio}
+                        {userInfo?.bio}
                     </p>
                     <div className='profile-stat-and-icon'>
                         <HiOutlineLocationMarker className='profile-icons' />
-                        <p className='profile-location'>{userInfo.location}</p>
+                        <p className='profile-location'>{userInfo?.location}</p>
                     </div>
                     <div className='profile-stat-and-icon'>
                         <FaBirthdayCake className='profile-icons' />
-                        <p className='profile-birthday'>Born {userInfo.birthday}</p>
+                        <p className='profile-birthday'>Born {userInfo?.birthday}</p>
                     </div>
                     <div className='profile-stat-and-icon'>
                         <BsCalendar3 className='profile-icons' />
-                        <p className='profile-joined'>Joined {moment(userInfo.joined).format('MMMM YYYY')}</p>
+                        <p className='profile-joined'>Joined {moment(userInfo?.joined).format('MMMM YYYY')}</p>
                     </div>
                 </div>
-                <div className='profile-relationships'>
+                {/* <div className='profile-relationships'>
                     <div className='profile-following-wrap'>
                         <p className='profile-following-amount'>3,234</p>
                         <p className='profile-following-txt'>Following</p>
@@ -60,7 +60,7 @@ const ProfileHeader = ({ userId }) => {
                         <p className='profile-followers-amount'>2,323</p>
                         <p className='profile-followers-txt'>Followers</p>
                     </div>
-                </div>
+                </div> */}
             </div>
         </div>
     )

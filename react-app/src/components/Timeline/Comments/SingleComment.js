@@ -52,7 +52,7 @@ const SingleComment = () => {
                 </div>
                 <div className='single-comment'>{comment.content}</div>
                 <div className='single-comment-timestamp'>{moment(comment.created_at).format('LT')}  ·  {moment(comment.created_at).format('ll')}</div>
-                <div className='single-comment-icons'>
+                {/* <div className='single-comment-icons'>
                     <div className='single-comment-icon-and-stat'>
                         <BiMessage />
                         <p className='single-comment-icon-info'></p>
@@ -69,7 +69,7 @@ const SingleComment = () => {
                         <FiShare />
                         <p className='single-comment-icon-info'></p>
                     </div>
-                </div>
+                </div> */}
             </div>
         </div>
     )
