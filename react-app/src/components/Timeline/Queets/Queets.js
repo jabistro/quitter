@@ -15,7 +15,7 @@ const Queets = () => {
 
     const users = useSelector(state => state.user);
     const usersArr = Object.values(users);
-    const sessionUser = useSelector(state => state.session.user);
+    const sessionUser = useSelector(state => state.session?.user);
     const queets = useSelector(state => state.queet);
     const queetsArr = Object.values(queets);
     const latestQueets = queetsArr.reverse();
@@ -44,7 +44,7 @@ const Queets = () => {
                 return (
                     <div key={queet.id} className="queets">
                         <Link className="all-queets-profile-pic-link" to={`/users/${queet.userId}`}>
-                            <img className='all-queets-profile-pic' src={usersArr[queet.userId - 1]?.profile_pic === '' ? 'https://i.pinimg.com/736x/7c/ee/6f/7cee6fa507169843e3430a90dd5377d4.jpg' : usersArr[queet.userId - 1].profile_pic} />
+                            <img className='all-queets-profile-pic' src={usersArr[queet.userId - 1]?.profile_pic === '' ? 'https://i.pinimg.com/736x/7c/ee/6f/7cee6fa507169843e3430a90dd5377d4.jpg' : usersArr[queet.userId - 1]?.profile_pic} />
                         </Link>
                         <div className="all-queets-everything-minus-pic">
                             <div className="feed-queet-names-edit-and-content">
@@ -52,7 +52,7 @@ const Queets = () => {
                                     <Link className="queet-link" to={`/queets/${queet.id}`}>
                                         <div className="feed-queet-names">
                                             <p className="feed-queet-display-name">{usersArr[queet.userId - 1]?.display_name}</p>
-                                            <p className="feed-queet-username">@{usersArr[queet.userId - 1].username}<div className="stupid-dot">·</div></p>
+                                            <p className="feed-queet-username">@{usersArr[queet.userId - 1]?.username}<div className="stupid-dot">·</div></p>
                                             <p className="timestamp-container">
                                                 <ReactTimeAgo
                                                     className="timestamp"

@@ -1,0 +1,27 @@
+.splash-demo-login-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    height: 40px;
+    background-color: white;
+    color: black;
+    border: none;
+    border-radius: 20px;
+    margin-top: 50px;
+    margin-left: 35px;
+}
+
+.demo-btn-txt {
+    font-family: 'Lucida Sans Unicode';
+    font-weight: bold;
+    font-size: 15px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.demo-btn-logo {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
