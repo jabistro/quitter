@@ -36,11 +36,11 @@ const SingleComment = () => {
                 <div className='single-comment-pic-names-and-edit'>
                     <div className='single-comment-pic-and-names'>
                         <Link className="single-comment-profile-pic-link" to={`/users/${comment.userId}`}>
-                            <img className='single-comment-profile-pic' src={usersArr[comment.userId - 1].profile_pic === '' ? 'https://i.pinimg.com/736x/7c/ee/6f/7cee6fa507169843e3430a90dd5377d4.jpg' : usersArr[comment.userId - 1].profile_pic} />
+                            <img className='single-comment-profile-pic' src={usersArr[comment.userId - 1]?.profile_pic === '' ? 'https://i.pinimg.com/736x/7c/ee/6f/7cee6fa507169843e3430a90dd5377d4.jpg' : usersArr[comment.userId - 1]?.profile_pic} />
                         </Link>
                         <div className='single-comment-names'>
-                            <p className='single-comment-display-name'>{usersArr[comment.userId - 1].display_name}</p>
-                            <p className='single-comment-username'>@{usersArr[comment.userId - 1].username}</p>
+                            <p className='single-comment-display-name'>{usersArr[comment.userId - 1]?.display_name}</p>
+                            <p className='single-comment-username'>@{usersArr[comment.userId - 1]?.username}</p>
                         </div>
                     </div>
                     <div className="single-comment-edit-btn">
@@ -50,8 +50,8 @@ const SingleComment = () => {
                         }
                     </div>
                 </div>
-                <div className='single-comment'>{comment.content}</div>
-                <div className='single-comment-timestamp'>{moment(comment.created_at).format('LT')}  ·  {moment(comment.created_at).format('ll')}</div>
+                <div className='single-comment'>{comment?.content}</div>
+                <div className='single-comment-timestamp'>{moment(comment?.created_at).format('LT')}  ·  {moment(comment?.created_at).format('ll')}</div>
                 {/* <div className='single-comment-icons'>
                     <div className='single-comment-icon-and-stat'>
                         <BiMessage />

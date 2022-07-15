@@ -38,10 +38,10 @@ const SingleQueet = () => {
             <div className="single-queet-block">
                 <div className='single-queet-pic-names-and-edit'>
                     <div className='single-queet-pic-and-names'>
-                        <img className='single-queet-profile-pic' src={usersArr[queet.userId - 1].profile_pic === '' ? 'https://i.pinimg.com/736x/7c/ee/6f/7cee6fa507169843e3430a90dd5377d4.jpg' : usersArr[queet.userId - 1].profile_pic} />
+                        <img className='single-queet-profile-pic' src={usersArr[queet.userId - 1]?.profile_pic === '' ? 'https://i.pinimg.com/736x/7c/ee/6f/7cee6fa507169843e3430a90dd5377d4.jpg' : usersArr[queet.userId - 1]?.profile_pic} />
                         <div className='single-queet-names'>
-                            <p className='single-queet-display-name'>{usersArr[queet.userId - 1].display_name}</p>
-                            <p className='single-queet-username'>@{usersArr[queet.userId - 1].username}</p>
+                            <p className='single-queet-display-name'>{usersArr[queet.userId - 1]?.display_name}</p>
+                            <p className='single-queet-username'>@{usersArr[queet.userId - 1]?.username}</p>
                         </div>
                     </div>
                     <div className="single-queet-edit-btn">
@@ -51,8 +51,8 @@ const SingleQueet = () => {
                         }
                     </div>
                 </div>
-                <div className='single-queet'>{queet.content}</div>
-                <div className='single-queet-timestamp'>{moment(queet.created_at).format('LT')}  ·  {moment(queet.created_at).format('ll')}</div>
+                <div className='single-queet'>{queet?.content}</div>
+                <div className='single-queet-timestamp'>{moment(queet?.created_at).format('LT')}  ·  {moment(queet?.created_at).format('ll')}</div>
                 <div className='single-queet-icons'>
                     <div className='single-queet-icon-and-stat'>
                         <BiMessage />
