@@ -20,14 +20,16 @@ const Sidebar = () => {
     <div className='sidebar-wrap'>
       <div className='sidebar-first-half'></div>
       <div className='sidebar-second-half'>
-        <img className='logo' src={require('../../../images/quitter2-removebg-preview.png')} alt="" />
-        <Link className='sidebar-home-link' to='/'>
-          <div className='icon-wrap'>
-            <HiOutlineUserGroup className='icons' />
-            <p className='icon-text'>Home</p>
-          </div>
-        </Link>
-        {/* <div className='icon-wrap'>
+        <div className='sidebar-second-half-wrap'>
+          <div className='sidebar-second-half-top'>
+            <img className='logo' src={require('../../../images/quitter2-removebg-preview.png')} alt="" />
+            <Link className='sidebar-home-link' to='/'>
+              <div className='icon-wrap'>
+                <HiOutlineUserGroup className='icons' />
+                <p className='icon-text'>Home</p>
+              </div>
+            </Link>
+            {/* <div className='icon-wrap'>
           <FaHashtag className='icons' />
           <p className='icon-text'>Explore</p>
         </div>
@@ -43,16 +45,18 @@ const Sidebar = () => {
           <FiBookmark className='icons' />
           <p className='icon-text'>Bookmarks</p>
         </div> */}
-        <Link className='sidebar-profile-link' to={`/users/${sessionUser.id}`}>
-          <div className='icon-wrap'>
-            <BsPerson className='icons' />
-            <p className='icon-text'>Profile</p>
+            <Link className='sidebar-profile-link' to={`/users/${sessionUser.id}`}>
+              <div className='icon-wrap'>
+                <BsPerson className='icons' />
+                <p className='icon-text'>Profile</p>
+              </div>
+            </Link>
+            <div className="sidebar-add-queet-length">
+              <SidebarQueetModal />
+            </div>
           </div>
-        </Link>
-        <div className="sidebar-add-queet-length">
-          <SidebarQueetModal />
+          <LogoutButton />
         </div>
-        <LogoutButton />
       </div>
     </div>
   )

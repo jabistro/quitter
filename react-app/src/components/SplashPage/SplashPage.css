@@ -24,6 +24,7 @@
     height: 870px;
 }
 
+@media screen and (max-width:) {}
 
 .splash-right {
     display: flex;
