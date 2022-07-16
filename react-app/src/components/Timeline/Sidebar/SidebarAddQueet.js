@@ -48,20 +48,6 @@ const SidebarAddQueet = ({ setShowModal }) => {
                         placeholder="What's on your mind? This is a safe space."
                     />
                     <div className="sidebar-icons-and-button">
-                        {/* <AiOutlinePicture onClick={() => setImageBoxOpen(!imageBoxOpen)} className='sidebar-add-img-btn' />
-                        <div className="sidebar-queet-upload-img-wrap">
-                            {imageBoxOpen && (
-                                <form className="sidebar-queet-upload-img-form">
-                                    <input
-                                        className="sidebar-queet-upload-img-input"
-                                        type="text"
-                                        placeholder="Enter Image URL..."
-                                    >
-                                    </input>
-                                    <button className="sidebar-queet-upload-img-btn">Add Image</button>
-                                </form>
-                            )}
-                        </div> */}
                         <button disabled={!content} type="submit" className="sidebar-add-queet-btn">Queet</button>
                     </div>
                 </div>
@@ -71,3 +57,21 @@ const SidebarAddQueet = ({ setShowModal }) => {
 }
 
 export default SidebarAddQueet
+
+
+
+
+{/* <AiOutlinePicture onClick={() => setImageBoxOpen(!imageBoxOpen)} className='sidebar-add-img-btn' /> */ }
+{/* <div className="sidebar-queet-upload-img-wrap">
+    {imageBoxOpen && (
+        <form className="sidebar-queet-upload-img-form">
+            <input
+                className="sidebar-queet-upload-img-input"
+                type="text"
+                placeholder="Enter Image URL..."
+            >
+            </input>
+            <button className="sidebar-queet-upload-img-btn">Add Image</button>
+        </form>
+    )}
+</div> */}

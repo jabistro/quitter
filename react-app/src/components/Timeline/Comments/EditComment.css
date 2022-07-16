@@ -1,11 +1,10 @@
 .edit-comment-wrap {
     width: 600px;
-    height: 300px;
+    height: 320px;
     /* background-color: #15202b; */
-    /* color: blueviolet; */
+    color: white;
     display: flex;
     flex-direction: column;
-    font-family: 'Lucida Sans Unicode';
 }
 
 .edit-comment-btn-and-title {
@@ -16,7 +15,8 @@
 
 .edit-comment-title {
     margin-left: 40px;
-    color: white;
+    font-family: 'Lucida Sans Unicode';
+    font-size: 25px;
 }
 
 .edit-comment-close-btn {
@@ -44,25 +44,62 @@
 }
 
 .edit-comment-input {
-    font-family: 'Lucida Sans Unicode';
+    display: flex;
     outline: none;
-    background-color: violet;
-    border: none;
-    color: white;
     font-size: 20px;
-    width: 80%;
+    outline: none;
+    border: none;
     height: 150px;
-    margin-left: 55px;
+    background-color: transparent;
+    color: white;
     resize: none;
+    margin-left: 55px;
+    width: 500px;
+    font-family: 'Lucida Sans Unicode';
+}
+
+.edit-comment-input::-webkit-scrollbar {
+    display: none;
 }
 
 .edit-and-delete-comment-btn {
     display: flex;
+    align-items: center;
     justify-content: space-between;
     margin-left: 55px;
     margin-right: 55px;
     border-top: 2px solid gray;
     padding-top: 15px;
+}
+
+.edit-comment-progress-and-submit-btn {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.edit-comment-progress {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 15px;
+}
+
+.edit-comment-char-total {
+    font-family: 'Lucida Sans Unicode';
+    color: white;
+}
+
+.edit-comment-char-total-red {
+    font-family: 'Lucida Sans Unicode';
+    color: red;
+}
+
+.edit-comment-char-max {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-family: 'Lucida Sans Unicode';
+    color: white;
 }
 
 .submit-edit-comment-btn {
@@ -71,11 +108,16 @@
     border: none;
     color: white;
     font-weight: bold;
-    height: 30px;
-    width: 80px;
+    height: 40px;
+    width: 120px;
     border-radius: 20px;
-    font-size: 15px;
+    font-size: 18px;
     cursor: pointer;
+}
+
+.submit-edit-comment-btn:disabled {
+    opacity: 40%;
+    cursor: default;
 }
 
 .submit-edit-comment-btn:hover {
@@ -90,10 +132,10 @@
     border: none;
     color: white;
     font-weight: bold;
-    height: 30px;
-    width: 80px;
+    height: 40px;
+    width: 120px;
     border-radius: 20px;
-    font-size: 15px;
+    font-size: 18px;
     cursor: pointer;
 }
 
