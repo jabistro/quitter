@@ -1,6 +1,6 @@
 .edit-queet-wrap {
     width: 600px;
-    height: 300px;
+    height: 320px;
     /* background-color: #15202b; */
     color: white;
     display: flex;
@@ -15,6 +15,8 @@
 
 .edit-queet-title {
     margin-left: 40px;
+    font-family: 'Lucida Sans Unicode';
+    font-size: 25px;
 }
 
 .edit-queet-close-btn {
@@ -42,25 +44,62 @@
 }
 
 .edit-queet-input {
+    display: flex;
     outline: none;
-    background-color: transparent;
+    font-size: 20px;
+    outline: none;
     border: none;
-    color: white;
-    font-size: 25px;
-    width: 550px;
     height: 150px;
-    margin-left: 55px;
+    background-color: transparent;
+    color: white;
     resize: none;
+    margin-left: 55px;
+    width: 500px;
+    font-family: 'Lucida Sans Unicode';
 }
 
+.edit-queet-input::-webkit-scrollbar {
+    display: none;
+}
 
 .edit-and-delete-queet-btn {
     display: flex;
+    align-items: center;
     justify-content: space-between;
     margin-left: 55px;
     margin-right: 55px;
     border-top: 2px solid gray;
     padding-top: 15px;
+}
+
+.edit-queet-progress-and-submit-btn {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.edit-queet-progress {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 15px;
+}
+
+.edit-queet-char-total {
+    font-family: 'Lucida Sans Unicode';
+    color: white;
+}
+
+.edit-queet-char-total-red {
+    font-family: 'Lucida Sans Unicode';
+    color: red;
+}
+
+.edit-queet-char-max {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-family: 'Lucida Sans Unicode';
+    color: white;
 }
 
 .submit-edit-queet-btn {
@@ -69,11 +108,16 @@
     border: none;
     color: white;
     font-weight: bold;
-    height: 30px;
-    width: 80px;
+    height: 40px;
+    width: 120px;
     border-radius: 20px;
-    font-size: 15px;
+    font-size: 18px;
     cursor: pointer;
+}
+
+.submit-edit-queet-btn:disabled {
+    opacity: 40%;
+    cursor: default;
 }
 
 .submit-edit-queet-btn:hover {
@@ -88,10 +132,10 @@
     border: none;
     color: white;
     font-weight: bold;
-    height: 30px;
-    width: 80px;
+    height: 40px;
+    width: 120px;
     border-radius: 20px;
-    font-size: 15px;
+    font-size: 18px;
     cursor: pointer;
 }
 
