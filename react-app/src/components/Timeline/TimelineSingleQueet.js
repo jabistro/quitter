@@ -1,7 +1,7 @@
 import './TimelineSingleQueet.css';
 import React from 'react'
 import SideBar from './Sidebar/Sidebar';
-import Widgets from './Widgets/Widgets';
+// import Widgets from './Widgets/Widgets';
 import SingleQueet from './Queets/SingleQueet';
 
 const TimelineSingleQueet = () => {

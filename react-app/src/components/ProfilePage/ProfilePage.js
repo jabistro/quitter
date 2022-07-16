@@ -2,7 +2,7 @@ import "./ProfilePage.css";
 import React from 'react'
 import Sidebar from "../Timeline/Sidebar/Sidebar";
 import ProfileFeed from "./ProfileFeed/ProfileFeed";
-import Widgets from "../Timeline/Widgets/Widgets";
+// import Widgets from "../Timeline/Widgets/Widgets";
 import { useParams } from "react-router-dom";
 
 const ProfilePage = () => {

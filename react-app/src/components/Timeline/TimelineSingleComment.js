@@ -1,7 +1,7 @@
 import './TimelineSingleComment.css';
 import React from 'react'
 import SideBar from './Sidebar/Sidebar';
-import Widgets from './Widgets/Widgets';
+// import Widgets from './Widgets/Widgets';
 import SingleComment from './Comments/SingleComment';
 
 const TimelineSingleComment = () => {
