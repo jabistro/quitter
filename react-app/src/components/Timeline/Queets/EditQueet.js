@@ -54,7 +54,13 @@ const EditQueet = ({ setShowModal, queet_id }) => {
                     />
                 </div>
                 <div className="edit-and-delete-queet-btn">
-                    <button type="submit" className="submit-edit-queet-btn">Submit</button>
+                    <div className="edit-queet-progress-and-submit-btn">
+                        <button disabled={!content || content.length > 280} type="submit" className="submit-edit-queet-btn">Submit</button>
+                        <div className="edit-queet-progress">
+                            <span className={(content.length > 280 || content.length === 0) ? "edit-queet-char-total-red" : "edit-queet-char-total"}>{content.length}</span>
+                            <p className="edit-queet-char-max">/280</p>
+                        </div>
+                    </div>
                     <button className="delete-queet-btn" onClick={(e) => deleteHandler(e, editedQueet)}>Delete</button>
                 </div>
             </form>

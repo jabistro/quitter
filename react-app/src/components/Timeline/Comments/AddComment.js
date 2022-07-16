@@ -49,7 +49,7 @@ const AddComment = () => {
                     <div className="add-comment-second-half">
                         <div className="add-comment-progress-and-button">
                             <div className="add-comment-progress">
-                                <span className={content.length <= 280 ? "add-comment-char-total" : "add-comment-char-total-red"}>{content.length}</span>
+                                <span className={(content.length > 280 || content.length === 0) ? "add-comment-char-total-red" : "add-comment-char-total"}>{content.length}</span>
                                 <p className="add-comment-char-max">/280</p>
                             </div>
                             <button disabled={!content || content.length > 280} type="submit" className="add-comment-btn">Reply</button>

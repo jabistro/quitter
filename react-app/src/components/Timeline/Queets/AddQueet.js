@@ -51,7 +51,7 @@ const AddQueet = () => {
                     <div className="add-queet-second-half">
                         <div className="add-queet-progress-and-button">
                             <div className="add-queet-progress">
-                                <span className={content.length <= 280 ? "add-queet-char-total" : "add-queet-char-total-red"}>{content.length}</span>
+                                <span className={(content.length > 280 || content.length === 0) ? "add-queet-char-total-red" : "add-queet-char-total"}>{content.length}</span>
                                 <p className="add-queet-char-max">/280</p>
                             </div>
                             <button disabled={!content || content.length > 280} type="submit" className="add-queet-btn">Queet</button>
