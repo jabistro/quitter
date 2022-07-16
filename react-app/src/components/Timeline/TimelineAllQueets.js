@@ -2,7 +2,7 @@ import React from 'react';
 import Feed from './Feed/Feed';
 import SideBar from './Sidebar/Sidebar';
 import './TimelineAllQueets.css';
-import Widgets from './Widgets/Widgets';
+// import Widgets from './Widgets/Widgets';
 
 
 const TimelineAllQueets = () => {

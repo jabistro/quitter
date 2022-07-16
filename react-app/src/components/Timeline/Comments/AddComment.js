@@ -6,14 +6,13 @@ import { addComment } from "../../../store/comments";
 
 const AddComment = () => {
     const user = useSelector(state => state.session.user);
-    const users = useSelector(state => state.user);
-    const usersArr = Object.values(users);
     const dispatch = useDispatch();
-    const queets = useSelector(state => state.queet)
-    const queetsArr = Object.values(queets)
     const { queetId } = useParams();
-    const queet = queetsArr[queetId];
-    const [content, setContent] = useState();
+    const [content, setContent] = useState('');
+
+    const contentHandler = (e) => {
+        setContent(e.target.value)
+    }
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -36,21 +35,25 @@ const AddComment = () => {
         <div className="add-comment-wrap">
             <form onSubmit={handleSubmit} className="add-comment-form">
                 <img className='add-comment-profile-pic' src={user.profile_pic === '' ? 'https://i.pinimg.com/736x/7c/ee/6f/7cee6fa507169843e3430a90dd5377d4.jpg' : user.profile_pic} />
-                <div className="add-comment-input-btn-and-reply-to">
-                    {/* <div className="add-comment-replying-to-container">
-                        <p className="add-comment-replying-to-txt">Replying to</p>
-                        <a className="add-comment-replying-to-user">@{usersArr[0][queet.userId - 1].username}</a>
-                    </div> */}
-                    <div className="add-comment-input-and-btn">
+                <div className="add-comment-both-halves">
+                    <div className="add-comment-first-half">
                         <textarea
                             className="add-comment-input"
                             type="text"
                             value={content}
-                            onChange={(e) => setContent(e.target.value)}
+                            onChange={contentHandler}
                             required
-                            placeholder="Queet your reply"
+                            placeholder="Queet your reply."
                         />
-                        <button disabled={!content} type="submit" className="add-comment-btn">Reply</button>
+                    </div>
+                    <div className="add-comment-second-half">
+                        <div className="add-comment-progress-and-button">
+                            <div className="add-comment-progress">
+                                <span className={content.length <= 280 ? "add-comment-char-total" : "add-comment-char-total-red"}>{content.length}</span>
+                                <p className="add-comment-char-max">/280</p>
+                            </div>
+                            <button disabled={!content || content.length > 280} type="submit" className="add-comment-btn">Reply</button>
+                        </div>
                     </div>
                 </div>
             </form>

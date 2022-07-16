@@ -1,45 +1,46 @@
 .add-comment-wrap {
-    border-bottom: 1px solid rgb(84, 84, 84);
+    display: flex;
+    margin-top: 10px;
 }
 
-.add-comment-input {
-    height: 155px;
-    width: 100%;
-    resize: none;
-    font-size: large;
-    outline: none;
-    border: none;
-    height: 70px;
-    background-color: transparent;
+.add-comment-form {
+    display: grid;
+    grid-template-columns: 1fr 12fr;
+}
+
+.add-comment-profile-pic:hover {
+    opacity: 0.7;
+}
+
+.add-comment-profile-pic {
+    height: 44px;
+    width: 44px;
+    border-radius: 22px;
+    margin-left: 15px;
+}
+
+.add-comment-char-total {
+    font-family: 'Lucida Sans Unicode';
     color: white;
-    margin: 5px;
-    font-family: 'Lucida Sans Unicode';
-    padding-top: 20px;
 }
 
-.add-comment-input-and-btn {
+.add-comment-char-total-red {
+    font-family: 'Lucida Sans Unicode';
+    color: red;
+}
+
+.add-comment-char-max {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-family: 'Lucida Sans Unicode';
+    color: white;
+}
+
+.add-comment-progress {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    width: 100%;
-}
-
-.add-comment-replying-to-container {
-    display: flex;
-    align-items: center;
-}
-
-.add-comment-replying-to-txt {
-    margin-left: 10px;
-    color: gray;
-    font-family: 'Lucida Sans Unicode';
-}
-
-.add-comment-replying-to-user {
-    text-decoration: none;
-    color: #b83dba;
-    font-family: 'Lucida Sans Unicode';
-    margin-left: 5px;
+    margin-top: 12px;
+    margin-right: 15px;
 }
 
 .add-comment-btn {
@@ -53,8 +54,6 @@
     border-radius: 20px;
     font-size: 15px;
     cursor: pointer;
-    margin-left: 10px;
-    margin-right: 15px;
 }
 
 .add-comment-btn:disabled {
@@ -62,19 +61,130 @@
     cursor: default;
 }
 
-.add-comment-profile-pic:hover {
-    opacity: 0.7;
+.add-comment-input {
+    display: flex;
+    width: 95%;
+    font-size: 15px;
+    outline: none;
+    border: none;
+    height: 115px;
+    background-color: transparent;
+    color: white;
+    resize: none;
+    margin-left: 15px;
+    font-family: 'Lucida Sans Unicode';
 }
 
-.add-comment-profile-pic {
-    height: 44px;
-    width: 44px;
-    border-radius: 22px;
+/* {content.length <= 280 ? "add-queet-input" : "add-queet-input-red"} */
+
+/* .add-queet-input-red {
+    display: flex;
+    width: 95%;
+    font-size: 20px;
+    outline: none;
+    border: 1px solid red;
+    height: 70px;
+    background-color: transparent;
+    color: white;
+    resize: none;
     margin-left: 15px;
+    font-family: 'Lucida Sans Unicode';
+    border-radius: 10px;
+} */
+
+.add-comment-input::-webkit-scrollbar {
+    display: none;
+}
+
+/* .add-queet-input-red::-webkit-scrollbar {
+    display: none;
+} */
+
+.profile-pic {
+    height: 45px;
+    width: 45px;
+    border-radius: 20px;
+    object-fit: cover;
+    margin-top: 5px;
+    margin-left: 11px;
+}
+
+.add-img-btn {
+    height: 25px;
+    width: 25px;
+    color: #b83dba;
+    cursor: pointer;
+    transition: ease-out;
+    transition-duration: 150ms;
+}
+
+.add-img-btn:hover {
+    transform: scale(1.5);
+}
+
+.add-comment-progress-and-button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 10px;
+}
+
+.comment-upload-img-form {
+    background-color: #b83dba;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 400px;
+    border-radius: 20px;
+    margin-left: 40px;
     margin-top: 15px;
 }
 
-.add-comment-form {
-    display: grid;
-    grid-template-columns: 1fr 12fr;
+.comment-upload-img-input {
+    background-color: transparent;
+    color: white;
+}
+
+/* .queet-upload-img-wrap {
+    background-color: #b83dba;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 400px;
+    border-radius: 20px;
+} */
+
+.comment-upload-img-input {
+    margin-right: 30px;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    color: white;
+}
+
+.comment-upload-img-btn {
+    margin-left: 30px;
+}
+
+.comment-upload-img-btn {
+    font-family: 'Lucida Sans Unicode';
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-weight: bold;
+    height: 30px;
+    width: 100px;
+    border-radius: 20px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.add-comment-second-half {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 10px;
 }

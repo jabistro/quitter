@@ -1,6 +1,5 @@
 .add-queet-wrap {
-    display: grid;
-    grid-template-rows: 4fr 1fr;
+    display: flex;
 }
 
 .add-queet-form {
@@ -17,6 +16,30 @@
     width: 44px;
     border-radius: 22px;
     margin-left: 15px;
+}
+
+.add-queet-char-total {
+    font-family: 'Lucida Sans Unicode';
+    color: white;
+}
+
+.add-queet-char-total-red {
+    font-family: 'Lucida Sans Unicode';
+    color: red;
+}
+
+.add-queet-char-max {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-family: 'Lucida Sans Unicode';
+    color: white;
+}
+
+.add-queet-progress {
+    display: flex;
+    align-items: center;
+    margin-top: 12px;
+    margin-right: 15px;
 }
 
 .add-queet-btn {
@@ -40,10 +63,10 @@
 .add-queet-input {
     display: flex;
     width: 95%;
-    font-size: 20px;
+    font-size: 15px;
     outline: none;
     border: none;
-    height: 70px;
+    height: 115px;
     background-color: transparent;
     color: white;
     resize: none;
@@ -51,10 +74,30 @@
     font-family: 'Lucida Sans Unicode';
 }
 
+/* {content.length <= 280 ? "add-queet-input" : "add-queet-input-red"} */
+
+/* .add-queet-input-red {
+    display: flex;
+    width: 95%;
+    font-size: 20px;
+    outline: none;
+    border: 1px solid red;
+    height: 70px;
+    background-color: transparent;
+    color: white;
+    resize: none;
+    margin-left: 15px;
+    font-family: 'Lucida Sans Unicode';
+    border-radius: 10px;
+} */
+
 .add-queet-input::-webkit-scrollbar {
     display: none;
 }
 
+/* .add-queet-input-red::-webkit-scrollbar {
+    display: none;
+} */
 
 .profile-pic {
     height: 45px;
@@ -78,12 +121,13 @@
     transform: scale(1.5);
 }
 
-.icons-and-button {
+.add-queet-progress-and-button {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding-left: 20px;
     padding-right: 20px;
+    margin-top: 10px;
 }
 
 .queet-upload-img-form {
@@ -141,4 +185,5 @@
 .add-queet-second-half {
     display: flex;
     justify-content: flex-end;
+    margin-bottom: 10px;
 }
