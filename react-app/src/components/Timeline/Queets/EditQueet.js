@@ -40,7 +40,7 @@ const EditQueet = ({ setShowModal, queet_id }) => {
                 <div onClick={() => setShowModal(false)} className='edit-queet-close-btn-container'>
                     <AiOutlineClose className='edit-queet-close-btn' />
                 </div>
-                <h3 className="edit-queet-title">Edit Queet</h3>
+                <h3 className="edit-queet-title">Edit queet</h3>
             </div>
             <form onSubmit={handleSubmit} className="edit-queet-form">
                 <div>
