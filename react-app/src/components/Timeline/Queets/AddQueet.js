@@ -31,9 +31,7 @@ const AddQueet = () => {
     return (
         <div className="add-queet-wrap">
             <form onSubmit={handleSubmit} className="add-queet-form">
-                <Link className="add-queet-profile-pic-link" to={`/users/${user.id}`}>
-                    <img className='add-queet-profile-pic' src={user.profile_pic === '' ? 'https://i.pinimg.com/736x/7c/ee/6f/7cee6fa507169843e3430a90dd5377d4.jpg' : user.profile_pic} />
-                </Link>
+                <img className='add-queet-profile-pic' src={user.profile_pic === '' ? 'https://i.pinimg.com/736x/7c/ee/6f/7cee6fa507169843e3430a90dd5377d4.jpg' : user.profile_pic} />
                 <div className="both-halves">
                     <div className="add-queet-first-half">
                         <div>

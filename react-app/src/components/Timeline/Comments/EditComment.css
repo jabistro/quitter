@@ -2,9 +2,10 @@
     width: 600px;
     height: 300px;
     /* background-color: #15202b; */
-    color: white;
+    /* color: blueviolet; */
     display: flex;
     flex-direction: column;
+    font-family: 'Lucida Sans Unicode';
 }
 
 .edit-comment-btn-and-title {
@@ -15,6 +16,7 @@
 
 .edit-comment-title {
     margin-left: 40px;
+    color: white;
 }
 
 .edit-comment-close-btn {
@@ -42,17 +44,17 @@
 }
 
 .edit-comment-input {
+    font-family: 'Lucida Sans Unicode';
     outline: none;
-    background-color: transparent;
+    background-color: violet;
     border: none;
     color: white;
-    font-size: 25px;
-    width: 550px;
+    font-size: 20px;
+    width: 80%;
     height: 150px;
     margin-left: 55px;
     resize: none;
 }
-
 
 .edit-and-delete-comment-btn {
     display: flex;

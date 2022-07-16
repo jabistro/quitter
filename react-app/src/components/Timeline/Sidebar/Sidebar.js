@@ -6,15 +6,17 @@ import { FiBell } from 'react-icons/fi';
 import { FiMail } from 'react-icons/fi';
 import { FiBookmark } from 'react-icons/fi';
 import { BsPerson } from 'react-icons/bs';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import SidebarQueetModal from './SidebarQueetModal';
 import LogoutButton from '../../auth/LogoutButton';
+import { MdKeyboardBackspace } from 'react-icons/md';
 
 
 const Sidebar = () => {
 
   const sessionUser = useSelector(state => state.session.user)
+  const history = useHistory();
 
   return (
     <div className='sidebar-wrap'>
@@ -22,7 +24,12 @@ const Sidebar = () => {
       <div className='sidebar-second-half'>
         <div className='sidebar-second-half-wrap'>
           <div className='sidebar-second-half-top'>
-            <img className='logo' src={require('../../../images/quitter2-removebg-preview.png')} alt="" />
+            <div className='sidebar-second-half-logo-and-back-btn'>
+              <img className='logo' src={require('../../../images/quitter2-removebg-preview.png')} alt="" />
+              <div onClick={() => history.goBack()} className='sidebar-back-btn-container'>
+                <MdKeyboardBackspace className='sidebar-back-btn' />
+              </div>
+            </div>
             <Link className='sidebar-home-link' to='/'>
               <div className='icon-wrap'>
                 <HiOutlineUserGroup className='icons' />

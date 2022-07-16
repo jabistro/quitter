@@ -11,10 +11,7 @@ const ProfileHeader = ({ userId }) => {
 
     const sessionUser = useSelector(state => state.session.user);
     const users = useSelector(state => state.user);
-    const usersArr = Object.values(users);
-    const userInfo = usersArr[userId - 1]
-
-    console.log(userInfo)
+    const userInfo = users[userId]
 
     return (
         <div className='profile-header-wrap'>

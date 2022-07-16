@@ -49,6 +49,7 @@ const EditComment = ({ setShowModal, comment_id }) => {
                         value={content}
                         onChange={(e) => setContent(e.target.value)}
                         required
+                        disabled={!content}
                         placeholder="What's on your mind? This is a safe space."
                     />
                 </div>

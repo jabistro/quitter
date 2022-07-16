@@ -10,20 +10,22 @@ const ProfileFeed = ({ userId }) => {
 
     // const sessionUser = useSelector(state => state.session.user);
     const users = useSelector(state => state.user);
-    const usersArr = Object.values(users);
-    const userInfo = usersArr[userId - 1]
+    const userInfo = users[userId]
     const queets = useSelector(state => state.queet);
     const queetsArr = Object.values(queets);
-    const userQueets = queetsArr?.filter(queet => queet.userId === userId)
+    const userQueets = queetsArr?.filter(queet => queet.userId === Number(userId))
+
+    console.log(queetsArr)
+    console.log(userQueets)
 
     return (
         <div className="profile-feed-wrap">
             <div className="profile-title-wrap">
-                <Link className='profile-back-link' to={"/"}>
+                {/* <Link className='profile-back-link' to={"/"}>
                     <div className="profile-feed-back-button-container">
                         <MdKeyboardBackspace className='profile-feed-back-button' />
                     </div>
-                </Link>
+                </Link> */}
                 <div className="profile-title-and-tweet-ammount">
                     <p className="profile-title">{userInfo?.display_name === '' ? '' : userInfo?.display_name}</p>
                     <p className="profile-amount-of-tweets">{userQueets.length} Tweets</p>

@@ -10,7 +10,7 @@ const Feed = () => {
         <div className="feed-wrap">
             <div className="header-wrap">
                 <h2 className="home">Home</h2>
-                <FiRefreshCcw className="refresh" />
+                {/* <FiRefreshCcw className="refresh" /> */}
             </div>
             <AddQueet />
             <Queets />

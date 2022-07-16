@@ -35,9 +35,7 @@ const AddComment = () => {
     return (
         <div className="add-comment-wrap">
             <form onSubmit={handleSubmit} className="add-comment-form">
-                <Link className="add-comment-profile-pic-link" to={`/users/${user.id}`}>
-                    <img className='add-comment-profile-pic' src={user.profile_pic === '' ? 'https://i.pinimg.com/736x/7c/ee/6f/7cee6fa507169843e3430a90dd5377d4.jpg' : user.profile_pic} />
-                </Link>
+                <img className='add-comment-profile-pic' src={user.profile_pic === '' ? 'https://i.pinimg.com/736x/7c/ee/6f/7cee6fa507169843e3430a90dd5377d4.jpg' : user.profile_pic} />
                 <div className="add-comment-input-btn-and-reply-to">
                     {/* <div className="add-comment-replying-to-container">
                         <p className="add-comment-replying-to-txt">Replying to</p>

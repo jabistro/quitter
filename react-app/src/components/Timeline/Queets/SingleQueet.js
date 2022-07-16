@@ -6,9 +6,9 @@ import Comments from '../Comments/Comments';
 import AddComment from '../Comments/AddComment';
 import EditQueetModal from './EditQueetModal';
 import { BiMessage } from 'react-icons/bi';
-import { FaRetweet } from 'react-icons/fa';
-import { FiHeart } from 'react-icons/fi';
-import { FiShare } from 'react-icons/fi';
+// import { FaRetweet } from 'react-icons/fa';
+// import { FiHeart } from 'react-icons/fi';
+// import { FiShare } from 'react-icons/fi';
 import { MdKeyboardBackspace } from 'react-icons/md';
 import moment from 'moment';
 
@@ -28,11 +28,11 @@ const SingleQueet = () => {
     return (
         <div className='queet-comment-wrap'>
             <div className='thread-and-back-button'>
-                <Link className='thread-back-link' to={"/"}>
+                {/* <Link className='thread-back-link' to={"/"}>
                     <div className='single-queet-back-btn-container'>
                         <MdKeyboardBackspace className='single-queet-back-button' />
                     </div>
-                </Link>
+                </Link> */}
                 <h2 className='thread'>Queet</h2>
             </div>
             <div className="single-queet-block">
