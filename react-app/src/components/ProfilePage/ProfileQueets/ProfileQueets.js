@@ -57,12 +57,13 @@ const ProfileQueets = ({ userId }) => {
                                     </div>
                                 </Link>
                             </div>
-                            <div className="profile-feed-queet-icons">
-                                <div className='profile-feed-queet-icon-and-stat'>
-                                    <BiMessage />
-                                    <p className='profile-feed-queet-stat'><NumberOfComments queetId={queet.id} /></p>
-                                </div>
-                                {/* <div className='profile-feed-queet-icon-and-stat'>
+                            <Link className="queet-link" to={`/queets/${queet.id}`}>
+                                <div className="profile-feed-queet-icons">
+                                    <div className='profile-feed-queet-icon-and-stat'>
+                                        <BiMessage />
+                                        <p className='profile-feed-queet-stat'><NumberOfComments queetId={queet.id} /></p>
+                                    </div>
+                                    {/* <div className='profile-feed-queet-icon-and-stat'>
                                     <FaRetweet className="requeet-icon" />
                                     <p className='profile-feed-queet-stat'></p>
                                 </div>
@@ -74,7 +75,8 @@ const ProfileQueets = ({ userId }) => {
                                     <FiShare />
                                     <p className='profile-feed-queet-stat'></p>
                                 </div> */}
-                            </div>
+                                </div>
+                            </Link>
                         </div>
                     </div>
                 )

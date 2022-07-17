@@ -23,10 +23,8 @@ const ProfileFeed = ({ userId }) => {
                         <MdKeyboardBackspace className='profile-feed-back-button' />
                     </div>
                 </Link> */}
-                <div className="profile-title-and-tweet-ammount">
-                    <p className="profile-title">{userInfo?.display_name === '' ? '' : userInfo?.display_name}</p>
-                    <p className="profile-amount-of-tweets">{userQueets.length} Tweets</p>
-                </div>
+                <p className="profile-title">{userInfo?.display_name === '' ? '' : userInfo?.display_name}</p>
+                <p className="profile-amount-of-tweets">{userQueets.length} Queets</p>
             </div>
             <ProfileHeader userId={userId} />
             <ProfileQueets userId={userId} />
