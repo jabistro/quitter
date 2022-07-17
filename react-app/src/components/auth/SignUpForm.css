@@ -84,6 +84,10 @@
     overflow-x: hidden;
 }
 
+.signup-form::-webkit-scrollbar {
+    display: none;
+}
+
 .signup-input {
     margin-top: 0px;
     color: white;

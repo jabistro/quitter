@@ -76,6 +76,10 @@
     overflow-x: hidden;
 }
 
+.login-form::-webkit-scrollbar {
+    display: none;
+}
+
 .login-input {
     margin-top: 0px;
     color: white;

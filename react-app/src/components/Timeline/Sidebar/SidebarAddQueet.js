@@ -9,7 +9,11 @@ const SidebarAddQueet = ({ setShowModal }) => {
     const user = useSelector(state => state.session.user);
     const dispatch = useDispatch();
     const [content, setContent] = useState('');
-    const [imageBoxOpen, setImageBoxOpen] = useState(false);
+    // const [imageBoxOpen, setImageBoxOpen] = useState(false);
+
+    const contentHandler = (e) => {
+        setContent(e.target.value)
+    }
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -30,25 +34,33 @@ const SidebarAddQueet = ({ setShowModal }) => {
 
     return (
         <div className="sidebar-add-queet-wrap">
-            <form onSubmit={handleSubmit} className="sidebar-add-queet-form">
-                <div className="sidebar-add-queet-first-half">
-                    <div onClick={() => setShowModal(false)} className='sidebar-queet-close-btn-container'>
-                        <AiOutlineClose className='sidebar-add-queet-close-btn' />
-                    </div>
-                    <img className='sidebar-profile-pic' src={user.profile_pic === '' ? 'https://i.pinimg.com/736x/7c/ee/6f/7cee6fa507169843e3430a90dd5377d4.jpg' : user.profile_pic} alt='' />
+            <div className='sidebar-add-queet-close-btn-and-title'>
+                <div onClick={() => setShowModal(false)} className='sidebar-add-queet-close-btn-container'>
+                    <AiOutlineClose className='sidebar-add-queet-close-btn' />
                 </div>
-                <div className="sidebar-add-queet-second-half">
-                    <div></div>
-                    <textarea
-                        className="sidebar-add-queet-input"
-                        type="text"
-                        value={content}
-                        onChange={(e) => setContent(e.target.value)}
-                        required
-                        placeholder="What's on your mind? This is a safe space."
-                    />
-                    <div className="sidebar-icons-and-button">
-                        <button disabled={!content} type="submit" className="sidebar-add-queet-btn">Queet</button>
+                <p className='sidebar-add-queet-title'>Add queet</p>
+            </div>
+            <form onSubmit={handleSubmit} className="sidebar-add-queet-form">
+                <img className='sidebar-add-queet-profile-pic' src={user.profile_pic === '' ? 'https://i.pinimg.com/736x/7c/ee/6f/7cee6fa507169843e3430a90dd5377d4.jpg' : user.profile_pic} />
+                <div className="sidebar-add-queet-both-halves">
+                    <div className="sidebar-add-queet-first-half">
+                        <textarea
+                            className="sidebar-add-queet-input"
+                            type="text"
+                            value={content}
+                            onChange={contentHandler}
+                            required
+                            placeholder="What's on your mind? This is a safe space."
+                        />
+                    </div>
+                    <div className="sidebar-add-queet-second-half">
+                        <div className="sidebar-add-queet-progress-and-button">
+                            <div className="sidebar-add-queet-progress">
+                                <span className={(content.length > 280 || content.length === 0) ? "sidebar-add-queet-char-total-red" : "sidebar-add-queet-char-total"}>{content.length}</span>
+                                <p className="sidebar-add-queet-char-max">/280</p>
+                            </div>
+                            <button disabled={!content || content.length > 280} type="submit" className="sidebar-add-queet-btn">Queet</button>
+                        </div>
                     </div>
                 </div>
             </form>

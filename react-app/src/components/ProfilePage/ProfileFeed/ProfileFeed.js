@@ -15,9 +15,6 @@ const ProfileFeed = ({ userId }) => {
     const queetsArr = Object.values(queets);
     const userQueets = queetsArr?.filter(queet => queet.userId === Number(userId))
 
-    console.log(queetsArr)
-    console.log(userQueets)
-
     return (
         <div className="profile-feed-wrap">
             <div className="profile-title-wrap">

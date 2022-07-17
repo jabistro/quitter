@@ -1,16 +1,17 @@
-.sidebar-add-queet-form {
-    display: grid;
-    grid-template-columns: 1fr 8fr;
-    height: 280px;
+.sidebar-add-queet-wrap {
+    display: flex;
     width: 600px;
+    height: 250px;
+    color: white;
+    flex-direction: column;
 }
 
-.sidebar-queet-close-btn {
+.sidebar-add-queet-close-btn {
     height: 25px;
     width: 25px;
 }
 
-.sidebar-queet-close-btn-container {
+.sidebar-add-queet-close-btn-container {
     margin-left: 8px;
     margin-top: 8px;
     display: flex;
@@ -21,23 +22,54 @@
     cursor: pointer;
     border-radius: 25px;
     color: white;
+    margin-left: 15px;
 }
 
-.sidebar-queet-close-btn-container:hover {
+.sidebar-add-queet-close-btn-container:hover {
     background-color: #27323d;
     transition: all;
     transition-duration: 200ms;
 }
 
-.sidebar-add-queet-first-half {
-    display: flex;
-    flex-direction: column;
+.sidebar-add-queet-form {
+    display: grid;
+    grid-template-columns: 1fr 12fr;
+    margin-top: 15px;
 }
 
-.sidebar-add-queet-second-half {
+.sidebar-add-queet-profile-pic:hover {
+    opacity: 0.7;
+}
+
+.sidebar-add-queet-profile-pic {
+    height: 44px;
+    width: 44px;
+    border-radius: 22px;
+    margin-left: 15px;
+}
+
+.sidebar-add-queet-char-total {
+    font-family: 'Lucida Sans Unicode';
+    color: white;
+}
+
+.sidebar-add-queet-char-total-red {
+    font-family: 'Lucida Sans Unicode';
+    color: red;
+}
+
+.sidebar-add-queet-char-max {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-family: 'Lucida Sans Unicode';
+    color: white;
+}
+
+.sidebar-add-queet-progress {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    align-items: center;
+    margin-top: 12px;
+    margin-right: 15px;
 }
 
 .sidebar-add-queet-btn {
@@ -46,11 +78,15 @@
     border: none;
     color: white;
     font-weight: bold;
-    height: 37px;
-    width: 75px;
-    border-radius: 25px;
-    font-size: 15px;
+    height: 40px;
+    width: 120px;
+    border-radius: 20px;
+    font-size: 20px;
     cursor: pointer;
+}
+
+.sidebar-add-queet-btn:hover {
+    background-color: #98309a;
 }
 
 .sidebar-add-queet-btn:disabled {
@@ -60,27 +96,50 @@
 
 .sidebar-add-queet-input {
     display: flex;
-    align-items: center;
-    height: 120px;
-    width: 490px;
-    font-size: 20px;
+    width: 95%;
+    font-size: 15px;
     outline: none;
+    border: none;
+    height: 115px;
     background-color: transparent;
     color: white;
     resize: none;
+    margin-left: 15px;
     font-family: 'Lucida Sans Unicode';
-    margin-top: 40px;
-    border: none;
 }
 
-.sidebar-profile-pic {
-    height: 46px;
-    width: 46px;
-    border-radius: 23px;
-    object-fit: cover;
-    margin-top: 15px;
+/* {content.length <= 280 ? "add-queet-input" : "add-queet-input-red"} */
+
+/* .add-queet-input-red {
+    display: flex;
+    width: 95%;
+    font-size: 20px;
+    outline: none;
+    border: 1px solid red;
+    height: 70px;
+    background-color: transparent;
+    color: white;
+    resize: none;
     margin-left: 15px;
-    margin-right: 15px;
+    font-family: 'Lucida Sans Unicode';
+    border-radius: 10px;
+} */
+
+.sidebar-add-queet-input::-webkit-scrollbar {
+    display: none;
+}
+
+/* .add-queet-input-red::-webkit-scrollbar {
+    display: none;
+} */
+
+.sidebar-profile-pic {
+    height: 45px;
+    width: 45px;
+    border-radius: 20px;
+    object-fit: cover;
+    margin-top: 5px;
+    margin-left: 11px;
 }
 
 .sidebar-add-img-btn {
@@ -96,14 +155,13 @@
     transform: scale(1.5);
 }
 
-.sidebar-icons-and-button {
+.sidebar-add-queet-progress-and-button {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
-    height: 55px;
-    border-top: 1px solid rgb(154, 154, 154);
-    padding-top: 10px;
-    width: 95%;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 10px;
 }
 
 .sidebar-queet-upload-img-form {
@@ -112,9 +170,15 @@
     justify-content: center;
     align-items: center;
     height: 50px;
-    width: 350px;
+    width: 400px;
     border-radius: 20px;
-    border: none;
+    margin-left: 40px;
+    margin-top: 15px;
+}
+
+.sidebar-queet-upload-img-input {
+    background-color: transparent;
+    color: white;
 }
 
 /* .queet-upload-img-wrap {
@@ -133,13 +197,6 @@
     border: none;
     background-color: transparent;
     color: white;
-    font-weight: bold;
-    font-family: 'Lucida Sans Unicode';
-    margin-left: 10px;
-}
-
-.sidebar-queet-upload-img-input::placeholder {
-    color: rgb(228, 228, 228);
 }
 
 .sidebar-queet-upload-img-btn {
@@ -157,4 +214,29 @@
     border-radius: 20px;
     font-size: 15px;
     cursor: pointer;
+}
+
+.sidebar-add-queet-first-half {
+    border-bottom: 1px solid gray;
+    width: 96%;
+}
+
+.sidebar-add-queet-second-half {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+}
+
+.sidebar-add-queet-close-btn-and-title {
+    display: flex;
+    align-items: center;
+}
+
+.sidebar-add-queet-title {
+    font-family: 'Lucida Sans Unicode';
+    font-weight: bold;
+    font-size: 20px;
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 0px;
 }
