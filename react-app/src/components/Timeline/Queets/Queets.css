@@ -65,7 +65,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
+    width: 520px;
 }
 
 .feed-queet-display-name {
@@ -128,9 +128,12 @@
     border: none;
     outline: none;
     background-color: transparent;
+    overflow-x: hidden;
+    word-wrap: break-word;
 }
 
 .feed-queet-content-lines {
+    width: 500px;
     margin-top: 0px;
     margin-bottom: 0px;
 }

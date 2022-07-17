@@ -51,7 +51,11 @@ const SingleQueet = () => {
                         }
                     </div>
                 </div>
-                <div className='single-queet'>{queet?.content}</div>
+                <div className="single-queet-container">
+                    <div className="single-queet">
+                        {queet.content.split('\n').map(line => (<p className="single-queet-content-lines">{line}</p>))}
+                    </div>
+                </div>
                 <div className='single-queet-timestamp'>{moment(queet?.created_at).format('LT')}  ·  {moment(queet?.created_at).format('ll')}</div>
                 <div className='single-queet-icons'>
                     <div className='single-queet-icon-and-stat'>

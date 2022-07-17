@@ -12,17 +12,14 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    margin-top: 15px;
+    width: 530px
 }
 
 .comments {
     display: grid;
     grid-template-columns: 1fr 12fr;
-    padding-top: 15px;
     border-bottom: 1px solid rgb(84, 84, 84);
-    overflow-wrap: normal;
-    text-align: justify;
-    overflow-x: auto;
-    height: 120px;
 }
 
 .all-comments-everything-minus-pic {
@@ -31,6 +28,7 @@
 }
 
 .all-comments-profile-pic-link {
+    margin-top: 15px;
     cursor: pointer;
 }
 
@@ -125,8 +123,21 @@
     font-size: 14px;
     padding-left: 10px;
     font-family: 'Lucida Sans Unicode';
-    height: 100%;
     margin-right: 15px;
+    width: 95%;
+    resize: none;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    margin-bottom: 15px;
+    overflow-x: hidden;
+    word-wrap: break-word;
+}
+
+.feed-comment-content-lines {
+    width: 500px;
+    margin-top: 0px;
+    margin-bottom: 0px;
 }
 
 .feed-comment-stat {

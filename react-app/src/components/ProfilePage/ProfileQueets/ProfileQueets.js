@@ -50,9 +50,13 @@ const ProfileQueets = ({ userId }) => {
                                     <EditQueetModal queetId={queet.id} className="profile-page-queets-edit-btn" />
                                 }
                             </div>
-                            <Link className="profile-queet-link" to={`/queets/${queet.id}`}>
-                                <div className="profile-feed-queet">{queet.content}</div>
-                            </Link>
+                            <div className="profile-feed-queet-container">
+                                <Link className="queet-link" to={`/queets/${queet.id}`}>
+                                    <div className="profile-feed-queet">
+                                        {queet.content.split('\n').map(line => (<p className="profile-feed-queet-content-lines">{line}</p>))}
+                                    </div>
+                                </Link>
+                            </div>
                             <div className="profile-feed-queet-icons">
                                 <div className='profile-feed-queet-icon-and-stat'>
                                     <BiMessage />

@@ -89,3 +89,7 @@
 .sidebar-second-half {
     display: flex;
 }
+
+.sidebar-second-half-top {
+    width: 325px;
+}

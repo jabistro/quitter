@@ -50,7 +50,11 @@ const SingleComment = () => {
                         }
                     </div>
                 </div>
-                <div className='single-comment'>{comment?.content}</div>
+                <div className="single-comment-container">
+                    <div className="single-comment">
+                        {comment.content.split('\n').map(line => (<p className="single-comment-content-lines">{line}</p>))}
+                    </div>
+                </div>
                 <div className='single-comment-timestamp'>{moment(comment?.created_at).format('LT')}  ·  {moment(comment?.created_at).format('ll')}</div>
                 {/* <div className='single-comment-icons'>
                     <div className='single-comment-icon-and-stat'>

@@ -1,10 +1,10 @@
 import './Sidebar.css';
 import React from 'react'
 import { HiOutlineUserGroup } from 'react-icons/hi';
-import { FaHashtag } from 'react-icons/fa';
-import { FiBell } from 'react-icons/fi';
-import { FiMail } from 'react-icons/fi';
-import { FiBookmark } from 'react-icons/fi';
+// import { FaHashtag } from 'react-icons/fa';
+// import { FiBell } from 'react-icons/fi';
+// import { FiMail } from 'react-icons/fi';
+// import { FiBookmark } from 'react-icons/fi';
 import { BsPerson } from 'react-icons/bs';
 import { Link, useHistory } from 'react-router-dom';
 import { useSelector } from 'react-redux';

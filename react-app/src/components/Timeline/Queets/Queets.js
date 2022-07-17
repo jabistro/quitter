@@ -1,6 +1,6 @@
 import "./Queets.css";
 import { useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import React from 'react'
 import EditQueetModal from "./EditQueetModal";
 import { BiMessage } from 'react-icons/bi';
@@ -12,6 +12,9 @@ import NumberOfComments from "../Comments/NumberOfComments/NumberOfComments";
 
 
 const Queets = () => {
+
+    const history = useHistory();
+    console.log(history)
 
     const users = useSelector(state => state.user);
     const usersArr = Object.values(users);
@@ -75,14 +78,15 @@ const Queets = () => {
                                     </Link>
                                 </div>
                             </div>
-                            <div className="feed-queet-icons">
-                                <div className='feed-queet-icon-and-stat'>
-                                    <BiMessage />
-                                    <p className='feed-queet-stat'>
-                                        <NumberOfComments queetId={queet.id} />
-                                    </p>
-                                </div>
-                                {/* <div className='feed-queet-icon-and-stat'>
+                            <Link className="queet-link" to={`/queets/${queet.id}`}>
+                                <div className="feed-queet-icons">
+                                    <div className='feed-queet-icon-and-stat'>
+                                        <BiMessage />
+                                        <p className='feed-queet-stat'>
+                                            <NumberOfComments queetId={queet.id} />
+                                        </p>
+                                    </div>
+                                    {/* <div className='feed-queet-icon-and-stat'>
                                     <FaRetweet className="requeet-icon" />
                                     <p className='feed-queet-stat'></p>
                                 </div>
@@ -94,7 +98,8 @@ const Queets = () => {
                                     <FiShare />
                                     <p className='feed-queet-stat'></p>
                                 </div> */}
-                            </div>
+                                </div>
+                            </Link>
                         </div>
                     </div>
                 )

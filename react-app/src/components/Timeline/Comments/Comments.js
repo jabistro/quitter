@@ -37,39 +37,45 @@ const Comments = () => {
                                             <p className="timestamp-container">
                                                 <ReactTimeAgo
                                                     className="timestamp"
-                                                    date={comment?.created_at}
+                                                    date={comment.created_at}
                                                     locale='en-US'
                                                     timeStyle="twitter-first-minute"
                                                 />
                                             </p>
                                         </div>
                                     </Link>
-                                    {comment.queet.userId === sessionUser.id &&
+                                    {comment.userId === sessionUser.id &&
                                         <EditCommentModal commentId={comment.id} className="all-comments-edit-btn" />
                                     }
                                 </div>
-                                <Link className="comment-link" to={`/comments/${comment.id}`}>
-                                    <div className="feed-comment">{comment.content}</div>
-                                </Link>
+                                <div className="feed-comment-container">
+                                    <Link className="comment-link" to={`/comments/${comment.id}`}>
+                                        <div className="feed-comment">
+                                            {comment.content.split('\n').map(line => (<p className="feed-comment-content-lines">{line}</p>))}
+                                        </div>
+                                    </Link>
+                                </div>
                             </div>
-                            {/* <div className="feed-comment-icons">
-                                <div className='feed-comment-icon-and-stat'>
+                            {/* <div className="feed-queet-icons">
+                                <div className='feed-queet-icon-and-stat'>
                                     <BiMessage />
-                                    <p className='feed-comment-stat'></p>
-                                </div>
-                                <div className='feed-comment-icon-and-stat'>
+                                    <p className='feed-queet-stat'>
+                                        <NumberOfComments queetId={queet.id} />
+                                    </p>
+                                </div> */}
+                            {/* <div className='feed-queet-icon-and-stat'>
                                     <FaRetweet className="requeet-icon" />
-                                    <p className='feed-comment-stat'></p>
+                                    <p className='feed-queet-stat'></p>
                                 </div>
-                                <div className='feed-comment-icon-and-stat'>
+                                <div className='feed-queet-icon-and-stat'>
                                     <FiHeart />
-                                    <p className='feed-comment-stat'></p>
+                                    <p className='feed-queet-stat'></p>
                                 </div>
-                                <div className='feed-comment-icon-and-stat'>
+                                <div className='feed-queet-icon-and-stat'>
                                     <FiShare />
-                                    <p className='feed-comment-stat'></p>
-                                </div>
-                            </div> */}
+                                    <p className='feed-queet-stat'></p>
+                                </div> */}
+                            {/* </div> */}
                         </div>
                     </div>
                 )
