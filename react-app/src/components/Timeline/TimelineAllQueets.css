@@ -1,6 +1,6 @@
 .timeline-all-wrap {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     height: 100%;
     overflow-y: scroll;
 }
@@ -9,23 +9,20 @@
     display: none;
 }
 
-.timeline-all-left {
-    width: 650px;
+/* .timeline-all-left {
     position: fixed;
     left: 0;
-}
+} */
 
 .timeline-all-center::-webkit-scrollbar {
     display: none;
 }
 
 .timeline-all-center {
-    width: 600px;
     overflow-y: scroll;
 }
 
-.timeline-all-right {
-    width: 650px;
+/* .timeline-all-right {
     position: fixed;
     right: 0;
-}
+} */

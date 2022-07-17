@@ -3,6 +3,7 @@ import React from 'react'
 import SideBar from './Sidebar/Sidebar';
 // import Widgets from './Widgets/Widgets';
 import SingleComment from './Comments/SingleComment';
+import Motivations from './Widgets/Motivations/Motivations';
 
 const TimelineSingleComment = () => {
     return (
@@ -15,6 +16,7 @@ const TimelineSingleComment = () => {
             </div>
             <div className='timeline-single-comment-right'>
                 {/* <Widgets /> */}
+                <Motivations />
             </div>
         </div>
     )
