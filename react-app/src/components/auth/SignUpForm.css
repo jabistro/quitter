@@ -1,10 +1,11 @@
 .signup-wrap {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
+    /* justify-content: center; */
     align-self: center;
     width: 600px;
-    height: 550px;
+    height: 650px;
 }
 
 .signup-header {
@@ -53,11 +54,12 @@
 }
 
 .signup-title-txt-two {
-    font-size: 15px;
-    color: rgb(125, 125, 125);
+    font-size: 20px;
+    color: #b83dba;
     margin-bottom: 0px;
     margin-top: 0px;
     margin-left: 10px;
+    /* font-weight: bold; */
 }
 
 .signup-submit-btn {
