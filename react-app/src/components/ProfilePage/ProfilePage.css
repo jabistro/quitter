@@ -1,32 +1,31 @@
 .profile-all-wrap {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    justify-content: center;
     height: 100%;
-    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
-.profile-all-wrap::-webkit-scrollbar {
+/* .profile-all-wrap::-webkit-scrollbar {
     display: none;
-}
+} */
 
 .profile-all-left {
-    width: 650px;
-    /* position: fixed;
-    left: 0; */
+    width: 500px;
 }
 
-.profile-all-center::-webkit-scrollbar {
+/* .profile-all-center::-webkit-scrollbar {
     display: none;
-}
+} */
 
 .profile-all-center {
-    width: 600px;
     overflow-y: scroll;
+    width: 510px;
+    border-left: 1px solid rgb(84, 84, 84);
+    border-right: 1px solid rgb(84, 84, 84);
+    height: 99vh;
+    overflow-x: hidden;
 }
 
 .profile-all-right {
-    width: 650px;
-    /* position: fixed;
-    right: 0; */
+    width: 500px;
 }

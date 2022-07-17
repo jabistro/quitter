@@ -1,9 +1,8 @@
 import "./Feed.css";
-import { FiRefreshCcw } from 'react-icons/fi';
+// import { FiRefreshCcw } from 'react-icons/fi';
 import React from 'react'
 import Queets from "../Queets/Queets";
 import AddQueet from "../Queets/AddQueet";
-import SingleQueet from "../Queets/SingleQueet";
 
 const Feed = () => {
     return (
@@ -14,7 +13,6 @@ const Feed = () => {
             </div>
             <AddQueet />
             <Queets />
-            {/* <SingleQueet /> */}
         </div>
     )
 }

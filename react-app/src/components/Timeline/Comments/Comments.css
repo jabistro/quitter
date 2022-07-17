@@ -1,5 +1,6 @@
 .comments-wrap {
     border-top: 1px solid rgb(84, 84, 84);
+    width: 500px;
 }
 
 .comments:hover {
@@ -13,16 +14,17 @@
     flex-direction: column;
     justify-content: space-between;
     margin-top: 15px;
-    width: 530px
 }
 
 .comments {
+    width: 500px;
     display: grid;
     grid-template-columns: 1fr 12fr;
     border-bottom: 1px solid rgb(84, 84, 84);
 }
 
 .all-comments-everything-minus-pic {
+    width: 440px;
     display: flex;
     flex-direction: column;
 }
@@ -66,7 +68,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
+    width: 430px;
 }
 
 .feed-comment-display-name {
@@ -124,7 +126,7 @@
     padding-left: 10px;
     font-family: 'Lucida Sans Unicode';
     margin-right: 15px;
-    width: 95%;
+    width: 440px;
     resize: none;
     border: none;
     outline: none;
@@ -135,7 +137,7 @@
 }
 
 .feed-comment-content-lines {
-    width: 500px;
+    width: 415px;
     margin-top: 0px;
     margin-bottom: 0px;
 }

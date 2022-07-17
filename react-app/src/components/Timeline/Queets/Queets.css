@@ -1,5 +1,6 @@
 .queets-wrap {
     border-top: 1px solid rgb(84, 84, 84);
+    width: 500px;
 }
 
 .queets:hover {
@@ -16,12 +17,14 @@
 }
 
 .queets {
+    width: 500px;
     display: grid;
     grid-template-columns: 1fr 12fr;
     border-bottom: 1px solid rgb(84, 84, 84);
 }
 
 .all-queets-everything-minus-pic {
+    width: 440px;
     display: flex;
     flex-direction: column;
 }
@@ -65,7 +68,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 520px;
+    width: 425px;
 }
 
 .feed-queet-display-name {
@@ -123,7 +126,7 @@
     padding-left: 10px;
     font-family: 'Lucida Sans Unicode';
     margin-right: 15px;
-    width: 95%;
+    width: 430px;
     resize: none;
     border: none;
     outline: none;
@@ -133,7 +136,7 @@
 }
 
 .feed-queet-content-lines {
-    width: 500px;
+    width: 405px;
     margin-top: 0px;
     margin-bottom: 0px;
 }

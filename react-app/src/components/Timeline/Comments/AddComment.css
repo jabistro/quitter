@@ -54,7 +54,12 @@
     border-radius: 20px;
     font-size: 15px;
     cursor: pointer;
+    margin-right: 10px;
 }
+
+/* .add-comment-btn:hover {
+    background-color: #9b319d;
+} */
 
 .add-comment-btn:disabled {
     opacity: 40%;
@@ -63,7 +68,7 @@
 
 .add-comment-input {
     display: flex;
-    width: 95%;
+    width: 90%;
     font-size: 15px;
     outline: none;
     border: none;

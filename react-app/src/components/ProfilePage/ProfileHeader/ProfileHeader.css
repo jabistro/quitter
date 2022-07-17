@@ -9,13 +9,13 @@
 } */
 
 .profile-header-container {
-    width: 600px;
+    width: 500px;
     height: 200px;
 }
 
 .profile-header {
     object-fit: fill;
-    width: 600px;
+    width: 500px;
     height: 200px;
 }
 

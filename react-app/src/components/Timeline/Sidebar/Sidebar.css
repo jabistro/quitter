@@ -1,6 +1,7 @@
 .sidebar-wrap {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    width: 500px;
 }
 
 .sidebar-second-half-logo-and-back-btn {
@@ -90,6 +91,6 @@
     display: flex;
 }
 
-.sidebar-second-half-top {
+/* .sidebar-second-half-top {
     width: 325px;
-}
+} */

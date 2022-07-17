@@ -1,10 +1,12 @@
 .add-queet-wrap {
     display: flex;
+    width: 500px;
 }
 
 .add-queet-form {
     display: grid;
     grid-template-columns: 1fr 12fr;
+    width: 500px;
 }
 
 /* .add-queet-profile-pic:hover {
@@ -55,9 +57,9 @@
     cursor: pointer;
 }
 
-.add-queet-btn:hover {
+/* .add-queet-btn:hover {
     background-color: #9a319c;
-}
+} */
 
 .add-queet-btn:disabled {
     opacity: 40%;
@@ -65,8 +67,8 @@
 }
 
 .add-queet-input {
+    width: 400px;
     display: flex;
-    width: 500px;
     font-size: 15px;
     outline: none;
     border: none;

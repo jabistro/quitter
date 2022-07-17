@@ -1,5 +1,6 @@
 .profile-queets-wrap {
     border-top: 1px solid rgb(84, 84, 84);
+    width: 500px;
 }
 
 .profile-queets:hover {
@@ -16,6 +17,7 @@
 }
 
 .profile-queets {
+    width: 500px;
     display: grid;
     grid-template-columns: 1fr 12fr;
     padding-top: 15px;
@@ -44,6 +46,7 @@
 }
 
 .profile-feed-queet-username-and-edit-btn {
+    width: 430px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -75,7 +78,7 @@
     padding-left: 10px;
     font-family: 'Lucida Sans Unicode';
     margin-right: 15px;
-    width: 95%;
+    width: 430px;
     resize: none;
     border: none;
     outline: none;
@@ -87,7 +90,7 @@
 .profile-feed-queet-content-lines {
     margin-top: 0px;
     margin-bottom: 0px;
-    width: 500px;
+    width: 410px;
 }
 
 .profile-feed-queet-stat {

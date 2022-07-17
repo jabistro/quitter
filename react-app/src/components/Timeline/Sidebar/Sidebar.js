@@ -10,13 +10,13 @@ import { Link, useHistory } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import SidebarQueetModal from './SidebarQueetModal';
 import LogoutButton from '../../auth/LogoutButton';
-import { MdKeyboardBackspace } from 'react-icons/md';
+// import { MdKeyboardBackspace } from 'react-icons/md';
 
 
 const Sidebar = () => {
 
   const sessionUser = useSelector(state => state.session.user)
-  const history = useHistory();
+  // const history = useHistory();
 
   return (
     <div className='sidebar-wrap'>
@@ -26,9 +26,9 @@ const Sidebar = () => {
           <div className='sidebar-second-half-top'>
             <div className='sidebar-second-half-logo-and-back-btn'>
               <img className='logo' src={require('../../../images/quitter2-removebg-preview.png')} alt="" />
-              <div onClick={() => history.goBack()} className='sidebar-back-btn-container'>
+              {/* <div onClick={() => history.goBack()} className='sidebar-back-btn-container'>
                 <MdKeyboardBackspace className='sidebar-back-btn' />
-              </div>
+              </div> */}
             </div>
             <Link className='sidebar-home-link' to='/'>
               <div className='icon-wrap'>

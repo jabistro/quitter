@@ -2,6 +2,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    width: 100%;
 }
 
 .home {
@@ -31,9 +32,6 @@
 }
 
 .feed-wrap {
-    border-left: 1px solid rgb(84, 84, 84);
-    border-right: 1px solid rgb(84, 84, 84);
     height: 100%;
-    border-bottom: 1px solid rgb(84, 84, 84);
-    width: 99%;
+    width: 500px;
 }
