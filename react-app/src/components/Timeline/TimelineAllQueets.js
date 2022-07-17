@@ -2,7 +2,8 @@ import React from 'react';
 import Feed from './Feed/Feed';
 import SideBar from './Sidebar/Sidebar';
 import './TimelineAllQueets.css';
-// import Widgets from './Widgets/Widgets';
+import Motivations from './Widgets/Motivations/Motivations';
+// import SearchBar from './Widgets/SearchBar/SearchBar';
 
 
 const TimelineAllQueets = () => {
@@ -15,7 +16,8 @@ const TimelineAllQueets = () => {
                 <Feed className='timeline-all-feed' />
             </div>
             <div className='timeline-all-right'>
-                {/* <Widgets /> */}
+                {/* <SearchBar /> */}
+                <Motivations />
             </div>
         </div>
     )

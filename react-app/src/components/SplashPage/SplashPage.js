@@ -18,7 +18,7 @@ const SplashPage = () => {
     <div className='splash-wrap'>
       <div className='splash-all-minus-footer'>
         <div className='splash-left'>
-          <img className='splash-backdrop' src={require("../../images/splash-backdrop.png")} />
+          <img className='splash-backdrop' src='https://live.staticflickr.com/65535/52221327933_83fc0d6219_b.jpg' alt='' />
         </div>
         <div className='splash-right'>
           <img className='splash-logo' src={require('../../images/quitter2-removebg-preview.png')} alt="" />

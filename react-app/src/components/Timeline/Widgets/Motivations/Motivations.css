@@ -1,0 +1,36 @@
+.motivations-wrap {
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+}
+
+.motivations-title {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 55px;
+    color: white;
+    font-size: 30px;
+    font-family: 'Lucida Sans Unicode';
+}
+
+.motivations-container {
+    margin-left: 15px;
+    border: 2px solid gray;
+    width: 250px;
+    border-radius: 25px;
+}
+
+.motivations-content {
+    display: flex;
+    width: 220px;
+    height: 300px;
+    resize: none;
+    overflow-x: hidden;
+    word-wrap: break-word;
+    color: white;
+    font-size: 20px;
+    background-color: transparent;
+    border: none;
+    margin-top: 15px;
+    margin-left: 15px;
+}

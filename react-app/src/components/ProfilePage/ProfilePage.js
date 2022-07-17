@@ -4,6 +4,7 @@ import Sidebar from "../Timeline/Sidebar/Sidebar";
 import ProfileFeed from "./ProfileFeed/ProfileFeed";
 // import Widgets from "../Timeline/Widgets/Widgets";
 import { useParams } from "react-router-dom";
+import Motivations from "../Timeline/Widgets/Motivations/Motivations";
 
 const ProfilePage = () => {
 
@@ -19,6 +20,7 @@ const ProfilePage = () => {
             </div>
             <div className='profile-all-right'>
                 {/* <Widgets /> */}
+                <Motivations />
             </div>
         </div>
     )
