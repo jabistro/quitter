@@ -74,7 +74,7 @@ const SignUpForm = ({ setShowModal }) => {
           <input
             className='signup-input'
             type='text'
-            name='display_name'
+            name='Display name'
             onChange={updateDisplayName}
             value={displayName}
           ></input>
@@ -84,7 +84,7 @@ const SignUpForm = ({ setShowModal }) => {
           <input
             className='signup-input'
             type='text'
-            name='username'
+            name='Username'
             onChange={updateUsername}
             value={username}
           ></input>
@@ -94,7 +94,7 @@ const SignUpForm = ({ setShowModal }) => {
           <input
             className='signup-input'
             type='text'
-            name='email'
+            name='Email'
             onChange={updateEmail}
             value={email}
           ></input>
@@ -104,7 +104,7 @@ const SignUpForm = ({ setShowModal }) => {
           <input
             className='signup-input'
             type='password'
-            name='password'
+            name='Password'
             onChange={updatePassword}
             value={password}
           ></input>
@@ -114,7 +114,7 @@ const SignUpForm = ({ setShowModal }) => {
           <input
             className='signup-input'
             type='password'
-            name='repeat_password'
+            name='Confirm Password'
             onChange={updateRepeatPassword}
             value={repeatPassword}
             required={true}
