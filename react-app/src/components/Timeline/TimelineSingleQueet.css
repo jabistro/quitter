@@ -1,5 +1,6 @@
 .timeline-single-queet-wrap {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     justify-content: center;
     height: 100%;
     overflow-y: scroll;
@@ -11,8 +12,8 @@
 
 .timeline-single-queet-left {
     width: 650px;
-    position: fixed;
-    left: 0;
+    /* position: fixed;
+    left: 0; */
 }
 
 .timeline-single-queet-center::-webkit-scrollbar {
@@ -26,6 +27,6 @@
 
 .timeline-single-queet-right {
     width: 650px;
-    position: fixed;
-    right: 0;
+    /* position: fixed;
+    right: 0; */
 }

@@ -44,7 +44,12 @@ const SplashPage = () => {
         </div>
       </div>
       <div className='splash-footer'>
-        NOT SURE WHAT TO PUT HERE YET
+        <a className='about-link'>About</a>
+        <div id='scroll-container'>
+          <div id='scroll-text'>
+            Giving up addiction and taking back control in your life isn't easy, but you don't have to do it alone. Join the Quitter community today and share your story.
+          </div>
+        </div>
       </div>
     </div >
   )

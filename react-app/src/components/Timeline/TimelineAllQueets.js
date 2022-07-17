@@ -2,6 +2,7 @@ import React from 'react';
 import Feed from './Feed/Feed';
 import SideBar from './Sidebar/Sidebar';
 import './TimelineAllQueets.css';
+import Community from './Widgets/Community/Community';
 import Motivations from './Widgets/Motivations/Motivations';
 // import SearchBar from './Widgets/SearchBar/SearchBar';
 
@@ -18,6 +19,7 @@ const TimelineAllQueets = () => {
             <div className='timeline-all-right'>
                 {/* <SearchBar /> */}
                 <Motivations />
+                <Community />
             </div>
         </div>
     )

@@ -4,6 +4,7 @@ import SideBar from './Sidebar/Sidebar';
 // import Widgets from './Widgets/Widgets';
 import SingleComment from './Comments/SingleComment';
 import Motivations from './Widgets/Motivations/Motivations';
+import Community from './Widgets/Community/Community';
 
 const TimelineSingleComment = () => {
     return (
@@ -17,6 +18,7 @@ const TimelineSingleComment = () => {
             <div className='timeline-single-comment-right'>
                 {/* <Widgets /> */}
                 <Motivations />
+                <Community />
             </div>
         </div>
     )

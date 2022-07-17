@@ -1,0 +1,76 @@
+.random-user-wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.random-user-pfp-and-names {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 10px;
+    margin-left: 5px;
+}
+
+.random-user-names {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 15px;
+}
+
+.random-user-display-name {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    color: white;
+    font-family: 'Lucida Sans Unicode';
+    font-size: 18px;
+}
+
+.random-user-username {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    color: gray;
+    font-size: 15px;
+    font-family: 'Lucida Sans Unicode';
+}
+
+.random-user-view-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 40px;
+    color: #b83dba;
+    background-color: transparent;
+    border: 1px solid gray;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 15px;
+    font-family: 'Lucida Sans Unicode';
+    margin-top: 25px;
+    margin-bottom: 15px;
+    margin-left: 25px;
+    text-decoration: none;
+}
+
+.random-user-view-btn:hover {
+    background-color: #1e2e3d;
+    transition: all;
+    transition-duration: 800ms;
+    color: #b83dba;
+    font-weight: bold;
+    font-size: 15px;
+    font-family: 'Lucida Sans Unicode';
+}
+
+.random-user-view-txt {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.random-user-link {
+    text-decoration: none;
+}

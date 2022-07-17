@@ -4,6 +4,7 @@ import SideBar from './Sidebar/Sidebar';
 // import Widgets from './Widgets/Widgets';
 import SingleQueet from './Queets/SingleQueet';
 import Motivations from './Widgets/Motivations/Motivations';
+import Community from './Widgets/Community/Community';
 
 const TimelineSingleQueet = () => {
     return (
@@ -17,6 +18,7 @@ const TimelineSingleQueet = () => {
             <div className='timeline-single-queet-right'>
                 {/* <Widgets /> */}
                 <Motivations />
+                <Community />
             </div>
         </div>
     )
