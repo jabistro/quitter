@@ -60,7 +60,6 @@ export const modifyUser = (editUser) => async (dispatch) => {
     if (response.ok) {
         const editedUser = await response.json();
         dispatch(createUser(editedUser));
-        return editedUser;
     } else if (response.status < 500) {
         const data = await response.json();
         if (data.errors) {

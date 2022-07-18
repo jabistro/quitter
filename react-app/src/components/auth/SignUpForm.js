@@ -22,6 +22,11 @@ const SignUpForm = ({ setShowModal }) => {
       if (data) {
         setErrors(data)
       }
+    } else {
+      const newErrs = [];
+      newErrs.push("Passwords do not match");
+      setErrors(newErrs);
+      return;
     }
   };
 
@@ -65,7 +70,7 @@ const SignUpForm = ({ setShowModal }) => {
       </div>
       <form className='signup-form' onSubmit={onSignUp}>
         <div>
-          {errors.map((error, ind) => (
+          {errors?.map((error, ind) => (
             <div key={ind}>{error}</div>
           ))}
         </div>
