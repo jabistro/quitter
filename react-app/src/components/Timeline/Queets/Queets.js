@@ -70,7 +70,7 @@ const Queets = () => {
                                 <div className="feed-queet-container">
                                     <Link className="queet-link" to={`/queets/${queet.id}`}>
                                         <div className="feed-queet">
-                                            {queet.content.split('\n').map(line => (<p className="feed-queet-content-lines">{line}</p>))}
+                                            {queet.content.split('\n').map(line => (<p id={queet.id} className="feed-queet-content-lines">{line}</p>))}
                                         </div>
                                     </Link>
                                 </div>

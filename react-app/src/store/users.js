@@ -49,6 +49,7 @@ export const addUser = (user) => async (dispatch) => {
 };
 
 export const modifyUser = (editUser) => async (dispatch) => {
+    console.log("THIS HITS NUMBER 6!!!!!!")
     const response = await fetch(`/api/users/edit/${editUser.id}`, {
         method: "PUT",
         headers: {
@@ -56,7 +57,7 @@ export const modifyUser = (editUser) => async (dispatch) => {
         },
         body: JSON.stringify(editUser),
     });
-
+    console.log("THIS HITS NUMBER 7!!!!!!")
     if (response.ok) {
         const editedUser = await response.json();
         dispatch(createUser(editedUser));
