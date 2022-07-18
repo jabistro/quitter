@@ -1,6 +1,6 @@
 import "./Queets.css";
 import { useSelector } from 'react-redux';
-import { Link, useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import React from 'react'
 import EditQueetModal from "./EditQueetModal";
 import { BiMessage } from 'react-icons/bi';
@@ -12,9 +12,6 @@ import NumberOfComments from "../Comments/NumberOfComments/NumberOfComments";
 
 
 const Queets = () => {
-
-    const history = useHistory();
-    console.log(history)
 
     const users = useSelector(state => state.user);
     const usersArr = Object.values(users);

@@ -5,6 +5,35 @@
     height: 100%;
 }
 
+.profile-feed-back-btn-and-title {
+    display: flex;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+    border-radius: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #2a4056;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #b83dba;
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #742676;
+}
+
 .profile-title-wrap {
     display: flex;
     align-items: flex-start;

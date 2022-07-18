@@ -25,11 +25,11 @@ const SingleComment = () => {
     return (
         <div className='single-comment-wrap'>
             <div className='comment-and-back-button'>
-                {/* <Link className='comment-back-link' to={`/queets/${comment.queet.id}`}>
+                <Link className='comment-back-link' to={`/queets/${comment.queet.id}`}>
                     <div className='single-comment-back-btn-container'>
                         <MdKeyboardBackspace className='single-comment-back-button' />
                     </div>
-                </Link> */}
+                </Link>
                 <h2 className='comment'>Comment</h2>
             </div>
             <div className="single-comment-block">

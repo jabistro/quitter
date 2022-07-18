@@ -28,11 +28,11 @@ const SingleQueet = () => {
     return (
         <div className='queet-comment-wrap'>
             <div className='thread-and-back-button'>
-                {/* <Link className='thread-back-link' to={"/"}>
+                <Link className='thread-back-link' to={"/"}>
                     <div className='single-queet-back-btn-container'>
                         <MdKeyboardBackspace className='single-queet-back-button' />
                     </div>
-                </Link> */}
+                </Link>
                 <h2 className='thread'>Queet</h2>
             </div>
             <div className="single-queet-block">

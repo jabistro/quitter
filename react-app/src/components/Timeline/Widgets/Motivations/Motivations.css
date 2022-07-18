@@ -18,19 +18,25 @@
     border: 2px solid gray;
     width: 250px;
     border-radius: 25px;
+    text-decoration: none;
 }
 
 .motivations-content {
     display: flex;
     width: 220px;
-    height: 300px;
+    height: 350px;
     resize: none;
     overflow-x: hidden;
     word-wrap: break-word;
     color: white;
-    font-size: 18px;
+    font-size: 17px;
     background-color: transparent;
     border: none;
     margin-top: 15px;
+    margin-bottom: 0px;
     margin-left: 15px;
+    outline: none;
+    text-decoration: none;
+    font-family: 'Lucida Sans Unicode';
+    padding-right: 10px;
 }

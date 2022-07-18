@@ -7,9 +7,9 @@ const Motivations = () => {
         <div className='motivations-wrap'>
             <h3 className='motivations-title'>Motivations</h3>
             <div className='motivations-container'>
-                <textarea className='motivations-content'>
+                <p className='motivations-content'>
                     {Quotes[Math.floor(Math.random() * Quotes.length)]}
-                </textarea>
+                </p>
             </div>
         </div>
     )

@@ -17,14 +17,16 @@ const ProfileFeed = ({ userId }) => {
 
     return (
         <div className="profile-feed-wrap">
-            <div className="profile-title-wrap">
-                {/* <Link className='profile-back-link' to={"/"}>
+            <div className="profile-feed-back-btn-and-title">
+                <Link className='profile-back-link' to={"/"}>
                     <div className="profile-feed-back-button-container">
                         <MdKeyboardBackspace className='profile-feed-back-button' />
                     </div>
-                </Link> */}
-                <p className="profile-title">{userInfo?.display_name === '' ? '' : userInfo?.display_name}</p>
-                <p className="profile-amount-of-tweets">{userQueets.length} Queets</p>
+                </Link>
+                <div className="profile-title-wrap">
+                    <p className="profile-title">{userInfo?.display_name === '' ? '' : userInfo?.display_name}</p>
+                    <p className="profile-amount-of-tweets">{userQueets.length} Queets</p>
+                </div>
             </div>
             <ProfileHeader userId={userId} />
             <ProfileQueets userId={userId} />
