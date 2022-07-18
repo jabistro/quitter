@@ -66,8 +66,9 @@
 }
 
 .edit-profile-birthday-input {
-    color: white;
+    color: black;
     margin-right: 50px;
+    margin-left: 15px;
 }
 
 .edit-profile-sumbit-btn:hover {
