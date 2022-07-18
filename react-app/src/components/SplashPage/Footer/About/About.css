@@ -1,0 +1,106 @@
+.about-container {
+    width: 90%;
+    height: 90%;
+    display: flex;
+    align-items: center;
+    background-color: #446586;
+}
+
+.about-wrap {
+    width: 98vw;
+    height: 98vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-back-btn-spacer {
+    display: flex;
+    align-items: flex-start;
+    height: 100%;
+    width: 100px;
+}
+
+.about-all-minus-back-btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.about-back-btn-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    width: 80px;
+    cursor: pointer;
+    border-radius: 40px;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.about-back-button {
+    text-decoration: none;
+    color: white;
+    height: 60px;
+    width: 60px;
+    cursor: pointer;
+    margin-left: 10px;
+    margin-right: 15px;
+}
+
+.about-back-btn-container:hover {
+    background-color: #27323d;
+    transition: all;
+    transition-duration: 200ms;
+}
+
+.about-img {
+    height: 300px;
+    width: 300px;
+    background-image: url("https://media-exp1.licdn.com/dms/image/C4E03AQERfIqg4kP2XQ/profile-displayphoto-shrink_200_200/0/1650068562379?e=1659571200&v=beta&t=ioE9LYMNBkw37M7TgXhPMTbsH16Whb6ladV0kHQ4crM");
+    background-size: cover;
+    border-radius: 150px;
+}
+
+.about-blurb {
+    width: 500px;
+    resize: none;
+    border: none;
+    outline: none;
+    word-wrap: break-word;
+    font-family: 'Lucida Sans Unicode';
+    color: white;
+    font-size: 20px;
+}
+
+.about-both-links {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.about-links {
+    margin: 10px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    font-family: 'Lucida Sans Unicode';
+    color: white;
+    font-size: 30px;
+}
+
+.about-links:hover {
+    text-decoration: underline;
+}
+
+.about-link {
+    text-decoration: none;
+    margin-left: 10px;
+    height: 30px;
+    width: 30px;
+}

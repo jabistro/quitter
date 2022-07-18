@@ -69,6 +69,15 @@
     background-color: rgb(234, 233, 233);
 }
 
+.edit-profile-errors {
+    color: #b83dba;
+    font-family: 'Lucida Sans Unicode';
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
 .edit-profile-form {
     color: white;
     font-family: 'Lucida Sans Unicode';

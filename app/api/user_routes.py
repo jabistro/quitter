@@ -40,7 +40,7 @@ def sign_up():
             display_name=data['display_name'],
             bio=data['bio'],
             location=data['location'],
-            birthday=data['birthday'],
+            birthday=datetime.now(),
             joined=datetime.now()
         )
 

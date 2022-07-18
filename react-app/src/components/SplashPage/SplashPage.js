@@ -3,8 +3,9 @@ import SplashSignupModal from "./SplashSignupModal";
 import './SplashPage.css';
 import DemoUserButton from '../auth/DemoUserButton/DemoUserButton';
 import SplashLoginModal from './SplashLoginModal';
-import { Redirect } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import About from './Footer/About/About';
 
 
 const SplashPage = () => {
@@ -44,7 +45,9 @@ const SplashPage = () => {
         </div>
       </div>
       <div className='splash-footer'>
-        <a className='about-link'>About</a>
+        <Link className='about-link' to="/about">
+          <div className='about'>About</div>
+        </Link>
         <div id='scroll-container'>
           <div id='scroll-text'>
             Giving up addiction and taking back control in your life isn't easy, but you don't have to do it alone. Join the Quitter community today and share your story.

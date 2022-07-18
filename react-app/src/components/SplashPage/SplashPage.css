@@ -12,20 +12,20 @@
 
 .splash-all-minus-footer {
     display: flex;
-    height: 850px;
+    height: 800px;
     width: 100%;
     /* height: 850px;
     width: 1900px; */
 }
 
 .splash-backdrop {
-    height: 850px;
+    height: 800px;
     width: 100%;
     object-fit: cover;
 }
 
 .splash-left {
-    height: 850px;
+    height: 800px;
     width: 100%;
     /* background-size: cover; */
     /* background-image: url("https://live.staticflickr.com/65535/52221327933_83fc0d6219_b.jpg"); */
@@ -138,14 +138,23 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 1400px;
-    height: 50px;
+    width: 100%;
+    height: 100px;
 }
 
 .about-link {
     color: white;
-    font-family: 'Lucida Sans Unicode';
+    text-decoration: none;
+}
+
+.about-link:hover {
     text-decoration: underline;
+}
+
+.about {
+    color: white;
+    font-family: 'Lucida Sans Unicode';
+    text-decoration: none;
     cursor: pointer;
     font-size: 20px;
     margin-right: 100px;
@@ -154,7 +163,7 @@
 #scroll-container {
     display: flex;
     overflow: hidden;
-    width: 1300px;
+    width: 90%;
     font-size: 15px;
 }
 

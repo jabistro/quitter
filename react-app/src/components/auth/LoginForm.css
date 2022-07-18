@@ -1,10 +1,35 @@
 .login-wrap {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-self: center;
+    align-items: center;
     width: 600px;
-    height: 260px;
+    height: 650px;
+}
+
+.login-close {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.login-everything-minus-close {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-title-txt {
+    color: white;
+    font-family: 'Lucida Sans Unicode';
+    font-weight: bold;
+    font-size: 40px;
+    margin-top: 15px;
+    margin-bottom: 0px;
+}
+
+.login-logo {
+    height: 100px;
+    width: 100px;
 }
 
 .login-header {
@@ -16,9 +41,10 @@
     padding-bottom: 8px;
 }
 
-.login-btn-and-title {
+.login-close-btn-and-logo {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     color: white;
     font-family: 'Lucida Sans Unicode';
 }
@@ -26,6 +52,7 @@
 .login-close-btn {
     height: 20px;
     width: 20px;
+    color: white;
 }
 
 .login-close-btn-container {
@@ -36,12 +63,25 @@
     width: 40px;
     cursor: pointer;
     border-radius: 20px;
+    margin-top: 10px;
+    margin-left: 10px;
 }
 
 .login-close-btn-container:hover {
     background-color: #27323d;
     transition: all;
     transition-duration: 200ms;
+}
+
+.login-error-container {
+    margin-left: 25px;
+}
+
+.login-error {
+    color: #b83dba;
+    font-family: 'Lucida Sans Unicode';
+    font-weight: bold;
+    font-size: 20px;
 }
 
 .login-title-txt-one {
@@ -53,27 +93,32 @@
 }
 
 .login-submit-btn {
-    font-family: 'Lucida Sans Unicode';
-    background-color: white;
-    width: 70px;
-    outline: none;
-    border-radius: 15px;
+    width: 300px;
+    height: 50px;
+    background-color: #b83dba;
+    color: white;
     border: none;
-    height: 30px;
-    font-weight: bold;
-    color: rgb(69, 69, 69);
+    border-radius: 25px;
     cursor: pointer;
+    font-weight: bold;
+    font-size: 25px;
+    font-family: 'Lucida Sans Unicode';
+    margin-top: 25px;
 }
 
 .login-submit-btn:hover {
-    background-color: rgb(234, 233, 233);
+    background-color: #a336a5;
+    transition: all;
+    transition-duration: 200ms;
 }
+
 
 .login-form {
     color: white;
     font-family: 'Lucida Sans Unicode';
     overflow-y: scroll;
     overflow-x: hidden;
+    margin-top: 20px;
 }
 
 .login-form::-webkit-scrollbar {
@@ -111,6 +156,7 @@
     border: 1px solid gray;
     border-radius: 5px;
     margin: 15px;
+    width: 300px;
 }
 
 .login-field-container:focus-within {

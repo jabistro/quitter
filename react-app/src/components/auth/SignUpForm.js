@@ -69,9 +69,9 @@ const SignUpForm = ({ setShowModal }) => {
         <button onClick={onSignUp} className='signup-submit-btn' type='submit'>Sign Up</button>
       </div>
       <form className='signup-form' onSubmit={onSignUp}>
-        <div>
+        <div className='signup-errors-container'>
           {errors?.map((error, ind) => (
-            <div key={ind}>{error}</div>
+            <div className='signup-error' key={ind}>{error}</div>
           ))}
         </div>
         <div className='signup-field-container'>
