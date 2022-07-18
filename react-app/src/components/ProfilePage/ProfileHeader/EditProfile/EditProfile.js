@@ -7,6 +7,7 @@ import { AiOutlineClose } from 'react-icons/ai';
 
 const EditProfile = ({ setShowModal }) => {
 
+    const [errors, setErrors] = useState([]);
     const userId = useSelector(state => state.session.user.id);
     const users = useSelector(state => state.user)
     const user = users[userId]
@@ -19,6 +20,12 @@ const EditProfile = ({ setShowModal }) => {
     const [location, setLocation] = useState(user.location);
     const [birthday, setBirthday] = useState(user.birthday);
     const dispatch = useDispatch();
+    const today = new Date();
+    const day = 60 * 60 * 24 * 1000;
+    const yesterday = new Date(today.getTime() - day)
+
+
+
 
     const onSubmit = async (e) => {
         e.preventDefault();
@@ -33,8 +40,12 @@ const EditProfile = ({ setShowModal }) => {
             profile_pic: profilePic,
             username
         }
-        await dispatch(modifyUser(editingUser))
-        setShowModal(false)
+        const data = await dispatch(modifyUser(editingUser))
+        if (data) {
+            setErrors(data)
+        } else {
+            setShowModal(false)
+        }
     }
 
     const updateUsername = (e) => {
@@ -81,6 +92,11 @@ const EditProfile = ({ setShowModal }) => {
                 <button onClick={onSubmit} type='submit' className='edit-profile-sumbit-btn'>Save</button>
             </div>
             <form className='edit-profile-form'>
+                <div>
+                    {errors?.map((error, ind) => (
+                        <div key={ind}>{error}</div>
+                    ))}
+                </div>
                 <div className='edit-profile-field-container'>
                     <label className='edit-label'>Name</label>
                     <input
@@ -158,8 +174,9 @@ const EditProfile = ({ setShowModal }) => {
                     <label className='edit-label'>Birthday</label>
                     <input
                         className='edit-profile-input'
-                        type="text"
+                        type="date"
                         name='birthday'
+                        max={yesterday.toISOString().split('T')[0]}
                         onChange={updateBirthday}
                         value={birthday}
                     />

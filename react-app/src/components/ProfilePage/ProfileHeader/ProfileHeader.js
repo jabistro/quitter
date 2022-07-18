@@ -42,7 +42,7 @@ const ProfileHeader = ({ userId }) => {
                     </div>
                     <div className='profile-stat-and-icon'>
                         <FaBirthdayCake className='profile-icons' />
-                        <p className='profile-birthday'>Born {userInfo?.birthday}</p>
+                        <p className='profile-birthday'>Born {moment(userInfo?.birthday).format('MMMM Do YYYY')}</p>
                     </div>
                     <div className='profile-stat-and-icon'>
                         <BsCalendar3 className='profile-icons' />
