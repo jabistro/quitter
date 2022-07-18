@@ -262,7 +262,7 @@ const EditProfile = ({ setShowModal }) => {
                 <div className='edit-profile-field-container'>
                     <label className='edit-label'>Birthday</label>
                     <input
-                        className='edit-profile-input'
+                        className='edit-profile-birthday-input'
                         type="date"
                         name='birthday'
                         max={yesterday.toISOString().split('T')[0]}

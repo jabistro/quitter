@@ -65,6 +65,11 @@
     cursor: pointer;
 }
 
+.edit-profile-birthday-input {
+    color: white;
+    margin-right: 50px;
+}
+
 .edit-profile-sumbit-btn:hover {
     background-color: rgb(234, 233, 233);
 }
