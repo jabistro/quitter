@@ -8,7 +8,7 @@
 
 <p align="center"><a  href="https://john-allan-quitter.herokuapp.com/">Quitter Live Demo</a></p>
 
-*splash img
+![test](https://user-images.githubusercontent.com/97556168/179539748-bfbc740d-abaf-4051-8482-5ed3b712446a.png)
 Splash page
 <br><br>
 
