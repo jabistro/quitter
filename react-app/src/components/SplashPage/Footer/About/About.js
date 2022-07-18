@@ -4,6 +4,7 @@ import { BsGithub } from 'react-icons/bs';
 import { BsLinkedin } from 'react-icons/bs';
 import { MdKeyboardBackspace } from 'react-icons/md';
 import { Link } from 'react-router-dom';
+// import UploadPicture from '../../../ImageUpload/UploadPicture';
 
 
 const About = () => {
@@ -35,6 +36,7 @@ const About = () => {
                             <BsGithub className='about-link' />
                         </a>
                     </div>
+                    {/* <UploadPicture /> */}
                 </div>
             </div>
         </div>

@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { modifyUser } from '../../../../store/users';
 import { AiOutlineClose } from 'react-icons/ai';
+import UploadPicture from '../../../ImageUpload/UploadPicture';
 // import { useParams } from "react-router-dom";
 
 const EditProfile = ({ setShowModal }) => {
@@ -27,6 +28,7 @@ const EditProfile = ({ setShowModal }) => {
 
 
 
+
     const onSubmit = async (e) => {
         e.preventDefault();
 
@@ -47,32 +49,65 @@ const EditProfile = ({ setShowModal }) => {
         //     return
         // }
 
-        if (profilePic &&
-            !profilePic.startsWith('https://') &&
-            !profilePic.endsWith('.png') &&
-            !profilePic.endsWith('.jpg') &&
-            !profilePic.endsWith('.jpeg') &&
-            !profilePic.endsWith('.gif')
-        ) {
-            setErrors(['Profile picture url must start with https:// and end with either .png, .jpg, .jpeg, or .gif'])
-            return
+        const picArr = ['png', 'jpg', 'jpeg', 'gif'];
+
+        console.log("THIS HITS NUMBER ONE!!!!!!")
+        if (profilePic) {
+            if (!profilePic.startsWith('https://')) {
+                setErrors(['Profile picture url must start with https:// and end with either .png, .jpg, .jpeg, or .gif'])
+                return
+            } else {
+                let splitProfile = profilePic.split('.')
+                if (!picArr.includes(splitProfile[splitProfile.length - 1])) {
+                    console.log(splitProfile[splitProfile.length - 1])
+                    setErrors(['Profile picture url must end with either .png, .jpg, .jpeg, or .gif'])
+                    return
+                }
+            }
+        }
+        //         if (profilePic) {
+        //             (!profilePic.startsWith('https://')
+        //         }
+        //         !profilePic.endsWith('.png') ||
+        //             !profilePic.endsWith('.jpg') ||
+        //             !profilePic.endsWith('.jpeg') ||
+        //             !profilePic.endsWith('.gif'))
+        //         ) {
+        //     setErrors(['Profile picture url must start with https:// and end with either .png, .jpg, .jpeg, or .gif'])
+        //     return
+        // }
+
+        if (header) {
+            if (!header.startsWith('https://')) {
+                setErrors(['Header url must start with https:// and end with either .png, .jpg, .jpeg, or .gif'])
+                return
+            } else {
+                let splitHeader = header.split('.')
+                if (!picArr.includes(splitHeader[splitHeader.length - 1])) {
+                    console.log(splitHeader[splitHeader.length - 1])
+                    setErrors(['Header url must end with either .png, .jpg, .jpeg, or .gif'])
+                    return
+                }
+            }
         }
 
+
+        console.log("THIS HITS NUMBER TWO!!!!!!")
         if (!profilePic) {
             profilePic = "https://i.pinimg.com/736x/7c/ee/6f/7cee6fa507169843e3430a90dd5377d4.jpg"
         }
-
-        if (header &&
-            !header.startsWith('https://') &&
-            !header.endsWith('.png') &&
-            !header.endsWith('.jpg') &&
-            !header.endsWith('.jpeg') &&
-            !header.endsWith('.gif')
-        ) {
-            setErrors(['Header url must start with https:// and end with either .png, .jpg, .jpeg, or .gif'])
-            return
-        }
-
+        console.log("THIS HITS NUMBER THREE!!!!!!")
+        // if (header &&
+        //     (!header.startsWith('https://') ||
+        //         !header.endsWith('.png') ||
+        //         !header.endsWith('.jpg') ||
+        //         !header.endsWith('.jpeg') ||
+        //         !header.endsWith('.gif'))
+        // ) {
+        //     setErrors(['Header url must start with https:// and end with either .png, .jpg, .jpeg, or .gif'])
+        //     return
+        // }
+        console.log("THIS HITS NUMBER 4!!!!!!")
         if (!header) {
             header = "https://p.favim.com/orig/2019/04/12/blue-solid-color-header-Favim.com-7052292.jpg"
         }
@@ -90,7 +125,7 @@ const EditProfile = ({ setShowModal }) => {
         }
 
         console.log(editingUser);
-
+        console.log("THIS HITS NUMBER 5!!!!!!")
         const data = await dispatch(modifyUser(editingUser))
         if (data) {
             setErrors(data)
@@ -195,6 +230,7 @@ const EditProfile = ({ setShowModal }) => {
                 </div>
                 <div className='edit-profile-field-container'>
                     <label className='edit-label'>Profile Picture URL</label>
+                    {/* <UploadPicture /> */}
                     <input
                         className='edit-profile-input'
                         type="text"
