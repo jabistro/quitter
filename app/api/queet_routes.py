@@ -1,8 +1,11 @@
 from datetime import datetime
+from distutils.command.upload import upload
+from turtle import up
 from flask import Blueprint, request
 from flask_login import login_required, current_user
 from app.models import Queet, db
 from app.forms.queet_form import QueetForm
+from app.s3_helpers import get_unique_filename, upload_file_to_s3
 from .utils import validation_errors_to_error_messages
 
 queet_routes = Blueprint('queets', __name__)
@@ -35,12 +38,30 @@ def new_queet():
     form['csrf_token'].data = request.cookies['csrf_token']
 
     if form.validate_on_submit():
+        if "image_url" in request.files:
+            image_url = request.files["image_url"]
+
+            image_url.filename = get_unique_filename(image_url.filename)
+
+            upload = upload_file_to_s3(image_url)
+
+            if "url" not in upload:
+
+                return upload, 400
+
+            image_url = upload["url"]
+
+        else:
+            image_url = None
+
         new_queet = Queet(
             user_id=current_user.to_dict()['id'],
             content=data['content'],
+            image_url=image_url,
             created_at=datetime.now(),
             updated_at=datetime.now()
         )
+
 
         db.session.add(new_queet)
         db.session.commit()

@@ -20,7 +20,6 @@ class User(db.Model, UserMixin):
 
     queets = db.relationship("Queet", back_populates="users")
     comments = db.relationship("Comment", back_populates="users")
-    images = db.relationship("Image", back_populates="users")
 
     # followers = db.relationship(
     #     "User",

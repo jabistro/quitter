@@ -29,8 +29,9 @@ def upload_image():
         return upload, 400
 
     url = upload["url"]
+    queetId = request.form.get("queetId")
     # flask_login allows us to get the current user from the request
-    new_image = Image(user=current_user, url=url)
+    new_image = Image(queetId=queetId, url=url)
     db.session.add(new_image)
     db.session.commit()
     return {"url": url}
