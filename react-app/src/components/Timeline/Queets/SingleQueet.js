@@ -22,6 +22,7 @@ const SingleQueet = () => {
     const comments = useSelector(state => state.comment);
     const commentsArr = Object.values(comments)
     const queetComments = commentsArr.filter(comment => Number(comment.queet.id) === Number(queetId))
+    // const image = queet.images[0];
 
     // <button className="single-queet-edit-btn" onClick={() => editHandler(queet)}>Edit</button>
 
@@ -56,6 +57,7 @@ const SingleQueet = () => {
                         {queet.content.split('\n').map(line => (<p className="single-queet-content-lines">{line}</p>))}
                     </div>
                 </div>
+                <img className='single-queet-img' src={queet.image_url} alt='image' />
                 <div className='single-queet-timestamp'>{moment(queet?.created_at).format('LT')}  ·  {moment(queet?.created_at).format('ll')}</div>
                 <div className='single-queet-icons'>
                     <div className='single-queet-icon-and-stat'>
