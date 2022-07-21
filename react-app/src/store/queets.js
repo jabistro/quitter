@@ -28,12 +28,26 @@ export const getQueets = () => async (dispatch) => {
 };
 
 export const addQueet = (queet) => async (dispatch) => {
+
+	const {
+		content,
+		user_id,
+		image_url
+	} = queet;
+
+	const formData = new FormData();
+
+	formData.append("content", content);
+	formData.append("user_id", user_id);
+	formData.append("image_url", image_url);
+
 	const response = await fetch("/api/queets/new", {
 		method: "POST",
-		headers: {
-			"Content-Type": "application/json",
-		},
-		body: JSON.stringify(queet),
+		// headers: {
+		// 	"Content-Type": "application/json",
+		// },
+		// body: JSON.stringify(queet),
+		body: formData
 	});
 
 	if (response.ok) {
@@ -88,6 +102,29 @@ export const eraseQueet = (destroyedQueet) => async (dispatch) => {
 		dispatch(deleteQueet(destroyedQueet.id));
 	}
 };
+
+
+//AWS upload images
+export const uploadImage = (imageData) => async dispatch => {
+	const { queetId, image } = imageData;
+
+	const formData = new FormData();
+	formData.append("queetId", queetId);
+	formData.append("image", image);
+
+	const res = await fetch('/api/images/upload', {
+		method: "POST",
+		body: formData,
+	});
+
+	if (res.ok) {
+		return await res.json();
+	}
+}
+
+
+
+
 
 const queetsReducer = (state = {}, action) => {
 	switch (action.type) {
