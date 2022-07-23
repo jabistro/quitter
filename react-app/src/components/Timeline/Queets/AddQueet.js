@@ -5,6 +5,7 @@ import { addQueet, uploadImage } from "../../../store/queets";
 // import { useHistory } from "react-router-dom";
 // import ProgressBar from "@ramonak/react-progress-bar";
 import { AiOutlinePicture } from 'react-icons/ai';
+import { ImCancelCircle } from 'react-icons/im';
 // import { Link } from "react-router-dom";
 
 const AddQueet = () => {
@@ -64,25 +65,33 @@ const AddQueet = () => {
                             type="text"
                             value={content}
                             onChange={contentHandler}
-                            required
                             placeholder="What's on your mind? This is a safe space."
                         />
                     </div>
                     <div className="add-queet-second-half">
                         <div className="add-queet-img-upload">
-                            <label className="add-queet-custom-file">
-                                <input className="add-queet-img-input" type="file" name="file"
-                                    accept="image/png, image/jpeg, image/jpg" onChange={updateImage} />
-                                <AiOutlinePicture className="add-queet-img-icon" />
-                            </label>
-                            <p onClick={removeImage}>{image?.name}</p>
+                            <div className={!image ? "add-queet-img-upload-container" : "add-queet-img-upload-container-off"}>
+                                {!image &&
+                                    <label className="add-queet-img-upload-label"><AiOutlinePicture className="add-queet-img-icon" />
+                                        <input className="add-queet-img-input" type="file" name="file"
+                                            accept="image/png, image/jpeg, image/jpg" onChange={updateImage} />
+                                    </label>
+
+                                }
+                            </div>
+                            {image &&
+                                <div className="add-queet-img-standby">
+                                    <ImCancelCircle className="add-queet-img-delete-btn" onClick={removeImage} />
+                                    <p className="add-queet-img-name">{image.name}</p>
+                                </div>
+                            }
                         </div>
                         <div className="add-queet-progress-and-button">
                             <div className="add-queet-progress">
-                                <span className={(content.length > 280 || content.length === 0) ? "add-queet-char-total-red" : "add-queet-char-total"}>{content.length}</span>
+                                <span className={(content.length > 280 || !image && content.length === 0) ? "add-queet-char-total-red" : "add-queet-char-total"}>{content.length}</span>
                                 <p className="add-queet-char-max">/280</p>
                             </div>
-                            <button disabled={!content || content.length > 280} type="submit" className="add-queet-btn">Queet</button>
+                            <button disabled={!content && !image || content.length > 280} type="submit" className="add-queet-btn">Queet</button>
                         </div>
                     </div>
                 </div>

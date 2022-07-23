@@ -49,15 +49,41 @@ export const addUser = (user) => async (dispatch) => {
 };
 
 export const modifyUser = (editUser) => async (dispatch) => {
-    console.log("THIS HITS NUMBER 6!!!!!!")
+
+    const {
+        username,
+        email,
+        password,
+        header,
+        profile_pic,
+        display_name,
+        bio,
+        location,
+        birthday,
+        joined
+    } = editUser;
+
+    const formData = new FormData();
+
+    formData.append("username", username);
+    formData.append("email", email);
+    formData.append("password", password);
+    formData.append("header", header);
+    formData.append("profile_pic", profile_pic);
+    formData.append("display_name", display_name);
+    formData.append("bio", bio);
+    formData.append("location", location);
+    formData.append("birthday", birthday);
+    formData.append("joined", joined);
+
     const response = await fetch(`/api/users/edit/${editUser.id}`, {
         method: "PUT",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify(editUser),
+        // headers: {
+        //     "Content-Type": "application/json",
+        // },
+        // body: JSON.stringify(editUser),
+        body: formData
     });
-    console.log("THIS HITS NUMBER 7!!!!!!")
     if (response.ok) {
         const editedUser = await response.json();
         dispatch(createUser(editedUser));

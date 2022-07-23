@@ -49,22 +49,24 @@ const EditProfile = ({ setShowModal }) => {
         //     return
         // }
 
-        const picArr = ['png', 'jpg', 'jpeg', 'gif'];
+        // const picArr = ['png', 'jpg', 'jpeg', 'gif'];
 
-        console.log("THIS HITS NUMBER ONE!!!!!!")
-        if (profilePic) {
-            if (!profilePic.startsWith('https://')) {
-                setErrors(['Profile picture url must start with https:// and end with either .png, .jpg, .jpeg, or .gif'])
-                return
-            } else {
-                let splitProfile = profilePic.split('.')
-                if (!picArr.includes(splitProfile[splitProfile.length - 1])) {
-                    console.log(splitProfile[splitProfile.length - 1])
-                    setErrors(['Profile picture url must end with either .png, .jpg, .jpeg, or .gif'])
-                    return
-                }
-            }
-        }
+        // console.log("THIS HITS NUMBER ONE!!!!!!")
+        // if (profilePic) {
+        //     if (!profilePic.startsWith('https://')) {
+        //         setErrors(['Profile picture url must start with https:// and end with either .png, .jpg, .jpeg, or .gif'])
+        //         return
+        //     } else {
+        //         let splitProfile = profilePic.split('.')
+        //         if (!picArr.includes(splitProfile[splitProfile.length - 1])) {
+        //             console.log(splitProfile[splitProfile.length - 1])
+        //             setErrors(['Profile picture url must end with either .png, .jpg, .jpeg, or .gif'])
+        //             return
+        //         }
+        //     }
+        // }
+
+
         //         if (profilePic) {
         //             (!profilePic.startsWith('https://')
         //         }
@@ -77,26 +79,26 @@ const EditProfile = ({ setShowModal }) => {
         //     return
         // }
 
-        if (header) {
-            if (!header.startsWith('https://')) {
-                setErrors(['Header url must start with https:// and end with either .png, .jpg, .jpeg, or .gif'])
-                return
-            } else {
-                let splitHeader = header.split('.')
-                if (!picArr.includes(splitHeader[splitHeader.length - 1])) {
-                    console.log(splitHeader[splitHeader.length - 1])
-                    setErrors(['Header url must end with either .png, .jpg, .jpeg, or .gif'])
-                    return
-                }
-            }
-        }
+        // if (header) {
+        //     if (!header.startsWith('https://')) {
+        //         setErrors(['Header url must start with https:// and end with either .png, .jpg, .jpeg, or .gif'])
+        //         return
+        //     } else {
+        //         let splitHeader = header.split('.')
+        //         if (!picArr.includes(splitHeader[splitHeader.length - 1])) {
+        //             console.log(splitHeader[splitHeader.length - 1])
+        //             setErrors(['Header url must end with either .png, .jpg, .jpeg, or .gif'])
+        //             return
+        //         }
+        //     }
+        // }
 
 
-        console.log("THIS HITS NUMBER TWO!!!!!!")
-        if (!profilePic) {
-            profilePic = "https://i.pinimg.com/736x/7c/ee/6f/7cee6fa507169843e3430a90dd5377d4.jpg"
-        }
-        console.log("THIS HITS NUMBER THREE!!!!!!")
+        // console.log("THIS HITS NUMBER TWO!!!!!!")
+        // if (!profilePic) {
+        //     profilePic = "https://i.pinimg.com/736x/7c/ee/6f/7cee6fa507169843e3430a90dd5377d4.jpg"
+        // }
+        // console.log("THIS HITS NUMBER THREE!!!!!!")
         // if (header &&
         //     (!header.startsWith('https://') ||
         //         !header.endsWith('.png') ||
@@ -107,10 +109,10 @@ const EditProfile = ({ setShowModal }) => {
         //     setErrors(['Header url must start with https:// and end with either .png, .jpg, .jpeg, or .gif'])
         //     return
         // }
-        console.log("THIS HITS NUMBER 4!!!!!!")
-        if (!header) {
-            header = "https://p.favim.com/orig/2019/04/12/blue-solid-color-header-Favim.com-7052292.jpg"
-        }
+        // console.log("THIS HITS NUMBER 4!!!!!!")
+        // if (!header) {
+        //     header = "https://p.favim.com/orig/2019/04/12/blue-solid-color-header-Favim.com-7052292.jpg"
+        // }
 
         const editingUser = {
             id: user.id,
@@ -124,8 +126,8 @@ const EditProfile = ({ setShowModal }) => {
             username
         }
 
-        console.log(editingUser);
-        console.log("THIS HITS NUMBER 5!!!!!!")
+        // console.log(editingUser);
+        // console.log("THIS HITS NUMBER 5!!!!!!")
         const data = await dispatch(modifyUser(editingUser))
         if (data) {
             setErrors(data)
@@ -143,12 +145,18 @@ const EditProfile = ({ setShowModal }) => {
     };
 
     const updateHeader = (e) => {
-        setHeader(e.target.value);
+        const file = e.target.files[0];
+        setHeader(file);
     };
 
+    const removeHeader = (e) => setHeader(null);
+
     const updateProfilePic = (e) => {
-        setProfilePic(e.target.value);
+        const file = e.target.files[0];
+        setProfilePic(file);
     };
+
+    const removeProfilePic = (e) => setProfilePic(null);
 
     const updateDisplayName = (e) => {
         setDisplayName(e.target.value);
@@ -222,10 +230,10 @@ const EditProfile = ({ setShowModal }) => {
                     <label className='edit-label'>Header URL</label>
                     <input
                         className='edit-profile-input'
-                        type="text"
+                        type="file"
                         name='header'
+                        accept='image/png, image/jpeg, image/jpg'
                         onChange={updateHeader}
-                        value={header}
                     />
                 </div>
                 <div className='edit-profile-field-container'>
@@ -233,10 +241,11 @@ const EditProfile = ({ setShowModal }) => {
                     {/* <UploadPicture /> */}
                     <input
                         className='edit-profile-input'
-                        type="text"
+                        type="file"
                         name='profile-pic'
+                        accept='image/png, image/jpeg, image/jpg'
                         onChange={updateProfilePic}
-                        value={profilePic}
+                    // value={profilePic}
                     />
                 </div>
                 <div className='edit-profile-field-container'>

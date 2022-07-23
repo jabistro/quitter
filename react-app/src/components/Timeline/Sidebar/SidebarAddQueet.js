@@ -4,10 +4,12 @@ import { useDispatch, useSelector } from "react-redux";
 import { addQueet } from "../../../store/queets";
 import { AiOutlinePicture } from 'react-icons/ai';
 import { AiOutlineClose } from 'react-icons/ai';
+import { ImCancelCircle } from 'react-icons/im';
 
 const SidebarAddQueet = ({ setShowModal }) => {
     const user = useSelector(state => state.session.user);
     const dispatch = useDispatch();
+    const [image, setImage] = useState(null);
     const [content, setContent] = useState('');
     // const [imageBoxOpen, setImageBoxOpen] = useState(false);
 
@@ -15,11 +17,20 @@ const SidebarAddQueet = ({ setShowModal }) => {
         setContent(e.target.value)
     }
 
+    const updateImage = (e) => {
+        const file = e.target.files[0];
+        // console.log(file)
+        setImage(file);
+    }
+
+    const removeImage = (e) => setImage(null);
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         const newQueet = {
             user_id: user.id,
-            content
+            content,
+            image_url: image
         }
 
         const queet = await dispatch(addQueet(newQueet))
@@ -49,17 +60,33 @@ const SidebarAddQueet = ({ setShowModal }) => {
                             type="text"
                             value={content}
                             onChange={contentHandler}
-                            required
                             placeholder="What's on your mind? This is a safe space."
                         />
                     </div>
                     <div className="sidebar-add-queet-second-half">
+                        <div className="sidebar-add-queet-img-upload">
+                            <div className={!image ? "sidebar-add-queet-img-upload-container" : "sidebar-add-queet-img-upload-container-off"}>
+                                {!image &&
+                                    <label className="sidebar-add-queet-img-upload-label"><AiOutlinePicture className="sidebar-add-queet-img-icon" />
+                                        <input className="sidebar-add-queet-img-input" type="file" name="file"
+                                            accept="image/png, image/jpeg, image/jpg" onChange={updateImage} />
+                                    </label>
+
+                                }
+                            </div>
+                            {image &&
+                                <div className="sidebar-add-queet-img-standby">
+                                    <ImCancelCircle className="sidebar-add-queet-img-delete-btn" onClick={removeImage} />
+                                    <p className="sidebar-add-queet-img-name">{image.name}</p>
+                                </div>
+                            }
+                        </div>
                         <div className="sidebar-add-queet-progress-and-button">
                             <div className="sidebar-add-queet-progress">
-                                <span className={(content.length > 280 || content.length === 0) ? "sidebar-add-queet-char-total-red" : "sidebar-add-queet-char-total"}>{content.length}</span>
+                                <span className={(content.length > 280 || !image && content.length === 0) ? "sidebar-add-queet-char-total-red" : "sidebar-add-queet-char-total"}>{content.length}</span>
                                 <p className="sidebar-add-queet-char-max">/280</p>
                             </div>
-                            <button disabled={!content || content.length > 280} type="submit" className="sidebar-add-queet-btn">Queet</button>
+                            <button disabled={!content && !image || content.length > 280} type="submit" className="sidebar-add-queet-btn">Queet</button>
                         </div>
                     </div>
                 </div>
