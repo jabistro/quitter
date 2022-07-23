@@ -6,9 +6,9 @@
     flex-direction: column;
 }
 
-.sidebar-add-queet-close-btn {
-    height: 25px;
-    width: 25px;
+.sidebar-add-queet-close-btn-and-title {
+    display: flex;
+    align-items: center;
 }
 
 .sidebar-add-queet-close-btn-container {
@@ -31,21 +31,135 @@
     transition-duration: 200ms;
 }
 
+.sidebar-add-queet-close-btn {
+    height: 25px;
+    width: 25px;
+}
+
+.sidebar-add-queet-title {
+    font-family: 'Lucida Sans Unicode';
+    font-weight: bold;
+    font-size: 20px;
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+
 .sidebar-add-queet-form {
     display: grid;
     grid-template-columns: 1fr 12fr;
     margin-top: 15px;
 }
 
-/* .sidebar-add-queet-profile-pic:hover {
-    opacity: 0.7;
-} */
-
 .sidebar-add-queet-profile-pic {
     height: 44px;
     width: 44px;
     border-radius: 22px;
     margin-left: 15px;
+}
+
+.sidebar-add-queet-first-half {
+    border-bottom: 1px solid gray;
+    width: 96%;
+}
+
+.sidebar-add-queet-input {
+    display: flex;
+    width: 95%;
+    font-size: 15px;
+    outline: none;
+    border: none;
+    height: 115px;
+    background-color: transparent;
+    color: white;
+    resize: none;
+    margin-left: 15px;
+    font-family: 'Lucida Sans Unicode';
+}
+
+.sidebar-add-queet-input::-webkit-scrollbar {
+    display: none;
+}
+
+.sidebar-add-queet-second-half {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.sidebar-add-queet-img-upload-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+}
+
+.sidebar-add-queet-img-upload-container:hover {
+    background-color: #25394e;
+    transition: all;
+    transition-duration: 200ms;
+}
+
+.sidebar-add-queet-img-upload-label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sidebar-add-queet-img-icon {
+    color: #b83dba;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+}
+
+.sidebar-add-queet-img-input {
+    display: none;
+}
+
+.sidebar-add-queet-img-standby {
+    display: flex;
+    align-items: center;
+}
+
+.sidebar-add-queet-img-delete-btn {
+    cursor: pointer;
+    height: 30px;
+    width: 30px;
+    color: white;
+    margin-right: 15px;
+}
+
+.sidebar-add-queet-img-delete-btn:hover {
+    color: rgb(219, 219, 219);
+    transition: all;
+    transition-duration: 200ms;
+}
+
+.sidebar-add-queet-img-name {
+    color: white;
+    font-family: 'Lucida Sans Unicode';
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.sidebar-add-queet-progress-and-button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 10px;
+}
+
+.sidebar-add-queet-progress {
+    display: flex;
+    align-items: center;
+    margin-top: 12px;
+    margin-right: 15px;
 }
 
 .sidebar-add-queet-char-total {
@@ -63,13 +177,6 @@
     margin-bottom: 0px;
     font-family: 'Lucida Sans Unicode';
     color: white;
-}
-
-.sidebar-add-queet-progress {
-    display: flex;
-    align-items: center;
-    margin-top: 12px;
-    margin-right: 15px;
 }
 
 .sidebar-add-queet-btn {
@@ -94,19 +201,12 @@
     cursor: default;
 }
 
-.sidebar-add-queet-input {
-    display: flex;
-    width: 95%;
-    font-size: 15px;
-    outline: none;
-    border: none;
-    height: 115px;
-    background-color: transparent;
-    color: white;
-    resize: none;
-    margin-left: 15px;
-    font-family: 'Lucida Sans Unicode';
-}
+/* BOTTOM */
+
+
+
+
+
 
 /* {content.length <= 280 ? "add-queet-input" : "add-queet-input-red"} */
 
@@ -125,46 +225,33 @@
     border-radius: 10px;
 } */
 
-.sidebar-add-queet-input::-webkit-scrollbar {
-    display: none;
-}
-
 /* .add-queet-input-red::-webkit-scrollbar {
     display: none;
 } */
 
-.sidebar-profile-pic {
+/* .sidebar-profile-pic {
     height: 45px;
     width: 45px;
     border-radius: 20px;
     object-fit: cover;
     margin-top: 5px;
     margin-left: 11px;
-}
+} */
 
-.sidebar-add-img-btn {
+/* .sidebar-add-img-btn {
     height: 25px;
     width: 25px;
     color: #b83dba;
     cursor: pointer;
     transition: ease-out;
     transition-duration: 150ms;
-}
+} */
 
-.sidebar-add-img-btn:hover {
+/* .sidebar-add-img-btn:hover {
     transform: scale(1.5);
-}
+} */
 
-.sidebar-add-queet-progress-and-button {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-left: 20px;
-    padding-right: 20px;
-    margin-top: 10px;
-}
-
-.sidebar-queet-upload-img-form {
+/* .sidebar-queet-upload-img-form {
     background-color: #b83dba;
     display: flex;
     justify-content: center;
@@ -174,12 +261,12 @@
     border-radius: 20px;
     margin-left: 40px;
     margin-top: 15px;
-}
+} */
 
-.sidebar-queet-upload-img-input {
+/* .sidebar-queet-upload-img-input {
     background-color: transparent;
     color: white;
-}
+} */
 
 /* .queet-upload-img-wrap {
     background-color: #b83dba;
@@ -191,19 +278,19 @@
     border-radius: 20px;
 } */
 
-.sidebar-queet-upload-img-input {
+/* .sidebar-queet-upload-img-input {
     margin-right: 30px;
     outline: none;
     border: none;
     background-color: transparent;
     color: white;
-}
+} */
 
-.sidebar-queet-upload-img-btn {
+/* .sidebar-queet-upload-img-btn {
     margin-left: 30px;
-}
+} */
 
-.sidebar-queet-upload-img-btn {
+/* .sidebar-queet-upload-img-btn {
     font-family: 'Lucida Sans Unicode';
     background-color: transparent;
     border: none;
@@ -214,29 +301,4 @@
     border-radius: 20px;
     font-size: 15px;
     cursor: pointer;
-}
-
-.sidebar-add-queet-first-half {
-    border-bottom: 1px solid gray;
-    width: 96%;
-}
-
-.sidebar-add-queet-second-half {
-    display: flex;
-    justify-content: flex-end;
-    margin-bottom: 10px;
-}
-
-.sidebar-add-queet-close-btn-and-title {
-    display: flex;
-    align-items: center;
-}
-
-.sidebar-add-queet-title {
-    font-family: 'Lucida Sans Unicode';
-    font-weight: bold;
-    font-size: 20px;
-    margin-left: 10px;
-    margin-top: 10px;
-    margin-bottom: 0px;
-}
+} */

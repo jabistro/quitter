@@ -6,7 +6,7 @@ class Queet(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
-    content = db.Column(db.String(280), nullable=False)
+    content = db.Column(db.String(280))
     image_url = db.Column(db.String(), nullable=True)
     created_at = db.Column(db.DateTime)
     updated_at = db.Column(db.DateTime)

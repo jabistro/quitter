@@ -25,7 +25,7 @@ class ProfileForm(FlaskForm):
     username = StringField("Username", validators=[DataRequired("Username is required"), Length(min=1, max=15, message="Username must be between 1 and 15.")])
     email = StringField('Email', validators=[DataRequired("Email address is required"), Email()])
     header = StringField("Header Photo")
-    profile_pic = StringField("Profile Picture")
+    # profile_pic = StringField("Profile Picture")
     display_name = StringField("Display Name", validators=[DataRequired("Display name is required"), Length(min=1, max=50, message="Display name must be between 1 and 50.")])
     bio = StringField("Bio")
     location = StringField("Location")
