@@ -9,7 +9,7 @@ import { BiMessage } from 'react-icons/bi';
 // import { FiShare } from 'react-icons/fi';
 import ReactTimeAgo from 'react-time-ago';
 import NumberOfComments from "../Comments/NumberOfComments/NumberOfComments";
-import { Provider, LikeButton } from "@lyket/react";
+// import { Provider, LikeButton } from "@lyket/react";
 
 
 const Queets = () => {
@@ -52,15 +52,15 @@ const Queets = () => {
                                     <Link className="queet-link" to={`/queets/${queet.id}`}>
                                         <div className="feed-queet-names">
                                             <p className="feed-queet-display-name">{users[queet.userId]?.display_name}</p>
-                                            <p className="feed-queet-username">@{users[queet.userId]?.username}<div className="stupid-dot">·</div></p>
-                                            <p className="timestamp-container">
+                                            <div className="feed-queet-username">@{users[queet.userId]?.username}<p className="stupid-dot">·</p></div>
+                                            <div className="timestamp-container">
                                                 <ReactTimeAgo
                                                     className="timestamp"
                                                     date={queet.created_at}
                                                     locale='en-US'
                                                     timeStyle="twitter-first-minute"
                                                 />
-                                            </p>
+                                            </div>
                                         </div>
                                     </Link>
                                     {queet.userId === sessionUser.id &&
@@ -70,7 +70,7 @@ const Queets = () => {
                                 <div className="feed-queet-container">
                                     <Link className="queet-link" to={`/queets/${queet.id}`}>
                                         <div className="feed-queet">
-                                            {queet.content.split('\n').map(line => (<p id={queet.id} className="feed-queet-content-lines">{line}</p>))}
+                                            {queet.content.split('\n').map(line => (<div key={line.id} id={queet.id} className="feed-queet-content-lines">{line}</div>))}
                                         </div>
                                         {queet.image_url &&
                                             <div className='feed-queet-img-container'>

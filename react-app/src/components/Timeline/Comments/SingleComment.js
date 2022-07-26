@@ -34,7 +34,7 @@ const SingleComment = () => {
                 <div className='single-comment-pic-names-and-edit'>
                     <div className='single-comment-pic-and-names'>
                         <Link className="single-comment-profile-pic-link" to={`/users/${comment?.user_id}`}>
-                            <img className='single-comment-profile-pic' src={users[comment.user_id]?.profile_pic === '' ? 'https://i.pinimg.com/736x/7c/ee/6f/7cee6fa507169843e3430a90dd5377d4.jpg' : users[comment.user_id]?.profile_pic} />
+                            <img className='single-comment-profile-pic' src={users[comment.user_id]?.profile_pic === '' ? 'https://i.pinimg.com/736x/7c/ee/6f/7cee6fa507169843e3430a90dd5377d4.jpg' : users[comment.user_id]?.profile_pic} alt="" />
                         </Link>
                         <div className='single-comment-names'>
                             <p className='single-comment-display-name'>{users[comment.user_id]?.display_name}</p>

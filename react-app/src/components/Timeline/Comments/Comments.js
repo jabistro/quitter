@@ -4,9 +4,9 @@ import { useParams, Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import EditCommentModal from "./EditCommentModal";
 import ReactTimeAgo from 'react-time-ago';
-import { BiMessage } from "react-icons/bi";
-import { FaRetweet } from "react-icons/fa";
-import { FiHeart, FiShare } from "react-icons/fi";
+// import { BiMessage } from "react-icons/bi";
+// import { FaRetweet } from "react-icons/fa";
+// import { FiHeart, FiShare } from "react-icons/fi";
 
 const Comments = () => {
 
@@ -24,7 +24,7 @@ const Comments = () => {
                 return (
                     <div key={comment.id} className="comments">
                         <Link className="all-comments-profile-pic-link" to={`/users/${comment.userId}`}>
-                            <img className='all-comments-profile-pic' src={users[comment.user_id]?.profile_pic === '' ? 'https://i.pinimg.com/736x/7c/ee/6f/7cee6fa507169843e3430a90dd5377d4.jpg' : users[comment.user_id]?.profile_pic} />
+                            <img className='all-comments-profile-pic' src={users[comment.user_id]?.profile_pic === '' ? 'https://i.pinimg.com/736x/7c/ee/6f/7cee6fa507169843e3430a90dd5377d4.jpg' : users[comment.user_id]?.profile_pic} alt="" />
                         </Link>
                         <div className="all-comments-everything-minus-pic">
                             <div className="feed-comment-names-edit-and-content">
