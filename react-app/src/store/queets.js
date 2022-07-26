@@ -67,20 +67,33 @@ export const addQueet = (queet) => async (dispatch) => {
 };
 
 export const modifyQueet = (editQueet) => async (dispatch) => {
+
+	const {
+		content,
+		user_id,
+		image_url
+	} = editQueet;
+
+	const formData = new FormData();
+
+	formData.append("content", content);
+	formData.append("user_id", user_id);
+	formData.append("image_url", image_url);
+
 	const response = await fetch(`/api/queets/edit/${editQueet.id}`, {
 		method: "PUT",
-		headers: {
-			"Content-Type": "application/json",
-		},
-		body: JSON.stringify(editQueet),
+		// headers: {
+		// 	"Content-Type": "application/json",
+		// },
+		// body: JSON.stringify(editQueet),
+		body: formData
 	});
 
+	const data = await response.json();
 	if (response.ok) {
-		const editedQueet = await response.json();
-		dispatch(createQueet(editedQueet));
-		return editedQueet;
+		dispatch(createQueet(data));
+		return null;
 	} else if (response.status < 500) {
-		const data = await response.json();
 		if (data.errors) {
 			return data.errors;
 		}
@@ -91,11 +104,11 @@ export const modifyQueet = (editQueet) => async (dispatch) => {
 
 export const eraseQueet = (destroyedQueet) => async (dispatch) => {
 	const response = await fetch(`/api/queets/${destroyedQueet.id}`, {
-		method: "DELETE",
-		headers: {
-			"Content-Type": "application/json",
-		},
-		body: JSON.stringify(destroyedQueet)
+		method: "DELETE"
+		// headers: {
+		// 	"Content-Type": "application/json",
+		// },
+		// body: JSON.stringify(destroyedQueet)
 	});
 
 	if (response.ok) {
@@ -104,7 +117,7 @@ export const eraseQueet = (destroyedQueet) => async (dispatch) => {
 };
 
 
-//AWS upload images
+// AWS upload images
 export const uploadImage = (imageData) => async dispatch => {
 	const { queetId, image } = imageData;
 

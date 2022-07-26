@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@heroicons/react": "^1.0.6",
+    "@lyket/react": "^1.4.8",
     "@ramonak/react-progress-bar": "^5.0.1",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",

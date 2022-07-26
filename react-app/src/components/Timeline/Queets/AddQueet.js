@@ -1,7 +1,7 @@
 import "./AddQueet.css";
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from "react-redux";
-import { addQueet, uploadImage } from "../../../store/queets";
+import { addQueet } from "../../../store/queets";
 // import { useHistory } from "react-router-dom";
 // import ProgressBar from "@ramonak/react-progress-bar";
 import { AiOutlinePicture } from 'react-icons/ai';
@@ -50,7 +50,10 @@ const AddQueet = () => {
         // // console.log(newImage)
         // const picture = await dispatch(uploadImage(newImage));
 
-        if (queet) reset();
+        if (queet) {
+            reset();
+            removeImage();
+        }
     }
 
 
@@ -88,10 +91,10 @@ const AddQueet = () => {
                         </div>
                         <div className="add-queet-progress-and-button">
                             <div className="add-queet-progress">
-                                <span className={(content.length > 280 || !image && content.length === 0) ? "add-queet-char-total-red" : "add-queet-char-total"}>{content.length}</span>
+                                <span className={(content.length > 280 || (!image && content.length === 0)) ? "add-queet-char-total-red" : "add-queet-char-total"}>{content.length}</span>
                                 <p className="add-queet-char-max">/280</p>
                             </div>
-                            <button disabled={!content && !image || content.length > 280} type="submit" className="add-queet-btn">Queet</button>
+                            <button disabled={(!content && !image) || content.length > 280} type="submit" className="add-queet-btn">Queet</button>
                         </div>
                     </div>
                 </div>
@@ -106,7 +109,7 @@ export default AddQueet
 
 
 
-{/* <div className="queet-upload-img-wrap">
+/* <div className="queet-upload-img-wrap">
     {imageBoxOpen && (
         <form className="queet-upload-img-form">
             <input
@@ -118,4 +121,4 @@ export default AddQueet
             <button className="queet-upload-img-btn">Add Image</button>
         </form>
     )}
-</div> */}
+</div> */

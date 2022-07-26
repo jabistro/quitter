@@ -16,7 +16,6 @@ const SingleQueet = () => {
 
     const sessionUser = useSelector(state => state.session.user);
     const users = useSelector(state => state.user);
-    const usersArr = Object.values(users);
     const { queetId } = useParams();
     const queet = useSelector(state => state?.queet[queetId]);
     const comments = useSelector(state => state.comment);
@@ -39,10 +38,10 @@ const SingleQueet = () => {
             <div className="single-queet-block">
                 <div className='single-queet-pic-names-and-edit'>
                     <div className='single-queet-pic-and-names'>
-                        <img className='single-queet-profile-pic' src={usersArr[queet.userId - 1]?.profile_pic === '' ? 'https://i.pinimg.com/736x/7c/ee/6f/7cee6fa507169843e3430a90dd5377d4.jpg' : usersArr[queet.userId - 1]?.profile_pic} />
+                        <img className='single-queet-profile-pic' src={users[queet.userId]?.profile_pic === '' ? 'https://i.pinimg.com/736x/7c/ee/6f/7cee6fa507169843e3430a90dd5377d4.jpg' : users[queet.userId]?.profile_pic} alt="" />
                         <div className='single-queet-names'>
-                            <p className='single-queet-display-name'>{usersArr[queet.userId - 1]?.display_name}</p>
-                            <p className='single-queet-username'>@{usersArr[queet.userId - 1]?.username}</p>
+                            <p className='single-queet-display-name'>{users[queet.userId]?.display_name}</p>
+                            <p className='single-queet-username'>@{users[queet.userId]?.username}</p>
                         </div>
                     </div>
                     <div className="single-queet-edit-btn">
@@ -59,7 +58,7 @@ const SingleQueet = () => {
                 </div>
                 {queet.image_url &&
                     <div className='single-queet-img-container'>
-                        <img className='single-queet-img' src={queet.image_url} alt='image' />
+                        <img className='single-queet-img' src={queet.image_url} alt='' />
                     </div>
                 }
                 <div className='single-queet-timestamp'>{moment(queet?.created_at).format('LT')}  ·  {moment(queet?.created_at).format('ll')}</div>

@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { modifyUser } from '../../../../store/users';
 import { AiOutlineClose } from 'react-icons/ai';
-import UploadPicture from '../../../ImageUpload/UploadPicture';
+// import UploadPicture from '../../../ImageUpload/UploadPicture';
 // import { useParams } from "react-router-dom";
 
 const EditProfile = ({ setShowModal }) => {
@@ -149,14 +149,14 @@ const EditProfile = ({ setShowModal }) => {
         setHeader(file);
     };
 
-    const removeHeader = (e) => setHeader(null);
+    // const removeHeader = (e) => setHeader(null);
 
     const updateProfilePic = (e) => {
         const file = e.target.files[0];
         setProfilePic(file);
     };
 
-    const removeProfilePic = (e) => setProfilePic(null);
+    // const removeProfilePic = (e) => setProfilePic(null);
 
     const updateDisplayName = (e) => {
         setDisplayName(e.target.value);

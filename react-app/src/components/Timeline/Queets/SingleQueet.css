@@ -168,9 +168,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-left: 12px;
+    margin-bottom: 10px;
 }
 
 .single-queet-img {
-    max-width: 300px;
-    max-height: 300px;
+    max-width: 95%;
+    max-height: 500px;
+    border-radius: 10px;
 }

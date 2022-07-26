@@ -52,7 +52,7 @@ const SidebarAddQueet = ({ setShowModal }) => {
                 <p className='sidebar-add-queet-title'>Add queet</p>
             </div>
             <form onSubmit={handleSubmit} className="sidebar-add-queet-form">
-                <img className='sidebar-add-queet-profile-pic' src={user.profile_pic === '' ? 'https://i.pinimg.com/736x/7c/ee/6f/7cee6fa507169843e3430a90dd5377d4.jpg' : user.profile_pic} />
+                <img className='sidebar-add-queet-profile-pic' src={user.profile_pic === '' ? 'https://i.pinimg.com/736x/7c/ee/6f/7cee6fa507169843e3430a90dd5377d4.jpg' : user.profile_pic} alt="" />
                 <div className="sidebar-add-queet-both-halves">
                     <div className="sidebar-add-queet-first-half">
                         <textarea
@@ -83,10 +83,10 @@ const SidebarAddQueet = ({ setShowModal }) => {
                         </div>
                         <div className="sidebar-add-queet-progress-and-button">
                             <div className="sidebar-add-queet-progress">
-                                <span className={(content.length > 280 || !image && content.length === 0) ? "sidebar-add-queet-char-total-red" : "sidebar-add-queet-char-total"}>{content.length}</span>
+                                <span className={(content.length > 280 || (!image && content.length === 0)) ? "sidebar-add-queet-char-total-red" : "sidebar-add-queet-char-total"}>{content.length}</span>
                                 <p className="sidebar-add-queet-char-max">/280</p>
                             </div>
-                            <button disabled={!content && !image || content.length > 280} type="submit" className="sidebar-add-queet-btn">Queet</button>
+                            <button disabled={(!content && !image) || content.length > 280} type="submit" className="sidebar-add-queet-btn">Queet</button>
                         </div>
                     </div>
                 </div>
@@ -100,8 +100,8 @@ export default SidebarAddQueet
 
 
 
-{/* <AiOutlinePicture onClick={() => setImageBoxOpen(!imageBoxOpen)} className='sidebar-add-img-btn' /> */ }
-{/* <div className="sidebar-queet-upload-img-wrap">
+/* <AiOutlinePicture onClick={() => setImageBoxOpen(!imageBoxOpen)} className='sidebar-add-img-btn' /> */
+/* <div className="sidebar-queet-upload-img-wrap">
     {imageBoxOpen && (
         <form className="sidebar-queet-upload-img-form">
             <input
@@ -113,4 +113,4 @@ export default SidebarAddQueet
             <button className="sidebar-queet-upload-img-btn">Add Image</button>
         </form>
     )}
-</div> */}
+</div> */

@@ -3,6 +3,7 @@ from flask import Blueprint, request
 from flask_login import login_required, current_user
 from app.models import Comment, db
 from app.forms.comment_form import CommentForm
+from app.s3_helpers import get_unique_filename, upload_file_to_s3
 from .utils import validation_errors_to_error_messages
 
 comment_routes = Blueprint('comments', __name__)
@@ -24,10 +25,27 @@ def new_comment():
     form['csrf_token'].data = request.cookies['csrf_token']
 
     if form.validate_on_submit():
+        if "image_url" in request.files:
+            image_url = request.files["image_url"]
+
+            image_url.filename = get_unique_filename(image_url.filename)
+
+            upload = upload_file_to_s3(image_url)
+
+            if "url" not in upload:
+
+                return upload, 400
+
+            image_url = upload["url"]
+
+        else:
+            image_url = None
+
         new_comment = Comment(
             user_id=current_user.to_dict()['id'],
             content=data['content'],
-            queet_id=request.json['queet_id'],
+            image_url=image_url,
+            queet_id=data['queet_id'],
             created_at=datetime.now(),
             updated_at=datetime.now()
         )
@@ -50,8 +68,26 @@ def update_comment(comment_id):
     form['csrf_token'].data = request.cookies['csrf_token']
 
     if form.validate_on_submit():
-        comment.content = data['content'],
-        comment.created_at = datetime.now(),
+
+        if "image_url" in request.files:
+            image_url = request.files["image_url"]
+
+            image_url.filename = get_unique_filename(image_url.filename)
+
+            upload = upload_file_to_s3(image_url)
+
+            if "url" not in upload:
+
+                return upload, 400
+
+            image_url = upload["url"]
+
+        else:
+            image_url = None
+
+        comment.content = data['content']
+        comment.image_url = image_url
+        comment.created_at = datetime.now()
         comment.updated_at = datetime.now()
 
         db.session.commit()

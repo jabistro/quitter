@@ -154,3 +154,18 @@
     margin-left: 15px;
     margin-right: 15px;
 }
+
+.feed-comment-img-container {
+    width: 95%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.feed-comment-img {
+    max-width: 95%;
+    max-height: 500px;
+    border-radius: 10px;
+}

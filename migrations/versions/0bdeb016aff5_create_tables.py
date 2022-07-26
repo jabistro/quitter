@@ -1,8 +1,8 @@
 """create tables
 
-Revision ID: f9c730118acd
+Revision ID: 0bdeb016aff5
 Revises: 
-Create Date: 2022-07-22 19:28:23.633029
+Create Date: 2022-07-23 19:32:46.453615
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = 'f9c730118acd'
+revision = '0bdeb016aff5'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -23,8 +23,8 @@ def upgrade():
     sa.Column('username', sa.String(length=40), nullable=False),
     sa.Column('email', sa.String(length=255), nullable=False),
     sa.Column('hashed_password', sa.String(length=255), nullable=False),
-    sa.Column('header', sa.String(length=1000), nullable=True),
-    sa.Column('profile_pic', sa.String(length=1000), nullable=True),
+    sa.Column('header', sa.String(), nullable=True),
+    sa.Column('profile_pic', sa.String(), nullable=True),
     sa.Column('display_name', sa.String(length=50), nullable=False),
     sa.Column('bio', sa.String(length=160), nullable=True),
     sa.Column('location', sa.String(length=50), nullable=True),
@@ -49,6 +49,7 @@ def upgrade():
     sa.Column('user_id', sa.Integer(), nullable=False),
     sa.Column('content', sa.String(length=280), nullable=False),
     sa.Column('queet_id', sa.Integer(), nullable=False),
+    sa.Column('image_url', sa.String(), nullable=True),
     sa.Column('created_at', sa.DateTime(), nullable=True),
     sa.Column('updated_at', sa.DateTime(), nullable=True),
     sa.ForeignKeyConstraint(['queet_id'], ['queets.id'], ),

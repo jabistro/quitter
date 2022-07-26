@@ -22,7 +22,7 @@
     font-size: 15px;
     outline: none;
     border: none;
-    height: 115px;
+    height: 75px;
     background-color: transparent;
     color: white;
     resize: none;
@@ -45,9 +45,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 50px;
-    height: 50px;
-    border-radius: 25px;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
 }
 
 .add-queet-img-upload-container:hover {
@@ -65,8 +65,8 @@
 .add-queet-img-icon {
     color: #b83dba;
     cursor: pointer;
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
 }
 
 .add-queet-img-input {
@@ -80,8 +80,8 @@
 
 .add-queet-img-delete-btn {
     cursor: pointer;
-    height: 30px;
-    width: 30px;
+    height: 20px;
+    width: 20px;
     color: white;
     margin-right: 15px;
 }

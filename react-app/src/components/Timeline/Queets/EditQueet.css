@@ -1,22 +1,41 @@
 .edit-queet-wrap {
     width: 600px;
-    height: 320px;
+    height: 520px;
     /* background-color: #15202b; */
     color: white;
     display: flex;
     flex-direction: column;
 }
 
-.edit-queet-btn-and-title {
+.edit-queet-top-left {
     display: flex;
     align-items: center;
     justify-content: flex-start;
+}
+
+.edit-queet-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 95%;
+}
+
+.edit-queet-top-right {
+    margin-right: 20px;
+}
+
+.edit-queet-btn-and-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .edit-queet-title {
     margin-left: 40px;
     font-family: 'Lucida Sans Unicode';
     font-size: 25px;
+    margin-top: 0px;
+    margin-bottom: 0px;
 }
 
 .edit-queet-close-btn {
@@ -26,7 +45,6 @@
 
 .edit-queet-close-btn-container {
     margin-left: 8px;
-    margin-top: 8px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -49,12 +67,12 @@
     font-size: 20px;
     outline: none;
     border: none;
-    height: 150px;
+    height: 90px;
     background-color: transparent;
     color: white;
     resize: none;
     margin-left: 55px;
-    width: 500px;
+    width: 95%;
     font-family: 'Lucida Sans Unicode';
 }
 
@@ -65,11 +83,12 @@
 .edit-and-delete-queet-btn {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     margin-left: 55px;
     margin-right: 55px;
     border-top: 2px solid gray;
     padding-top: 15px;
+    margin-bottom: 15px;
 }
 
 .edit-queet-progress-and-submit-btn {
@@ -150,4 +169,99 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.edit-queet-img-upload {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    margin-left: 55px;
+}
+
+
+.edit-queet-img-upload-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+}
+
+.edit-queet-img-upload-container:hover {
+    background-color: #25394e;
+    transition: all;
+    transition-duration: 200ms;
+}
+
+.edit-queet-img-upload-label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.edit-queet-img-icon {
+    color: #b83dba;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+}
+
+.edit-queet-img-input {
+    display: none;
+}
+
+.edit-queet-img-standby {
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+}
+
+.edit-queet-remove-img-btn-and-txt {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 5px;
+}
+
+.edit-queet-remove-img-txt {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.edit-queet-img-delete-btn {
+    cursor: pointer;
+    height: 20px;
+    width: 20px;
+    color: white;
+    margin-left: 15px;
+}
+
+.edit-queet-img-delete-btn:hover {
+    color: rgb(219, 219, 219);
+    transition: all;
+    transition-duration: 200ms;
+}
+
+.edit-queet-img-name {
+    color: white;
+    font-family: 'Lucida Sans Unicode';
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.edit-queet-img-container {
+    width: 95%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 12px;
+    margin-bottom: 20px;
+}
+
+.edit-queet-img {
+    max-width: 250px;
+    max-height: 250px;
+    border-radius: 10px;
 }

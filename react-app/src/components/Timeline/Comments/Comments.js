@@ -13,7 +13,6 @@ const Comments = () => {
     const { queetId } = useParams();
     const sessionUser = useSelector(state => state.session.user);
     const users = useSelector(state => state.user);
-    const usersArr = Object.values(users);
     const comments = useSelector(state => state.comment);
     const commentsArr = Object.values(comments)
     const queetComments = commentsArr.filter(comment => Number(comment.queet.id) === Number(queetId))
@@ -25,15 +24,15 @@ const Comments = () => {
                 return (
                     <div key={comment.id} className="comments">
                         <Link className="all-comments-profile-pic-link" to={`/users/${comment.userId}`}>
-                            <img className='all-comments-profile-pic' src={usersArr[comment.userId - 1]?.profile_pic === '' ? 'https://i.pinimg.com/736x/7c/ee/6f/7cee6fa507169843e3430a90dd5377d4.jpg' : usersArr[comment.userId - 1]?.profile_pic} />
+                            <img className='all-comments-profile-pic' src={users[comment.user_id]?.profile_pic === '' ? 'https://i.pinimg.com/736x/7c/ee/6f/7cee6fa507169843e3430a90dd5377d4.jpg' : users[comment.user_id]?.profile_pic} />
                         </Link>
                         <div className="all-comments-everything-minus-pic">
                             <div className="feed-comment-names-edit-and-content">
                                 <div className="feed-comment-username-and-edit-btn">
                                     <Link className="comment-link" to={`/comments/${comment.id}`}>
                                         <div className="feed-comment-names">
-                                            <p className="feed-comment-display-name">{usersArr[comment.userId - 1]?.display_name}</p>
-                                            <p className="feed-comment-username">@{usersArr[comment.userId - 1]?.username}<div className="stupid-dot">·</div></p>
+                                            <p className="feed-comment-display-name">{users[comment.user_id]?.display_name}</p>
+                                            <p className="feed-comment-username">@{users[comment.user_id]?.username}<div className="stupid-dot">·</div></p>
                                             <p className="timestamp-container">
                                                 <ReactTimeAgo
                                                     className="timestamp"
@@ -53,6 +52,11 @@ const Comments = () => {
                                         <div className="feed-comment">
                                             {comment.content.split('\n').map(line => (<p className="feed-comment-content-lines">{line}</p>))}
                                         </div>
+                                        {comment.image_url &&
+                                            <div className='feed-comment-img-container'>
+                                                <img className='feed-comment-img' src={comment.image_url} alt='' />
+                                            </div>
+                                        }
                                     </Link>
                                 </div>
                             </div>

@@ -79,7 +79,24 @@ def update_queet(queet_id):
     form['csrf_token'].data = request.cookies['csrf_token']
 
     if form.validate_on_submit():
+        if "image_url" in request.files:
+            image_url = request.files["image_url"]
+
+            image_url.filename = get_unique_filename(image_url.filename)
+
+            upload = upload_file_to_s3(image_url)
+
+            if "url" not in upload:
+
+                return upload, 400
+
+            image_url = upload["url"]
+
+        else:
+            image_url = None
+
         queet.content = data['content']
+        queet.image_url = image_url
         queet.created_at = datetime.now()
         queet.updated_at = datetime.now()
 

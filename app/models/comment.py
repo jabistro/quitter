@@ -7,6 +7,7 @@ class Comment(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
     content = db.Column(db.String(280), nullable=False)
     queet_id = db.Column(db.Integer, db.ForeignKey("queets.id"), nullable=False)
+    image_url = db.Column(db.String(), nullable=True)
     created_at = db.Column(db.DateTime)
     updated_at = db.Column(db.DateTime)
 
@@ -18,8 +19,9 @@ class Comment(db.Model):
     def to_dict(self):
         return {
             "id": self.id,
-            "userId": self.user_id,
+            "user_id": self.user_id,
             "content": self.content,
+            "image_url": self.image_url,
             "queet": self.queets.to_dict(),
             "created_at": self.created_at,
             "updated_at": self.updated_at

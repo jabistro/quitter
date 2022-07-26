@@ -163,3 +163,18 @@
 .single-comment-icon-info {
     margin-left: 5px;
 }
+
+.single-comment-img-container {
+    width: 95%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 12px;
+    margin-bottom: 10px;
+}
+
+.single-comment-img {
+    max-width: 95%;
+    max-height: 500px;
+    border-radius: 10px;
+}

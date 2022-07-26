@@ -19,6 +19,64 @@
     margin-left: 15px;
 }
 
+.add-comment-img-upload-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+}
+
+.add-comment-img-upload-container:hover {
+    background-color: #25394e;
+    transition: all;
+    transition-duration: 200ms;
+}
+
+.add-comment-img-upload-label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.add-comment-img-icon {
+    color: #b83dba;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+}
+
+.add-comment-img-input {
+    display: none;
+}
+
+.add-comment-img-standby {
+    display: flex;
+    align-items: center;
+}
+
+.add-comment-img-delete-btn {
+    cursor: pointer;
+    height: 20px;
+    width: 20px;
+    color: white;
+    margin-right: 15px;
+}
+
+.add-comment-img-delete-btn:hover {
+    color: rgb(219, 219, 219);
+    transition: all;
+    transition-duration: 200ms;
+}
+
+.add-comment-img-name {
+    color: white;
+    font-family: 'Lucida Sans Unicode';
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
 .add-comment-char-total {
     font-family: 'Lucida Sans Unicode';
     color: white;
@@ -133,7 +191,6 @@
     align-items: center;
     padding-left: 20px;
     padding-right: 20px;
-    margin-top: 10px;
 }
 
 .comment-upload-img-form {
@@ -190,6 +247,7 @@
 
 .add-comment-second-half {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
+    align-items: center;
     margin-bottom: 10px;
 }

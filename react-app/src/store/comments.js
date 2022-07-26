@@ -28,12 +28,28 @@ export const getComments = () => async (dispatch) => {
 };
 
 export const addComment = (comment) => async (dispatch) => {
+
+	const {
+		user_id,
+		content,
+		queet_id,
+		image_url
+	} = comment;
+
+	const formData = new FormData();
+
+	formData.append("content", content);
+	formData.append("queet_id", queet_id);
+	formData.append("user_id", user_id);
+	formData.append("image_url", image_url);
+
 	const response = await fetch("/api/comments/new", {
 		method: "POST",
-		headers: {
-			"Content-Type": "application/json",
-		},
-		body: JSON.stringify(comment),
+		// headers: {
+		// 	"Content-Type": "application/json",
+		// },
+		// body: JSON.stringify(comment),
+		body: formData
 	});
 
 	if (response.ok) {
@@ -53,20 +69,35 @@ export const addComment = (comment) => async (dispatch) => {
 };
 
 export const modifyComment = (editComment) => async (dispatch) => {
+
+	const {
+		content,
+		user_id,
+		queet_id,
+		image_url
+	} = editComment;
+
+	const formData = new FormData();
+
+	formData.append("content", content);
+	formData.append("user_id", user_id);
+	formData.append("queet_id", queet_id);
+	formData.append("image_url", image_url);
+
 	const response = await fetch(`/api/comments/edit/${editComment.id}`, {
 		method: "PUT",
-		headers: {
-			"Content-Type": "application/json",
-		},
-		body: JSON.stringify(editComment),
+		// headers: {
+		// 	"Content-Type": "application/json",
+		// },
+		// body: JSON.stringify(editComment),
+		body: formData
 	});
 
+	const data = await response.json();
 	if (response.ok) {
-		const editedComment = await response.json();
-		dispatch(createComment(editedComment));
-		return editedComment;
+		dispatch(createComment(data));
+		return null;
 	} else if (response.status < 500) {
-		const data = await response.json();
 		if (data.errors) {
 			return data.errors;
 		}
@@ -77,17 +108,35 @@ export const modifyComment = (editComment) => async (dispatch) => {
 
 export const eraseComment = (destroyedComment) => async (dispatch) => {
 	const response = await fetch(`/api/comments/${destroyedComment.id}`, {
-		method: "DELETE",
-		headers: {
-			"Content-Type": "application/json",
-		},
-		body: JSON.stringify(destroyedComment)
+		method: "DELETE"
+		// headers: {
+		// 	"Content-Type": "application/json",
+		// },
+		// body: JSON.stringify(destroyedComment)
 	});
 
 	if (response.ok) {
 		dispatch(deleteComment(destroyedComment.id));
 	}
 };
+
+//AWS upload images
+// export const uploadImage = (imageData) => async dispatch => {
+// 	const { queetId, image } = imageData;
+
+// 	const formData = new FormData();
+// 	formData.append("queetId", queetId);
+// 	formData.append("image", image);
+
+// 	const res = await fetch('/api/images/upload', {
+// 		method: "POST",
+// 		body: formData,
+// 	});
+
+// 	if (res.ok) {
+// 		return await res.json();
+// 	}
+// }
 
 const commentsReducer = (state = {}, action) => {
 	switch (action.type) {
