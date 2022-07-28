@@ -15,7 +15,7 @@ const DemoUserButton = () => {
     }
     return (
         <button className="splash-demo-login-btn" onClick={loginDemo}>
-            <img className="demo-btn-logo" src={require("../../../images/app-academy-logo.png")} />
+            <img className="demo-btn-logo" src={require("../../../images/app-academy-logo.png")} alt="" />
             <p className="demo-btn-txt">Log in with demo user</p>
         </button>
     )

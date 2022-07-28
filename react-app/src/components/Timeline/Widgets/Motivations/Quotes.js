@@ -1,7 +1,7 @@
 export const Quotes = [
     "\"Believe you can, and you're halfway there.\" - Theodore Roosevelt",
     "\"I avoid looking forward or backward, and try to keep looking upward.\" - Charlotte Brontë",
-    "\"I hated every minute of training, but I said, 'Don\'t quit. Suffer now and live the rest of your life as a champion.'\" - Muhammad Ali",
+    "\"I hated every minute of training, but I said, 'Don't quit. Suffer now and live the rest of your life as a champion.'\" - Muhammad Ali",
     "\"Our greatest glory is not in never failing, but in rising up every time we fail.\" - Ralph Waldo Emerson",
     "\"Every worthy act is difficult. Ascent is always difficult. Descent is easy and often slippery.\" - Mahatma Gandhi",
     "\"It is by going down into the abyss that we recover the treasures of life. Where you stumble, there lies your treasure.\" - Joseph Campbell",
