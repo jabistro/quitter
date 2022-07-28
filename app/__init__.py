@@ -4,17 +4,15 @@ from flask_cors import CORS
 from flask_migrate import Migrate
 from flask_wtf.csrf import CSRFProtect, generate_csrf
 from flask_login import LoginManager
-
 from .models import db, User
 from .api.user_routes import user_routes
 from .api.auth_routes import auth_routes
 from .api.queet_routes import queet_routes
 from .api.comment_routes import comment_routes
 from .api.image_routes import image_routes
-
 from .seeds import seed_commands
-
 from .config import Config
+from .socket import socketio
 
 app = Flask(__name__)
 
@@ -43,9 +41,16 @@ app.register_blueprint(comment_routes, url_prefix='/api/comments')
 app.register_blueprint(image_routes, url_prefix='/api/images')
 db.init_app(app)
 Migrate(app, db)
+# initialize the app with the socket instance
+# you could include this line right after Migrate(app, db)
+socketio.init_app(app)
 
 # Application Security
 CORS(app)
+
+# at the bottom of the file, use this to run the app
+if __name__ == '__main__':
+    socketio.run(app)
 
 
 # Since we are deploying with Docker and Flask,

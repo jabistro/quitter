@@ -31,7 +31,6 @@ def new_comment():
             image_url.filename = get_unique_filename(image_url.filename)
 
             upload = upload_file_to_s3(image_url)
-
             if "url" not in upload:
 
                 return upload, 400

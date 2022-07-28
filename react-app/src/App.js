@@ -19,8 +19,9 @@ import TimelineSingleComment from './components/Timeline/TimelineSingleComment';
 import HomePage from './components/HomePage/HomePage';
 import ProfilePage from './components/ProfilePage/ProfilePage';
 import SplashPage from './components/SplashPage/SplashPage';
-import './App.css';
 import About from './components/SplashPage/Footer/About/About';
+import Chat from "../src/components/Socket/Chat";
+import './App.css';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -74,6 +75,9 @@ function App() {
         </ProtectedRoute>
         <ProtectedRoute path='/comments/edit/:commentId' exact={true} >
           <EditComment />
+        </ProtectedRoute>
+        <ProtectedRoute path='/chat' exact={true} >
+          <Chat />
         </ProtectedRoute>
       </Switch>
     </BrowserRouter>

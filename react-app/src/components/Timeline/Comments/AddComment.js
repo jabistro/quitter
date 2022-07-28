@@ -13,6 +13,8 @@ const AddComment = () => {
     const [content, setContent] = useState('');
     const [image, setImage] = useState(null);
 
+    console.log(image)
+
     const contentHandler = (e) => {
         setContent(e.target.value)
     }
