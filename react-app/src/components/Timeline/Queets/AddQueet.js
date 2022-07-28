@@ -7,6 +7,7 @@ import { addQueet } from "../../../store/queets";
 import { AiOutlinePicture } from 'react-icons/ai';
 import { ImCancelCircle } from 'react-icons/im';
 // import { Link } from "react-router-dom";
+// import EmojiPicker from "../Emojis/EmojiPicker";
 
 const AddQueet = () => {
 
@@ -88,6 +89,7 @@ const AddQueet = () => {
                                     <p className="add-queet-img-name">{image.name}</p>
                                 </div>
                             }
+                            {/* <EmojiPicker /> */}
                         </div>
                         <div className="add-queet-progress-and-button">
                             <div className="add-queet-progress">

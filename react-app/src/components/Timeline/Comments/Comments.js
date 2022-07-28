@@ -43,7 +43,7 @@ const Comments = () => {
                                             </p>
                                         </div>
                                     </Link>
-                                    {comment.userId === sessionUser.id &&
+                                    {comment.user_id === sessionUser.id &&
                                         <EditCommentModal commentId={comment.id} className="all-comments-edit-btn" />
                                     }
                                 </div>
