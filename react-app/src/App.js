@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import LoginForm from './components/auth/LoginForm';
+// import LoginForm from './components/auth/LoginForm';
 import SignUpForm from './components/auth/SignUpForm';
-import NavBar from './components/NavBar';
+// import NavBar from './components/NavBar';
 import ProtectedRoute from './components/auth/ProtectedRoute';
 import UsersList from './components/UsersList';
 // import User from './components/User';
@@ -20,8 +20,8 @@ import HomePage from './components/HomePage/HomePage';
 import ProfilePage from './components/ProfilePage/ProfilePage';
 import SplashPage from './components/SplashPage/SplashPage';
 import About from './components/SplashPage/Footer/About/About';
-import Chat from "../src/components/Socket/Chat";
 import './App.css';
+import Chat from "../src/components/Socket/Chat";
 
 function App() {
   const [loaded, setLoaded] = useState(false);

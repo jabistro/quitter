@@ -106,3 +106,17 @@
     margin-right: 15px;
     margin-bottom: 0%;
 }
+
+.profile-feed-queet-img-container {
+    width: 95%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.profile-feed-queet-img {
+    max-width: 95%;
+    max-height: 500px;
+    border-radius: 10px;
+}

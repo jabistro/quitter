@@ -79,7 +79,7 @@ const LoginForm = ({ setShowModal }) => {
 
 export default LoginForm;
 
-{/* <div className='login-wrap'>
+/* <div className='login-wrap'>
   <div className='login-header'>
     <div className='login-btn-and-title'>
       <div onClick={() => setShowModal(false)} className='login-close-btn-container'>
@@ -118,4 +118,4 @@ export default LoginForm;
       />
     </div>
   </form>
-</div> */}
+</div> */

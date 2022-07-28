@@ -51,7 +51,7 @@ const Queets = () => {
                                 <div className="feed-queet-username-and-edit-btn">
                                     <Link className="queet-link" to={`/queets/${queet.id}`}>
                                         <div className="feed-queet-names">
-                                            <p className="feed-queet-display-name">{users[queet.userId]?.display_name}</p>
+                                            <div className="feed-queet-display-name">{users[queet.userId]?.display_name}</div>
                                             <div className="feed-queet-username">@{users[queet.userId]?.username}<p className="stupid-dot">·</p></div>
                                             <div className="timestamp-container">
                                                 <ReactTimeAgo

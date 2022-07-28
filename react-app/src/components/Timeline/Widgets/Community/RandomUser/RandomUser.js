@@ -13,7 +13,7 @@ const RandomUser = () => {
     return (
         <div className="random-user-wrap">
             <div className="random-user-pfp-and-names">
-                <img className="profile-pic" src={randomUser?.profile_pic === '' ? 'https://i.pinimg.com/736x/7c/ee/6f/7cee6fa507169843e3430a90dd5377d4.jpg' : randomUser?.profile_pic} />
+                <img className="profile-pic" alt="" src={randomUser?.profile_pic === '' ? 'https://i.pinimg.com/736x/7c/ee/6f/7cee6fa507169843e3430a90dd5377d4.jpg' : randomUser?.profile_pic} />
                 <div className="random-user-names">
                     <p className="random-user-display-name">{randomUser.display_name}</p>
                     <p className="random-user-username">@{randomUser.username}</p>

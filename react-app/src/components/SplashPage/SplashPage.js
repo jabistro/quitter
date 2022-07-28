@@ -5,7 +5,7 @@ import DemoUserButton from '../auth/DemoUserButton/DemoUserButton';
 import SplashLoginModal from './SplashLoginModal';
 import { Link, Redirect } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import About from './Footer/About/About';
+// import About from './Footer/About/About';
 
 
 const SplashPage = () => {

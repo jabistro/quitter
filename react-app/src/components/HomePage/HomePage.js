@@ -17,7 +17,7 @@ const HomePage = () => {
         (async () => {
             await dispatch(getUsers());
         })();
-    }, []);
+    }, [dispatch]);
 
     return (
         <>

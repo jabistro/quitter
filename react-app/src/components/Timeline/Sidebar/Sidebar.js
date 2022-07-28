@@ -6,7 +6,7 @@ import { HiOutlineUserGroup } from 'react-icons/hi';
 // import { FiMail } from 'react-icons/fi';
 // import { FiBookmark } from 'react-icons/fi';
 import { BsPerson } from 'react-icons/bs';
-import { Link, useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import SidebarQueetModal from './SidebarQueetModal';
 import LogoutButton from '../../auth/LogoutButton';

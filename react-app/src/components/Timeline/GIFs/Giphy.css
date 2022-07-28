@@ -1,0 +1,13 @@
+.gif-container {
+    margin: 0 auto;
+    max-width: 400px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: 200px;
+    overflow-y: scroll;
+}
+
+.gif {
+    padding: 0 2px;
+}
