@@ -1,0 +1,25 @@
+#profile-pic-modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#profile-pic-modal-background {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(73, 89, 105, 0.65);
+}
+
+#profile-pic-modal-content {
+    position: absolute;
+    background-color: transparent;
+    /* border-radius: 300px; */
+}

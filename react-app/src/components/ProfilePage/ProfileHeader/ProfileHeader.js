@@ -1,26 +1,42 @@
 import './ProfileHeader.css';
-import React from 'react'
+import React, { useState } from 'react'
 import EditProfileModal from './EditProfile/EditProfileModal';
 import moment from 'moment';
 import { useSelector } from 'react-redux';
 import { HiOutlineLocationMarker } from 'react-icons/hi';
 import { FaBirthdayCake } from 'react-icons/fa';
 import { BsCalendar3 } from 'react-icons/bs';
+import { ProfilePicModal } from './ProfileImages/ProfilePicModal';
+import ProfilePicZoom from './ProfileImages/ProfilePicZoom';
+import { Modal } from '../../../context/Modal';
+import ProfileHeaderZoom from './ProfileImages/ProfileHeaderZoom';
 
 const ProfileHeader = ({ userId }) => {
 
     const sessionUser = useSelector(state => state.session.user);
     const users = useSelector(state => state.user);
     const userInfo = users[userId]
+    const [showProfileModal, setShowProfileModal] = useState(false);
+    const [showHeaderModal, setShowHeaderModal] = useState(false);
 
     return (
         <div className='profile-header-wrap'>
             <div className='profile-header-pic-and-profile-pic'>
                 <div className='profile-header-container'>
-                    <img className='profile-header' alt='' src={userInfo?.header === '' ? 'https://p.favim.com/orig/2019/04/12/blue-solid-color-header-Favim.com-7052292.jpg' : userInfo?.header} />
+                    <img onClick={() => setShowHeaderModal(true)} className='profile-header' alt='' src={userInfo?.header === '' ? 'https://p.favim.com/orig/2019/04/12/blue-solid-color-header-Favim.com-7052292.jpg' : userInfo?.header} />
+                    {showHeaderModal && (
+                        <Modal onClose={() => setShowHeaderModal(false)}>
+                            <ProfileHeaderZoom userInfo={userInfo} setShowModal={setShowHeaderModal} />
+                        </Modal>
+                    )}
                 </div>
                 <div className='profile-prof-pic-and-edit-btn'>
-                    <img className='profile-prof-pic' alt='' src={userInfo?.profile_pic === '' ? 'https://i.pinimg.com/736x/7c/ee/6f/7cee6fa507169843e3430a90dd5377d4.jpg' : userInfo?.profile_pic} />
+                    <img onClick={() => setShowProfileModal(true)} className='profile-prof-pic' alt='' src={userInfo?.profile_pic === '' ? 'https://i.pinimg.com/736x/7c/ee/6f/7cee6fa507169843e3430a90dd5377d4.jpg' : userInfo?.profile_pic} />
+                    {showProfileModal && (
+                        <ProfilePicModal onClose={() => setShowProfileModal(false)}>
+                            <ProfilePicZoom className="profile-pic-zoom-modal" userInfo={userInfo} setShowModal={setShowProfileModal} />
+                        </ProfilePicModal>
+                    )}
                     <div className='profile-edit-profile-btn-div'>
                         {sessionUser.id === Number(userId) && <EditProfileModal />}
                     </div>

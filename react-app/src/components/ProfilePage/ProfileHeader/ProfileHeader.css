@@ -17,6 +17,7 @@
     object-fit: fill;
     width: 500px;
     height: 200px;
+    cursor: pointer;
 }
 
 .profile-prof-pic {
@@ -28,7 +29,12 @@
     margin-left: 15px;
     position: relative;
     top: -70px;
+    cursor: pointer;
 }
+
+/* .profile-pic-zoom-modal {
+    background-color: transparent;
+} */
 
 .profile-prof-pic-and-edit-btn {
     display: flex;

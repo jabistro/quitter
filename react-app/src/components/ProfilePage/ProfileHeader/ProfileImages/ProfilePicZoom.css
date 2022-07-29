@@ -1,0 +1,18 @@
+/* .profile-pic-zoom-img-wrap {
+    width: 98vw;
+    height: 98vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} */
+
+.profile-pic-zoom-img-container {
+    width: 600px;
+    height: 600px;
+}
+
+.profile-pic-zoom-img {
+    border-radius: 300px;
+    height: 100%;
+    width: 100%;
+}

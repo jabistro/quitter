@@ -24,7 +24,6 @@ const AddQueet = () => {
 
     const updateImage = (e) => {
         const file = e.target.files[0];
-        // console.log(file)
         setImage(file);
     }
 
@@ -41,14 +40,12 @@ const AddQueet = () => {
             content,
             image_url: image
         }
-        // console.log(newQueet.id)
         const queet = await dispatch(addQueet(newQueet))
 
         // const newImage = {
         //     image,
         //     queetId: newQueet.id
         // }
-        // // console.log(newImage)
         // const picture = await dispatch(uploadImage(newImage));
 
         if (queet) {

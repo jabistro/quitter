@@ -28,7 +28,6 @@ const Queets = () => {
     //     commentsArr.filter(comment => (comment.queet.id === queet.id)
     //     )
     // })
-    // console.log(replies)
     // const replies = latestQueets.map(queet => {
     //     comments
     // })
@@ -37,10 +36,6 @@ const Queets = () => {
     return (
         <div className="queets-wrap">
             {latestQueets?.map(queet => {
-                // console.log(queet)
-                // commentsArr.forEach(comment => console.log(comment))
-                // replies = commentsArr?.filter(comment => (comment.queet.id === queet.id))
-                // console.log(replies)
                 return (
                     <div key={queet.id} className="queets">
                         <Link className="all-queets-profile-pic-link" to={`/users/${queet.userId}`}>

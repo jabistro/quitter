@@ -14,6 +14,14 @@ const EditComment = ({ setShowModal, comment_id }) => {
     const dispatch = useDispatch();
     const history = useHistory();
     const [content, setContent] = useState(editedComment.content);
+    const [image, setImage] = useState(editedComment.image_url);
+
+    const updateImage = (e) => {
+        const file = e.target.files[0];
+        setImage(file);
+    }
+
+    const removeImage = (e) => setImage(null);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -21,7 +29,8 @@ const EditComment = ({ setShowModal, comment_id }) => {
             id: editedComment.id,
             user_id: user.id,
             queet_id: queetId,
-            content
+            content,
+            image_url: image
         }
         await dispatch(modifyComment(editingComment))
         setShowModal(false)
@@ -62,6 +71,7 @@ const EditComment = ({ setShowModal, comment_id }) => {
                     </div>
                     <button className="delete-comment-btn" onClick={(e) => deleteHandler(e, editedComment)}>Delete</button>
                 </div>
+
             </form>
         </div>
     )

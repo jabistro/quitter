@@ -1,0 +1,10 @@
+.profile-header-zoom-img-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-header-zoom-img {
+    min-width: 1300px;
+    width: 100%;
+}

@@ -23,7 +23,7 @@ const Comments = () => {
             {queetComments?.map(comment => {
                 return (
                     <div key={comment.id} className="comments">
-                        <Link className="all-comments-profile-pic-link" to={`/users/${comment.userId}`}>
+                        <Link className="all-comments-profile-pic-link" to={`/users/${comment.user_id}`}>
                             <img className='all-comments-profile-pic' src={users[comment.user_id]?.profile_pic === '' ? 'https://i.pinimg.com/736x/7c/ee/6f/7cee6fa507169843e3430a90dd5377d4.jpg' : users[comment.user_id]?.profile_pic} alt="" />
                         </Link>
                         <div className="all-comments-everything-minus-pic">

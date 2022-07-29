@@ -49,8 +49,6 @@ def new_comment():
             updated_at=datetime.now()
         )
 
-        # print(new_comment)
-
         db.session.add(new_comment)
         db.session.commit()
         return new_comment.to_dict()

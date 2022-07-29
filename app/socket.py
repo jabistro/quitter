@@ -1,4 +1,4 @@
-from flask_socketio import SocketIO, emit
+from flask_socketio import SocketIO, emit, send
 import os
 
 
@@ -19,3 +19,10 @@ socketio = SocketIO(cors_allowed_origins=origins)
 @socketio.on("chat")
 def handle_chat(data):
     emit("chat", data, broadcast=True)
+
+# alternate
+@socketio.on("message")
+def handleMessage(msg):
+    print(msg)
+    send(msg, broadcast=True)
+    return None

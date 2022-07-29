@@ -51,7 +51,6 @@ const EditProfile = ({ setShowModal }) => {
 
         // const picArr = ['png', 'jpg', 'jpeg', 'gif'];
 
-        // console.log("THIS HITS NUMBER ONE!!!!!!")
         // if (profilePic) {
         //     if (!profilePic.startsWith('https://')) {
         //         setErrors(['Profile picture url must start with https:// and end with either .png, .jpg, .jpeg, or .gif'])
@@ -59,7 +58,6 @@ const EditProfile = ({ setShowModal }) => {
         //     } else {
         //         let splitProfile = profilePic.split('.')
         //         if (!picArr.includes(splitProfile[splitProfile.length - 1])) {
-        //             console.log(splitProfile[splitProfile.length - 1])
         //             setErrors(['Profile picture url must end with either .png, .jpg, .jpeg, or .gif'])
         //             return
         //         }
@@ -86,7 +84,6 @@ const EditProfile = ({ setShowModal }) => {
         //     } else {
         //         let splitHeader = header.split('.')
         //         if (!picArr.includes(splitHeader[splitHeader.length - 1])) {
-        //             console.log(splitHeader[splitHeader.length - 1])
         //             setErrors(['Header url must end with either .png, .jpg, .jpeg, or .gif'])
         //             return
         //         }
@@ -94,11 +91,9 @@ const EditProfile = ({ setShowModal }) => {
         // }
 
 
-        // console.log("THIS HITS NUMBER TWO!!!!!!")
         // if (!profilePic) {
         //     profilePic = "https://i.pinimg.com/736x/7c/ee/6f/7cee6fa507169843e3430a90dd5377d4.jpg"
         // }
-        // console.log("THIS HITS NUMBER THREE!!!!!!")
         // if (header &&
         //     (!header.startsWith('https://') ||
         //         !header.endsWith('.png') ||
@@ -109,7 +104,6 @@ const EditProfile = ({ setShowModal }) => {
         //     setErrors(['Header url must start with https:// and end with either .png, .jpg, .jpeg, or .gif'])
         //     return
         // }
-        // console.log("THIS HITS NUMBER 4!!!!!!")
         // if (!header) {
         //     header = "https://p.favim.com/orig/2019/04/12/blue-solid-color-header-Favim.com-7052292.jpg"
         // }
@@ -126,8 +120,6 @@ const EditProfile = ({ setShowModal }) => {
             username
         }
 
-        // console.log(editingUser);
-        // console.log("THIS HITS NUMBER 5!!!!!!")
         const data = await dispatch(modifyUser(editingUser))
         if (data) {
             setErrors(data)

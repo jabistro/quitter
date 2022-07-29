@@ -22,6 +22,7 @@ import SplashPage from './components/SplashPage/SplashPage';
 import About from './components/SplashPage/Footer/About/About';
 import './App.css';
 import Chat from "../src/components/Socket/Chat";
+import Message from './components/Timeline/Messages/Message';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -78,6 +79,9 @@ function App() {
         </ProtectedRoute>
         <ProtectedRoute path='/chat' exact={true} >
           <Chat />
+        </ProtectedRoute>
+        <ProtectedRoute path='/message' exact={true} >
+          <Message />
         </ProtectedRoute>
       </Switch>
     </BrowserRouter>

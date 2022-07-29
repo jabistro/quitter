@@ -28,7 +28,7 @@ const SingleComment = () => {
                         <MdKeyboardBackspace className='single-comment-back-button' />
                     </div>
                 </Link>
-                <h2 className='comment'>Comment</h2>
+                <h2 className='comment'>Reply</h2>
             </div>
             <div className="single-comment-block">
                 <div className='single-comment-pic-names-and-edit'>

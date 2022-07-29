@@ -13,15 +13,12 @@ const AddComment = () => {
     const [content, setContent] = useState('');
     const [image, setImage] = useState(null);
 
-    console.log(image)
-
     const contentHandler = (e) => {
         setContent(e.target.value)
     }
 
     const updateImage = (e) => {
         const file = e.target.files[0];
-        // console.log(file)
         setImage(file);
     }
 

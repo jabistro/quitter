@@ -23,7 +23,6 @@ const Giphy = () => {
                     }
                 });
 
-                console.log(res);
                 setData(res.data.data);
 
             } catch (err) {

@@ -100,12 +100,16 @@
     margin-left: 8px;
     margin-bottom: 8px;
     font-size: 16px;
-    width: 100%;
-    overflow: hidden;
+    width: 95%;
+    overflow-y: scroll;
     text-overflow: ellipsis;
     resize: none;
     margin-right: 38px;
     outline: none;
+}
+
+.edit-profile-input::-webkit-scrollbar {
+    display: none;
 }
 
 .edit-label {

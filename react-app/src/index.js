@@ -9,6 +9,7 @@ import TimeAgo from 'javascript-time-ago'
 
 import en from 'javascript-time-ago/locale/en.json'
 import ru from 'javascript-time-ago/locale/ru.json'
+import { ProfilePicModalProvider } from './components/ProfilePage/ProfileHeader/ProfileImages/ProfilePicModal'
 
 TimeAgo.addDefaultLocale(en)
 TimeAgo.addLocale(ru)
@@ -18,9 +19,11 @@ const store = configureStore();
 ReactDOM.render(
   <React.StrictMode>
     <ModalProvider>
-      <Provider store={store}>
-        <App />
-      </Provider>
+      <ProfilePicModalProvider>
+        <Provider store={store}>
+          <App />
+        </Provider>
+      </ProfilePicModalProvider>
     </ModalProvider>
   </React.StrictMode>,
   document.getElementById('root')

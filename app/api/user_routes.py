@@ -55,17 +55,13 @@ def sign_up():
 
 @user_routes.route('/edit/<int:user_id>', methods=['PUT'])
 def update_user(user_id):
-    print("THIS IS A PRINT IN THE PUT ROUTE----------")
     user = User.query.get(user_id)
     form = ProfileForm()
     data = form.data
     form['csrf_token'].data = request.cookies['csrf_token']
 
-    print(">>>>>>>>>>>>>", data)
-    print("THIS IS THE USER ->>>>>>>>>>", user)
 
     if form.validate_on_submit():
-        print('AHHHHHHHHHHHHHH')
 
         if 'profile_pic' in request.files:
             profile_pic = request.files["profile_pic"]
