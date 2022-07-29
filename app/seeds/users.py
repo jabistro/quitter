@@ -4,6 +4,7 @@ from app.models import db, User
 
 # Adds a demo user, you can add other users here if you want
 def seed_users():
+    # 1
     demo = User(
         username='Demo22',
         email='demo@aa.io',
@@ -15,6 +16,7 @@ def seed_users():
         location='San Angeles, CA',
         birthday='1962-07-31',
         joined='2016-09-03 19:17:22')
+    # 2
     marnie = User(
         username='marnie79',
         email='marnie@aa.io',
@@ -26,6 +28,7 @@ def seed_users():
         location='Raleigh, NC',
         birthday='1979-02-17',
         joined='2017-10-03 19:17:22')
+    # 3
     bobbie = User(
         username='HelicopterBobbie',
         email='bobbie@aa.io',
@@ -37,6 +40,7 @@ def seed_users():
         location='New York City, NY',
         birthday='1996-05-28',
         joined='2009-01-03 19:17:22')
+    # 4
     john_allan = User(
         username='JABistro',
         email='info@johnallanhinds.com',
@@ -48,6 +52,7 @@ def seed_users():
         location='Fort Lee, NJ/Greenville, NC/LV',
         birthday='1987-06-03',
         joined='2011-04-03 19:17:22')
+    # 5
     lebron = User(
         username='KingJames',
         email='lebron@mail.com',
@@ -59,6 +64,7 @@ def seed_users():
         location='Amongst La Familia!',
         birthday='1984-12-30',
         joined='2006-07-03 19:17:22')
+    # 6
     zach = User(
         username='RealZachGalifianakis',
         email='zach@mail.com',
@@ -70,6 +76,7 @@ def seed_users():
         location='Saskatoon, Saskatchewan Canada',
         birthday='1969-10-01',
         joined='2012-04-03 19:17:22')
+    # 7
     steve_o = User(
         username='steveo',
         email='steveo@mail.com',
@@ -81,6 +88,7 @@ def seed_users():
         location='Los Angeles, CA',
         birthday='1974-06-13',
         joined='2012-11-03 19:17:22')
+    # 8
     robert = User(
         username='RobertDowneyJr',
         email='robert@mail.com',
@@ -92,6 +100,7 @@ def seed_users():
         location='New York City, NY',
         birthday='1965-04-04',
         joined='2009-06-03 19:17:22')
+    # 9
     ben = User(
         username='BenAffleck',
         email='ben@mail.com',
@@ -103,6 +112,7 @@ def seed_users():
         location='Los Angeles, CA',
         birthday='1972-08-15',
         joined='2011-07-03 19:17:22')
+    # 10
     drew = User(
         username='DrewBarrymore',
         email='drew@mail.com',
@@ -114,6 +124,7 @@ def seed_users():
         location='West Hollywood',
         birthday='1975-02-22',
         joined='2013-07-03 19:17:22')
+    # 11
     elton = User(
         username='eltonofficial',
         email='elton@mail.com',
@@ -125,6 +136,7 @@ def seed_users():
         location='London, UK',
         birthday='1947-03-25',
         joined='2010-08-03 19:17:22')
+    # 12
     jamie = User(
         username='jamieleecurtis',
         email='jamie@mail.com',
@@ -136,6 +148,7 @@ def seed_users():
         location='Near enough to hear the ocean',
         birthday='1958-11-22',
         joined='2022-05-03 19:17:22')
+    # 13
     amber = User(
         username='ambervalletta',
         email='amber@mail.com',
@@ -147,6 +160,7 @@ def seed_users():
         location='Wherever I go, there I am',
         birthday='1974-02-09',
         joined='2011-05-03 19:17:22')
+    # 14
     eric = User(
         username='EricClapton',
         email='eric@mail.com',
@@ -158,6 +172,7 @@ def seed_users():
         location='Ripley, United Kingdom',
         birthday='1945-03-30',
         joined='2016-08-03 19:17:22')
+    # 15
     lindsay = User(
         username='lindsaylohan',
         email='lindsay@mail.com',
@@ -169,6 +184,7 @@ def seed_users():
         location='The Bronx, NY',
         birthday='1986-07-02',
         joined='2009-08-03 19:17:22')
+    # 16
     david = User(
         username='DavidHasselhoff',
         email='david@mail.com',
@@ -180,6 +196,7 @@ def seed_users():
         location='Los Angeles, California',
         birthday='1952-07-17',
         joined='2009-02-03 19:17:22')
+    # 17
     christina = User(
         username='cgraw1',
         email='christina@mail.com',
@@ -191,6 +208,7 @@ def seed_users():
         location='Chesapeake, VA',
         birthday='1982-09-16',
         joined='2012-01-03 19:17:22')
+    # 18
     brittany = User(
         username='_BLShelton',
         email='brittany@mail.com',
@@ -202,6 +220,7 @@ def seed_users():
         location='Kansas City, MO',
         birthday='1983-01-17',
         joined='2013-02-03 19:17:22')
+    # 19
     anthony = User(
         username='AFlannagain',
         email='anthony@mail.com',
@@ -213,6 +232,7 @@ def seed_users():
         location='Beal feirste - Ireland',
         birthday='1980-12-04',
         joined='2017-01-03 19:17:22')
+    # 20
     bryce = User(
         username='BryceHall',
         email='bryce@mail.com',
@@ -224,6 +244,7 @@ def seed_users():
         location='Los Angeles, CA',
         birthday='1994-07-19',
         joined='2014-05-03 19:17:22')
+    # 21
     kaliyah = User(
         username='_kaliyahhhhhh',
         email='kaliyah@mail.com',
@@ -235,6 +256,7 @@ def seed_users():
         location='Detroit, MI',
         birthday='1993-09-28',
         joined='2015-01-03 19:17:22')
+    # 22
     Ro = User(
         username='Forever7Ro',
         email='ro@mail.com',
@@ -246,6 +268,7 @@ def seed_users():
         location='',
         birthday='1989-08-19',
         joined='2021-08-03 19:17:22')
+    # 23
     silas = User(
         username='Kenny16Techs',
         email='silas@mail.com',
