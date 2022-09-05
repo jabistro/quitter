@@ -62,8 +62,6 @@
 .about-img {
     height: 300px;
     width: 300px;
-    background-image: url("https://media-exp1.licdn.com/dms/image/C4E03AQERfIqg4kP2XQ/profile-displayphoto-shrink_200_200/0/1650068562379?e=1659571200&v=beta&t=ioE9LYMNBkw37M7TgXhPMTbsH16Whb6ladV0kHQ4crM");
-    background-size: cover;
     border-radius: 150px;
 }
 

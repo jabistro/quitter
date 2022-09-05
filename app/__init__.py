@@ -10,6 +10,7 @@ from .api.auth_routes import auth_routes
 from .api.queet_routes import queet_routes
 from .api.comment_routes import comment_routes
 from .api.image_routes import image_routes
+from .api.conversation_routes import conversation_routes
 from .seeds import seed_commands
 from .config import Config
 from .socket import socketio
@@ -39,6 +40,7 @@ app.register_blueprint(auth_routes, url_prefix='/api/auth')
 app.register_blueprint(queet_routes, url_prefix='/api/queets')
 app.register_blueprint(comment_routes, url_prefix='/api/comments')
 app.register_blueprint(image_routes, url_prefix='/api/images')
+app.register_blueprint(conversation_routes, url_prefix='/api/conversations')
 db.init_app(app)
 Migrate(app, db)
 # initialize the app with the socket instance
@@ -47,10 +49,6 @@ socketio.init_app(app)
 
 # Application Security
 CORS(app)
-
-# at the bottom of the file, use this to run the app
-if __name__ == '__main__':
-    socketio.run(app)
 
 
 # Since we are deploying with Docker and Flask,
@@ -85,3 +83,8 @@ def react_root(path):
     if path == 'favicon.ico':
         return app.send_static_file('favicon.ico')
     return app.send_static_file('index.html')
+
+
+# at the bottom of the file, use this to run the app
+if __name__ == '__main__':
+    socketio.run(app)

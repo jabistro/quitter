@@ -2,11 +2,13 @@ from datetime import datetime
 import profile
 from flask import Blueprint, request
 from flask_login import login_required, login_user
-from app.models import User, db
+from app.models import User, db, Conversation
 from app.forms.profile_form import ProfileForm
 from app.forms.signup_form import SignUpForm
 from app.s3_helpers import allowed_file, get_unique_filename, upload_file_to_s3
 from .utils import validation_errors_to_error_messages
+from sqlalchemy import or_
+from sqlalchemy.orm import aliased
 
 user_routes = Blueprint('users', __name__)
 
@@ -60,7 +62,6 @@ def update_user(user_id):
     data = form.data
     form['csrf_token'].data = request.cookies['csrf_token']
 
-
     if form.validate_on_submit():
 
         if 'profile_pic' in request.files:
@@ -78,8 +79,7 @@ def update_user(user_id):
 
             profile_pic = upload['url']
         else:
-            profile_pic =user.profile_pic
-
+            profile_pic = user.profile_pic
 
         if 'header' in request.files:
             header = request.files["header"]
@@ -96,8 +96,7 @@ def update_user(user_id):
 
             header = upload['url']
         else:
-            header =user.header
-
+            header = user.header
 
         user.username = data['username']
         user.email = data['email']
@@ -113,3 +112,24 @@ def update_user(user_id):
         db.session.commit()
         return user.to_dict()
     return {'errors': validation_errors_to_error_messages(form.errors)}, 401
+
+
+@login_required
+# When using parameters, Flask allows you to specify
+# the type of data you expect to receive.
+@user_routes.route('/<int:id>/conversations', methods=["GET"])
+def user_conversations(id):
+    # To reference the same table more than once, the table
+    # must be aliased
+    user_alias1 = aliased(User)
+    user_alias2 = aliased(User)
+    # To add a filter to a join query, you must use join rather than
+    # joinedload. Joinedload data is transparent and cannot be altered,
+    # but join data can.
+    conversations = Conversation.query.\
+        join(user_alias1, Conversation.creator).\
+        join(user_alias2, Conversation.participant).\
+        filter(or_(Conversation.creator_id == id,
+               Conversation.participant_id == id))
+
+    return {conversation.id: conversation.to_dict(creator=conversation.creator, participant=conversation.participant) for conversation in conversations}

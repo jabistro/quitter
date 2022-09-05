@@ -4,8 +4,6 @@ import { BsGithub } from 'react-icons/bs';
 import { BsLinkedin } from 'react-icons/bs';
 import { MdKeyboardBackspace } from 'react-icons/md';
 import { Link } from 'react-router-dom';
-// import Giphy from '../../../Timeline/GIFs/Giphy';
-// import UploadPicture from '../../../ImageUpload/UploadPicture';
 
 
 const About = () => {
@@ -20,7 +18,7 @@ const About = () => {
                     </Link>
                 </div>
                 <div className='about-all-minus-back-btn'>
-                    <div className='about-img'></div>
+                    <img alt='' src={require('../../../../images/jah.jpg')} className='about-img' />
                     <div className='about-blurb'>
                         Quitter was incepted by ex-professional poker player John Allan Hinds.
                         As someone who has seen first hand what addiction can do to a person,
@@ -37,8 +35,6 @@ const About = () => {
                             <BsGithub className='about-link' />
                         </a>
                     </div>
-                    {/* <UploadPicture /> */}
-                    {/* <Giphy /> */}
                 </div>
             </div>
         </div>

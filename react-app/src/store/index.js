@@ -4,12 +4,16 @@ import session from './session';
 import queet from './queets';
 import comment from './comments';
 import user from './users';
+import conversation from './conversations';
+import message from './messages';
 
 const rootReducer = combineReducers({
   session,
   queet,
   comment,
-  user
+  user,
+  conversation,
+  message
 });
 
 

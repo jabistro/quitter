@@ -3,7 +3,7 @@ import React from 'react'
 import { HiOutlineUserGroup } from 'react-icons/hi';
 // import { FaHashtag } from 'react-icons/fa';
 // import { FiBell } from 'react-icons/fi';
-// import { FiMail } from 'react-icons/fi';
+import { FiMail } from 'react-icons/fi';
 // import { FiBookmark } from 'react-icons/fi';
 import { BsPerson } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
@@ -39,16 +39,16 @@ const Sidebar = () => {
             {/* <div className='icon-wrap'>
           <FaHashtag className='icons' />
           <p className='icon-text'>Explore</p>
-        </div>
-        <div className='icon-wrap'>
+        </div> */}
+            {/* <div className='icon-wrap'>
           <FiBell className='icons' />
           <p className='icon-text'>Notifications</p>
-        </div>
-        <div className='icon-wrap'>
-          <FiMail className='icons' />
-          <p className='icon-text'>Messages</p>
-        </div>
-        <div className='icon-wrap'>
+        </div> */}
+            <div className='icon-wrap'>
+              <FiMail className='icons' />
+              <p className='icon-text'>Messages</p>
+            </div>
+            {/* <div className='icon-wrap'>
           <FiBookmark className='icons' />
           <p className='icon-text'>Bookmarks</p>
         </div> */}

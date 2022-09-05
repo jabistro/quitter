@@ -20,6 +20,9 @@ class User(db.Model, UserMixin):
 
     queets = db.relationship("Queet", back_populates="users")
     comments = db.relationship("Comment", back_populates="users")
+    creator_user = db.relationship("Conversation", foreign_keys="Conversation.creator_id", back_populates="creator", lazy="dynamic")
+    participant_user = db.relationship("Conversation", foreign_keys="Conversation.participant_id", back_populates="participant", lazy="dynamic")
+    messages = db.relationship("Message", back_populates="user")
 
     # followers = db.relationship(
     #     "User",
