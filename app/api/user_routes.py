@@ -114,22 +114,22 @@ def update_user(user_id):
     return {'errors': validation_errors_to_error_messages(form.errors)}, 401
 
 
-@login_required
-# When using parameters, Flask allows you to specify
-# the type of data you expect to receive.
-@user_routes.route('/<int:id>/conversations', methods=["GET"])
-def user_conversations(id):
-    # To reference the same table more than once, the table
-    # must be aliased
-    user_alias1 = aliased(User)
-    user_alias2 = aliased(User)
-    # To add a filter to a join query, you must use join rather than
-    # joinedload. Joinedload data is transparent and cannot be altered,
-    # but join data can.
-    conversations = Conversation.query.\
-        join(user_alias1, Conversation.creator).\
-        join(user_alias2, Conversation.participant).\
-        filter(or_(Conversation.creator_id == id,
-               Conversation.participant_id == id))
+# @login_required
+# # When using parameters, Flask allows you to specify
+# # the type of data you expect to receive.
+# @user_routes.route('/<int:id>/conversations', methods=["GET"])
+# def user_conversations(id):
+#     # To reference the same table more than once, the table
+#     # must be aliased
+#     user_alias1 = aliased(User)
+#     user_alias2 = aliased(User)
+#     # To add a filter to a join query, you must use join rather than
+#     # joinedload. Joinedload data is transparent and cannot be altered,
+#     # but join data can.
+#     conversations = Conversation.query.\
+#         join(user_alias1, Conversation.creator).\
+#         join(user_alias2, Conversation.participant).\
+#         filter(or_(Conversation.creator_id == id,
+#                Conversation.participant_id == id))
 
-    return {conversation.id: conversation.to_dict(creator=conversation.creator, participant=conversation.participant) for conversation in conversations}
+#     return {conversation.id: conversation.to_dict(creator=conversation.creator, participant=conversation.participant) for conversation in conversations}
