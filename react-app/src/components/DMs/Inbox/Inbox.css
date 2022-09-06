@@ -1,0 +1,31 @@
+.inbox-wrap {
+    display: grid;
+    grid-template-columns: 1fr 385px 1fr;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+/* .profile-all-wrap::-webkit-scrollbar {
+    display: none;
+} */
+
+.inbox-left {
+    width: 500px;
+}
+
+/* .profile-all-center::-webkit-scrollbar {
+    display: none;
+} */
+
+.inbox-center {
+    overflow-y: scroll;
+    border-left: 1px solid rgb(84, 84, 84);
+    border-right: 1px solid rgb(84, 84, 84);
+    height: 99vh;
+    overflow-x: hidden;
+}
+
+.inbox-right {
+    width: 500px;
+    background-color: aquamarine;
+}

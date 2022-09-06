@@ -142,7 +142,7 @@ def seed_users():
         email='jamie@mail.com',
         password='password',
         header='https://pbs.twimg.com/profile_banners/336851461/1625319051/1500x500',
-        profile_pic='https://pbs.twimg.com/profile_images/1411316506462281733/gHRhK6bG_400x400.jpg',
+        profile_pic='https://pbs.twimg.com/profile_images/1562117534177849345/aBB4mg1H_400x400.jpg',
         display_name='Jamie Lee Curtis',
         bio="@jamieleecurtis Facebook @curtisleejamie Instagram",
         location='Near enough to hear the ocean',

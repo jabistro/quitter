@@ -23,8 +23,7 @@ import ProfilePage from './components/ProfilePage/ProfilePage';
 import SplashPage from './components/SplashPage/SplashPage';
 import About from './components/SplashPage/Footer/About/About';
 import './App.css';
-import Chat from "../src/components/Socket/Chat";
-import Message from './components/Timeline/Messages/Message';
+import Inbox from './components/DMs/Inbox/Inbox';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -48,10 +47,8 @@ function App() {
 
   return (
     <BrowserRouter>
-      {/* <NavBar /> */}
       <Switch>
         <Route path='/login' exact={true}>
-          {/* <LoginForm /> */}
           <SplashPage />
         </Route>
         <Route path='/sign-up' exact={true}>
@@ -81,11 +78,8 @@ function App() {
         <ProtectedRoute path='/comments/edit/:commentId' exact={true} >
           <EditComment />
         </ProtectedRoute>
-        <ProtectedRoute path='/chat' exact={true} >
-          <Chat />
-        </ProtectedRoute>
-        <ProtectedRoute path='/message' exact={true} >
-          <Message />
+        <ProtectedRoute path='/inbox' exact={true} >
+          <Inbox />
         </ProtectedRoute>
       </Switch>
     </BrowserRouter>

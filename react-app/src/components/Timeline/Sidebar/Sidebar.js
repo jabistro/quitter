@@ -6,7 +6,7 @@ import { HiOutlineUserGroup } from 'react-icons/hi';
 import { FiMail } from 'react-icons/fi';
 // import { FiBookmark } from 'react-icons/fi';
 import { BsPerson } from 'react-icons/bs';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import SidebarQueetModal from './SidebarQueetModal';
 import LogoutButton from '../../auth/LogoutButton';
@@ -16,7 +16,7 @@ import LogoutButton from '../../auth/LogoutButton';
 const Sidebar = () => {
 
   const sessionUser = useSelector(state => state.session.user)
-  // const history = useHistory();
+  const history = useHistory();
 
   return (
     <div className='sidebar-wrap'>
@@ -44,7 +44,7 @@ const Sidebar = () => {
           <FiBell className='icons' />
           <p className='icon-text'>Notifications</p>
         </div> */}
-            <div className='icon-wrap'>
+            <div className='icon-wrap' onClick={(e) => history.push('/inbox')}>
               <FiMail className='icons' />
               <p className='icon-text'>Messages</p>
             </div>

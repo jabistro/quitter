@@ -10,6 +10,7 @@ import { ProfilePicModal } from './ProfileImages/ProfilePicModal';
 import ProfilePicZoom from './ProfileImages/ProfilePicZoom';
 import { Modal } from '../../../context/Modal';
 import ProfileHeaderZoom from './ProfileImages/ProfileHeaderZoom';
+import { FiMail } from 'react-icons/fi';
 
 const ProfileHeader = ({ userId }) => {
 
@@ -38,6 +39,11 @@ const ProfileHeader = ({ userId }) => {
                         </ProfilePicModal>
                     )}
                     <div className='profile-edit-profile-btn-div'>
+                        {Number(userId) !== sessionUser.id &&
+                            <div title='Message' className='profile-mail-div'>
+                                <FiMail className='profile-mail-icon' />
+                            </div>
+                        }
                         {sessionUser.id === Number(userId) && <EditProfileModal />}
                     </div>
                 </div>

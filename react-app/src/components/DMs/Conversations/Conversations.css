@@ -1,0 +1,42 @@
+.conversations-wrap {
+    width: 100%;
+    display: flex;
+    background-color: rebeccapurple;
+    flex-direction: column;
+}
+
+.conversations-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid aquamarine;
+    height: 80px;
+}
+
+.conversations-pfp {
+    width: 44px;
+    height: 44px;
+    border-radius: 22px;
+    object-fit: cover;
+}
+
+.conversations-info-and-message {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.conversations-names-and-date {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.conversations-display-name {}
+
+.conversations-username {}
+
+.conversations-date {}
+
+.conversations-message {}
