@@ -53,7 +53,7 @@ const ProfileQueets = ({ userId }) => {
                             <div className="profile-feed-queet-container">
                                 <Link className="queet-link" to={`/queets/${queet.id}`}>
                                     <div className="profile-feed-queet">
-                                        {queet.content.split('\n').map(line => (<p className="profile-feed-queet-content-lines">{line}</p>))}
+                                        {queet.content.split('\n').map(line => (<p key={line.id} className="profile-feed-queet-content-lines">{line}</p>))}
                                     </div>
                                     {queet.image_url &&
                                         <div className='profile-feed-queet-img-container'>

@@ -9,18 +9,18 @@ const Conversations = ({ userConvos, setConvo }) => {
 
     return (
         <div className='conversations-wrap'>
-            {[...userConvos].map(convo => {
+            {[...userConvos].map(conversation => {
                 return (
-                    <div key={convo.id} className="conversations-container" onClick={(e) => setConvo(convo.id)}>
-                        <img className='conversations-pfp' alt='' src={convo.creator_id !== sessionUser.id ? users[convo.creator_id].profile_pic : users[convo.participant_id].profile_pic} />
+                    <div key={conversation.id} className="conversations-container" onClick={(e) => setConvo(conversation)}>
+                        <img className='conversations-pfp' alt='' src={conversation.creator_id !== sessionUser.id ? users[conversation.creator_id].profile_pic : users[conversation.participant_id].profile_pic} />
                         <div className='conversations-info-and-message'>
                             <div className='conversations-names-and-date'>
-                                <div className='conversations-display-name'>{convo.creator_id !== sessionUser.id ? users[convo.creator_id].display_name : users[convo.participant_id].display_name}</div>
-                                <div className='conversations-username'>@{convo.creator_id !== sessionUser.id ? users[convo.creator_id].username : users[convo.participant_id].username}</div>
+                                <div className='conversations-display-name'>{conversation.creator_id !== sessionUser.id ? users[conversation.creator_id].display_name : users[conversation.participant_id].display_name}</div>
+                                <div className='conversations-username'>@{conversation.creator_id !== sessionUser.id ? users[conversation.creator_id].username : users[conversation.participant_id].username}</div>
                                 <div className='conversations-date'>date</div>
                             </div>
                             <div className='conversations-message'>
-                                <ConvoPreview convo={convo} />
+                                <ConvoPreview conversation={conversation} />
                             </div>
                         </div>
                     </div>
