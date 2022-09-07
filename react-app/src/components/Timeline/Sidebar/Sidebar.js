@@ -44,10 +44,10 @@ const Sidebar = () => {
           <FiBell className='icons' />
           <p className='icon-text'>Notifications</p>
         </div> */}
-            <div className='icon-wrap' onClick={(e) => history.push('/inbox')}>
+            {/* <div className='icon-wrap' onClick={(e) => history.push('/inbox')}>
               <FiMail className='icons' />
               <p className='icon-text'>Messages</p>
-            </div>
+            </div> */}
             {/* <div className='icon-wrap'>
           <FiBookmark className='icons' />
           <p className='icon-text'>Bookmarks</p>

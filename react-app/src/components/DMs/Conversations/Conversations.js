@@ -20,7 +20,7 @@ const Conversations = ({ userConvos, setConvo }) => {
                                 <div className='conversations-date'>date</div>
                             </div>
                             <div className='conversations-message'>
-                                <ConvoPreview conversation={conversation} />
+                                {/* <ConvoPreview conversation={conversation} /> */}
                             </div>
                         </div>
                     </div>

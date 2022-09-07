@@ -7,53 +7,64 @@ import { io } from 'socket.io-client';
 let socket;
 
 const Messages = ({ convo }) => {
-    const [input, setInput] = useState('');
-    // const dispatch = useDispatch();
-    // const sessionUser = useSelector(state => state.session.user);
+    const [chatInput, setChatInput] = useState('');
+    const dispatch = useDispatch();
+    const sessionUser = useSelector(state => state.session.user);
     const messages = Object.values(useSelector(state => state.message));
-    // const [tempMessages, setTempMessages] = useState([]);
-    // let id;
-    // if (convo) id = parseInt(convo.id);
-    const conversations = useSelector(state => state.conversation);
-    let conversation;
-    if (convo) conversation = conversations[convo.id];
-    let convoMessages;
-    if (convo) convoMessages = messages.filter(msg => msg.conversation_id === conversation.id);
+    const [tempMessages, setTempMessages] = useState([]);
+    let conversationId;
+    if (convo) conversationId = convo.id;
+    let id;
+    if (convo) id = parseInt(conversationId);
+    console.log(id)
+    // const conversations = useSelector(state => state.conversation);
+    // let conversation;
+    // if (convo) conversation = conversations[convo.id];
+    // let convoMessages;
+    // if (convo) convoMessages = messages.filter(msg => msg.conversation_id === conversation.id);
 
-    // useEffect(() => {
-    //     dispatch(getAllMessages());
-    //     setTempMessages([]);
-    // }, [dispatch]);
+    useEffect(() => {
+        dispatch(getAllMessages());
+        setTempMessages([]);
+    }, [dispatch]);
 
-    // useEffect(() => {
-    //     //create websocket/connect
-    //     socket = io();
+    useEffect(() => {
+        //create websocket/connect
+        socket = io();
 
-    //     //join the room after component mounts
-    //     socket.on("connect", () => {
-    //         socket.emit("join", { conversation: convo.id })
-    //     })
-    //     //listen for chat events
-    //     socket.on("chat", (chat) => {
-    //         //when we receive a chat, add it into our messages array in state
-    //         setTempMessages(messages => [...messages, chat])
-    //     });
-    //     //when component unmounts, leave the room and disconnect
-    //     return () => {
-    //         dispatch(clearMessages())
-    //         socket.emit("leave", { conversation: convo.id })
-    //         socket.disconnect()
-    //     }
-    // }, [id]);
+        //join the room after component mounts
+        socket.on("connect", () => {
+            socket.emit("join", { conversation: conversationId })
+        })
+        //listen for chat events
+        socket.on("chat", (chat) => {
+            //when we receive a chat, add it into our messages array in state
+            setTempMessages(messages => [...messages, chat])
+        });
+        //when component unmounts, leave the room and disconnect
+        return () => {
+            dispatch(clearMessages())
+            socket.emit("leave", { conversation: conversationId })
+            socket.disconnect()
+        }
+    }, [id]);
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-
+    const updateChatInput = (e) => {
+        setChatInput(e.target.value)
     }
+
+    const sendChat = (e) => {
+        e.preventDefault()
+        //emit message, first arg must match backend, second arg is the data we want to send
+        socket.emit("chat", { sender: { id: sessionUser.id, username: sessionUser.username, profile_pic: sessionUser.profile_pic }, content: chatInput, conversation: conversationId });
+        //clear the input field after the message is sent
+        setChatInput("");
+    }
+
 
     return (
         <>
-            {convoMessages &&
+            {/* {convoMessages &&
                 <div className='messages-wrap'>
                     <div className='messages-header-and-msgs'>
                         <div>Header Component</div>
@@ -81,7 +92,7 @@ const Messages = ({ convo }) => {
                         </form>
                     </div>
                 </div>
-            }
+            } */}
         </>
     )
 }
