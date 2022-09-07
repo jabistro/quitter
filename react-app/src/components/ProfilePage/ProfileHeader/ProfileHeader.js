@@ -39,11 +39,11 @@ const ProfileHeader = ({ userId }) => {
                         </ProfilePicModal>
                     )}
                     <div className='profile-edit-profile-btn-div'>
-                        {Number(userId) !== sessionUser.id &&
+                        {/* {Number(userId) !== sessionUser.id &&
                             <div title='Message' className='profile-mail-div'>
                                 <FiMail className='profile-mail-icon' />
                             </div>
-                        }
+                        } */}
                         {sessionUser.id === Number(userId) && <EditProfileModal />}
                     </div>
                 </div>
